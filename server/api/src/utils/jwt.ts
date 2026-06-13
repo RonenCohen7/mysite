@@ -24,7 +24,7 @@ export function getCookieOptions() {
   return {
     httpOnly: true,
     secure: config.isProd,
-    sameSite: "strict" as const,
+    sameSite: (config.isProd ? "strict" : "lax") as "strict" | "lax",
     maxAge: 8 * 60 * 60 * 1000,
     path: "/",
   };

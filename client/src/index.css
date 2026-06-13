@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #050816;
-  --color-bg-elevated: #0a0f1e;
-  --color-cyan: #22d3ee;
-  --color-purple: #a855f7;
-  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f8fafc;
+  --color-turquoise: #0d9488;
+  --color-cyan: #06b6d4;
+  --color-orange: #f97316;
+  --color-red-orange: #ea580c;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Space Grotesk", system-ui, sans-serif;
 }
@@ -32,7 +33,7 @@ html {
 body {
   margin: 0;
   background-color: var(--color-bg);
-  color: #e2e8f0;
+  color: #0f172a;
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -43,18 +44,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
 }
 
 .glow-border {
-  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.15), 0 0 30px rgba(34, 211, 238, 0.05);
+  box-shadow: 0 0 0 1px rgba(13, 148, 136, 0.2), 0 8px 32px rgba(249, 115, 22, 0.08);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #22d3ee 100%);
+  background: linear-gradient(135deg, #0d9488 0%, #06b6d4 35%, #f97316 70%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,10 +81,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050816;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(34, 211, 238, 0.3);
+  background: linear-gradient(180deg, #0d9488, #f97316);
   border-radius: 3px;
 }
 
@@ -85,12 +94,29 @@ h1, h2, h3, h4, h5, h6 {
   left: 1rem;
   z-index: 9999;
   padding: 0.75rem 1.5rem;
-  background: #22d3ee;
-  color: #050816;
+  background: #0d9488;
+  color: #ffffff;
   border-radius: 0.5rem;
   font-weight: 600;
   text-decoration: none;
 }
 .skip-link:focus {
   top: 1rem;
+}
+
+[dir="rtl"] .section-container {
+  text-align: right;
+}
+
+@keyframes services-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-services-marquee {
+  animation: services-marquee 48s linear infinite;
 }

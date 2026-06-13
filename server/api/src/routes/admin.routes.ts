@@ -3,7 +3,7 @@ import multer from "multer";
 import { createProjectSchema, updateProjectSchema } from "@mysite/shared";
 import { requireAuth } from "../middleware/auth.js";
 import { adminRobotsHeader } from "../middleware/security.js";
-import { doubleCsrfProtection } from "../middleware/csrf.js";
+import { optionalCsrfProtection } from "../middleware/csrf.js";
 import {
   getAllProjects,
   createProject,
@@ -41,7 +41,7 @@ router.get("/projects/:id", async (req, res) => {
   res.json({ success: true, data: project });
 });
 
-router.post("/projects", doubleCsrfProtection, async (req, res) => {
+router.post("/projects", optionalCsrfProtection, async (req, res) => {
   try {
     const parsed = createProjectSchema.safeParse(req.body);
     if (!parsed.success) {
@@ -55,7 +55,7 @@ router.post("/projects", doubleCsrfProtection, async (req, res) => {
   }
 });
 
-router.put("/projects/:id", doubleCsrfProtection, async (req, res) => {
+router.put("/projects/:id", optionalCsrfProtection, async (req, res) => {
   try {
     const parsed = updateProjectSchema.safeParse(req.body);
     if (!parsed.success) {
@@ -73,7 +73,7 @@ router.put("/projects/:id", doubleCsrfProtection, async (req, res) => {
   }
 });
 
-router.delete("/projects/:id", doubleCsrfProtection, async (req, res) => {
+router.delete("/projects/:id", optionalCsrfProtection, async (req, res) => {
   try {
     const deleted = await deleteProject(String(req.params.id));
     if (!deleted) {
@@ -86,7 +86,7 @@ router.delete("/projects/:id", doubleCsrfProtection, async (req, res) => {
   }
 });
 
-router.post("/upload", doubleCsrfProtection, upload.single("file"), async (req, res) => {
+router.post("/upload", optionalCsrfProtection, upload.single("file"), async (req, res) => {
   try {
     if (!req.file) {
       res.status(400).json({ success: false, error: "No file uploaded" });

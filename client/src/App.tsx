@@ -22,7 +22,7 @@ const ProjectEditor = lazy(() => import("@/pages/admin/ProjectEditor").then((m) 
 
 function Loading() {
   return (
-    <div className="min-h-screen bg-[#050816] flex items-center justify-center text-white/40">
+    <div className="min-h-screen bg-white flex items-center justify-center text-slate-400">
       Loading...
     </div>
   );
@@ -38,11 +38,11 @@ function PublicSite() {
       <Navbar />
       <main>
         <Hero />
+        <Process />
         <Services />
         <Solutions />
         <Portfolio />
         <TechStack />
-        <Process />
         <Stats />
         <Testimonials />
         <Contact />

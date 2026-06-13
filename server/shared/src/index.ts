@@ -4,3 +4,4 @@ export * from "./types/api.js";
 export * from "./schemas/project.schema.js";
 export * from "./schemas/auth.schema.js";
 export * from "./schemas/contact.schema.js";
+export * from "./n8n-contact.js";

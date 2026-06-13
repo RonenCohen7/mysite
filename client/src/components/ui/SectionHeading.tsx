@@ -3,7 +3,7 @@ import { sectionHeadingStyles } from "./SectionHeading.styles";
 
 interface SectionHeadingProps {
   label: string;
-  title: string;
+  title?: string;
   subtitle?: string;
 }
 
@@ -17,7 +17,7 @@ export function SectionHeading({ label, title, subtitle }: SectionHeadingProps) 
       transition={{ duration: 0.6 }}
     >
       <p className={sectionHeadingStyles.label}>{label}</p>
-      <h2 className={sectionHeadingStyles.title}>{title}</h2>
+      {title && <h2 className={sectionHeadingStyles.title}>{title}</h2>}
       {subtitle && <p className={sectionHeadingStyles.subtitle}>{subtitle}</p>}
     </motion.div>
   );

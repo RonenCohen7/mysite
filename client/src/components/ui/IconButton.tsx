@@ -6,6 +6,7 @@ import { iconButtonStyles } from "./IconButton.styles";
 interface IconButtonProps {
   icon: ReactNode;
   tooltip: string;
+  tooltipPlacement?: "top" | "bottom";
   variant?: "primary" | "ghost" | "danger";
   size?: "sm" | "default" | "lg";
   className?: string;
@@ -17,6 +18,7 @@ interface IconButtonProps {
 export function IconButton({
   icon,
   tooltip,
+  tooltipPlacement = "top",
   variant = "primary",
   size = "default",
   className,
@@ -41,7 +43,7 @@ export function IconButton({
   };
 
   return (
-    <Tooltip label={tooltip}>
+    <Tooltip label={tooltip} placement={tooltipPlacement}>
       <button
         ref={ref}
         type={type}

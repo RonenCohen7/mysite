@@ -39,8 +39,9 @@ Open [http://localhost:5173](http://localhost:5173)
 
 ## Admin
 
-- URL: [http://localhost:5173/admin/login](http://localhost:5173/admin/login)
-- Password: value of `ADMIN_PASSWORD` in `.env` (default: `change-me-secure-password`)
+- URL: [http://localhost:5173/admin](http://localhost:5173/admin) — **open in dev** (no password)
+- Before production: set `ADMIN_AUTH_ENABLED=true` and `ADMIN_PASSWORD=...` in `.env`
+- Keep `VITE_API_URL` **empty** in dev
 
 ## Project Structure
 

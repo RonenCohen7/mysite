@@ -1,8 +1,11 @@
 import axios from "axios";
 import type { Project, ApiResponse, AuthMeResponse, UploadResponse } from "@mysite/shared";
+import { buildN8nContactFormData } from "@mysite/shared";
 
+// In dev, leave VITE_API_URL empty so requests go through the Vite proxy (same origin).
+// Direct calls to :3001 break login cookies (cross-origin + SameSite=strict).
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "",
+  baseURL: import.meta.env.VITE_API_URL ?? "",
   withCredentials: true,
   headers: { "Content-Type": "application/json" },
 });
@@ -19,10 +22,10 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (res) => res,
   (err) => {
-    if (err.response?.status === 401 && window.location.pathname.startsWith("/admin") && !window.location.pathname.includes("login")) {
-      window.location.href = "/admin/login";
-    }
-    return Promise.reject(err);
+    const message =
+      err.response?.data?.error ||
+      (err.response?.status === 429 ? "Too many attempts — wait 15 minutes" : err.message);
+    return Promise.reject(new Error(message));
   }
 );
 
@@ -54,7 +57,6 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 export async function getAdminProjects(): Promise<Project[]> {
-  await fetchCsrfToken();
   const { data } = await api.get<ApiResponse<Project[]>>("/api/admin/projects");
   return data.data || [];
 }
@@ -93,7 +95,28 @@ export async function uploadFile(file: File, kind: "image" | "video"): Promise<U
 }
 
 export async function sendContact(form: Record<string, string>): Promise<void> {
-  await api.post<ApiResponse>("/api/contact", form);
+  if (form.website) return;
+
+  const payload = {
+    name: form.name,
+    email: form.email,
+    company: form.company || "",
+    message: form.message,
+    mobile: form.mobile,
+  };
+
+  if (import.meta.env.DEV) {
+    const res = await fetch("/n8n-contact", {
+      method: "POST",
+      body: buildN8nContactFormData(payload),
+    });
+    if (!res.ok) {
+      throw new Error("Failed to send message");
+    }
+    return;
+  }
+
+  await api.post<ApiResponse>("/api/contact", payload);
 }
 
 export function getMediaUrl(fileId: string): string {

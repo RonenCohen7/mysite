@@ -8,7 +8,6 @@ import {
   deleteProject,
   uploadFile,
   getMediaUrl,
-  checkAuth,
 } from "@/services/api";
 import { IconButton } from "@/components/ui/IconButton";
 import { adminStyles } from "./Admin.styles";
@@ -32,9 +31,6 @@ export function ProjectEditor() {
   const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
-    checkAuth().then((auth) => {
-      if (!auth.authenticated) navigate("/admin/login");
-    });
     if (!isNew && id) {
       getAdminProject(id)
         .then((p) => {
@@ -49,7 +45,7 @@ export function ProjectEditor() {
           setImages(p.images || []);
           setVideo(p.video);
         })
-        .catch(() => navigate("/admin/login"))
+        .catch(() => navigate("/admin"))
         .finally(() => setLoading(false));
     }
   }, [id, isNew, navigate]);

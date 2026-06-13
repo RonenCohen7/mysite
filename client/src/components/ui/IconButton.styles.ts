@@ -1,17 +1,11 @@
 export const iconButtonStyles = {
-  base: "relative inline-flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050816]",
+  base: "relative inline-flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
   primary:
-    "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 hover:border-cyan-500/40 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-105",
+    "bg-teal-50 text-teal-600 border border-teal-200 hover:bg-teal-100 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-100 hover:scale-105",
   ghost:
-    "bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20 hover:scale-105",
+    "bg-slate-50 text-slate-600 border border-slate-200 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200 hover:scale-105",
   danger:
-    "bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20 hover:border-red-500/40",
+    "bg-red-50 text-red-600 border border-red-200 hover:bg-red-100 hover:border-red-300",
   sm: "h-9 w-9",
   lg: "h-13 w-13",
-};
-
-export const iconSize = {
-  default: 20,
-  sm: 16,
-  lg: 24,
 };

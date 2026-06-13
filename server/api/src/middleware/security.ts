@@ -38,8 +38,8 @@ export function applySecurityMiddleware(app: Express): void {
 
   const authLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 5,
-    message: { success: false, error: "Too many login attempts" },
+    max: config.isProd ? 5 : 50,
+    message: { success: false, error: "Too many login attempts — wait 15 minutes" },
   });
   app.use("/api/auth/login", authLimiter);
 
