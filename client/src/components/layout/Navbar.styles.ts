@@ -1,0 +1,15 @@
+export const navbarStyles = {
+  nav: "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+  scrolled: "bg-[#050816]/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-cyan-500/5",
+  transparent: "bg-transparent",
+  inner: "section-container flex items-center justify-between h-16 md:h-20",
+  logo: "text-xl font-bold text-white font-[family-name:var(--font-display)] tracking-tight",
+  logoAccent: "text-cyan-400",
+  links: "hidden lg:flex items-center gap-1",
+  link: "px-4 py-2 text-sm text-white/60 hover:text-white transition-colors rounded-lg",
+  linkActive: "text-cyan-400 bg-cyan-500/5",
+  actions: "flex items-center gap-2",
+  mobileBtn: "lg:hidden",
+  mobileMenu: "fixed inset-0 z-50 bg-[#050816]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 lg:hidden",
+  mobileLink: "text-2xl text-white/80 hover:text-cyan-400 transition-colors",
+};
