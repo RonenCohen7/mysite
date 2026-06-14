@@ -2,19 +2,19 @@
   "name": "mysite",
   "private": true,
   "workspaces": [
-    "client",
-    "server/shared",
-    "server/api"
+    "frontend",
+    "backend",
+    "backend/src/models"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "seed": "npm run build -w @mysite/shared && tsx server/scripts/seed.ts",
+    "build": "npm run build -w @mysite/shared && npm run build -w @mysite/backend && npm run build -w @mysite/frontend",
+    "seed": "npm run build -w @mysite/shared && tsx backend/scripts/seed.ts",
     "docker:deps": "docker compose up -d mongo",
     "kill:ports": "for p in 3001 5173 5174 5175; do lsof -ti :$p 2>/dev/null | xargs kill -9 2>/dev/null; done; exit 0",
     "predev": "npm run kill:ports",
-    "dev": "concurrently -n api,client -c green,cyan \"npm start -w @mysite/api\" \"npm start -w @mysite/client\"",
-    "dev:client": "npm start -w @mysite/client",
-    "dev:api": "npm start -w @mysite/api"
+    "dev": "concurrently -n backend,frontend -c green,cyan \"npm start -w @mysite/backend\" \"npm start -w @mysite/frontend\"",
+    "dev:frontend": "npm start -w @mysite/frontend",
+    "dev:backend": "npm start -w @mysite/backend"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

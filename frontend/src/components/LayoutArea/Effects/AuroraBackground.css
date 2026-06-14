@@ -1,0 +1,5 @@
+.aurora { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.aurora__orb1 { position: absolute; top: -25%; left: -25%; width: 600px; height: 600px; border-radius: 50%; background: rgba(153,246,228,0.3); filter: blur(120px); animation: pulse 4s ease-in-out infinite; }
+.aurora__orb2 { position: absolute; top: 33%; right: -25%; width: 500px; height: 500px; border-radius: 50%; background: rgba(254,215,170,0.25); filter: blur(100px); animation: pulse 4s ease-in-out infinite 2s; }
+.aurora__orb3 { position: absolute; bottom: -25%; left: 33%; width: 400px; height: 400px; border-radius: 50%; background: rgba(207,250,254,0.4); filter: blur(80px); animation: pulse 4s ease-in-out infinite 4s; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }

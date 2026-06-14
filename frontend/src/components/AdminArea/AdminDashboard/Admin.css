@@ -1,0 +1,22 @@
+.admin { min-height: 100vh; background: var(--color-slate-50); padding-top: 5rem; padding-bottom: 3rem; }
+.admin__container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); max-width: 72rem; }
+.admin__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.admin__title { font-size: 1.5rem; font-weight: 700; color: var(--color-slate-900); }
+.admin__card { border-radius: var(--radius-2xl); padding: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: #fff; }
+.admin__card-title { font-size: 1.125rem; font-weight: 600; color: var(--color-slate-900); }
+.admin__card-meta { color: var(--color-slate-500); font-size: 0.875rem; margin-top: 0.25rem; }
+.admin__published { background: var(--color-turquoise-50); color: var(--color-turquoise-700); border: 1px solid var(--color-turquoise-200); padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; }
+.admin__draft { background: var(--color-orange-50); color: var(--color-orange-700); border: 1px solid var(--color-orange-200); padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; }
+.admin__form { border-radius: var(--radius-2xl); padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; max-width: 48rem; margin: 0 auto; background: #fff; }
+.admin__field { display: flex; flex-direction: column; gap: 0.5rem; }
+.admin__label { font-size: 0.875rem; color: var(--color-slate-600); }
+.admin__input { width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-xl); background: var(--color-slate-50); border: 1px solid var(--color-slate-200); color: var(--color-slate-900); font-family: inherit; font-size: 1rem; }
+.admin__input:focus { outline: none; border-color: var(--color-turquoise-400); box-shadow: 0 0 0 2px rgba(204,251,241,1); }
+.admin__textarea { min-height: 120px; resize: vertical; }
+.admin__row { display: flex; align-items: center; gap: 1rem; }
+.admin__checkbox { display: flex; align-items: center; gap: 0.5rem; color: var(--color-slate-600); font-size: 0.875rem; }
+.admin__previews { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.75rem; }
+.admin__preview { width: 5rem; height: 5rem; border-radius: var(--radius-lg); object-fit: cover; border: 1px solid var(--color-slate-200); }
+.admin__actions { display: flex; align-items: center; gap: 0.5rem; justify-content: flex-end; padding-top: 1rem; }
+.admin__muted { color: var(--color-slate-500); font-size: 0.875rem; margin-top: 0.5rem; }
+.admin__error { color: var(--color-orange-600); font-size: 0.875rem; }

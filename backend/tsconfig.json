@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/server", "src/controller", "src/services", "src/utils"],
+  "exclude": ["src/models"],
+  "references": [{ "path": "src/models" }]
+}

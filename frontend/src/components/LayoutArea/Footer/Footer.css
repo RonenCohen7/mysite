@@ -1,0 +1,7 @@
+.footer { position: relative; border-top: 1px solid var(--color-slate-200); padding: 3rem 0; background: rgba(248,250,252,0.5); }
+.footer__inner { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1.5rem; }
+@media (min-width: 768px) { .footer__inner { flex-direction: row; } }
+.footer__copy { font-size: 0.875rem; color: var(--color-slate-500); }
+.footer__about-link { color: var(--color-turquoise-600); text-decoration: none; font-weight: 600; margin-inline-start: 0.25rem; }
+.footer__about-link:hover { color: var(--color-turquoise-700); text-decoration: underline; }
+.footer__socials { display: flex; align-items: center; gap: 0.5rem; }

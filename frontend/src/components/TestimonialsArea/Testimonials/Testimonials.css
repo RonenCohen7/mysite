@@ -1,0 +1,6 @@
+.testimonials__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+@media (min-width: 768px) { .testimonials__grid { grid-template-columns: repeat(3, 1fr); } }
+.testimonials__quote { color: var(--color-slate-600); font-size: 0.875rem; line-height: 1.625; margin-bottom: 1.5rem; font-style: italic; }
+.testimonials__name { color: var(--color-slate-900); font-weight: 600; }
+.testimonials__role { color: var(--color-slate-400); font-size: 0.875rem; margin-top: 0.25rem; }
+.testimonials__mark { color: rgba(251,146,60,0.4); font-size: 2.25rem; font-family: serif; line-height: 1; margin-bottom: 1rem; }

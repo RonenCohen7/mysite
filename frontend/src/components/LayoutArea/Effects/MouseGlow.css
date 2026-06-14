@@ -1,0 +1,2 @@
+.mouse-glow { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+.mouse-glow__glow { position: absolute; width: 500px; height: 500px; border-radius: 50%; transform: translate(-50%, -50%); transition: opacity var(--transition-base); }

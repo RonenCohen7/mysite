@@ -1,0 +1,19 @@
+.contact__wrapper { max-width: 42rem; margin: 0 auto; }
+.contact__form { border-radius: var(--radius-2xl); padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; background: #fff; }
+@media (min-width: 768px) { .contact__form { padding: 2.5rem; } }
+.contact__field { display: flex; flex-direction: column; gap: 0.5rem; }
+.contact__label { font-size: 0.875rem; color: var(--color-slate-600); font-weight: 500; }
+.contact__input { width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-xl); background: var(--color-slate-50); border: 1px solid var(--color-slate-200); color: var(--color-slate-900); transition: all var(--transition-base); font-family: inherit; font-size: 1rem; }
+.contact__input::placeholder { color: var(--color-slate-400); }
+.contact__input:focus { outline: none; border-color: var(--color-turquoise-400); box-shadow: 0 0 0 2px rgba(204,251,241,1); }
+.contact__textarea { min-height: 140px; resize: vertical; }
+.contact__honeypot { position: absolute; opacity: 0; pointer-events: none; height: 0; width: 0; overflow: hidden; }
+.contact__actions { display: flex; justify-content: flex-end; padding-top: 0.5rem; }
+.contact__submit { padding: 0.75rem 2rem; border-radius: var(--radius-xl); background: linear-gradient(to right, var(--color-turquoise-600), var(--color-orange-500)); color: #fff; font-weight: 600; border: none; cursor: pointer; transition: all var(--transition-base); box-shadow: 0 10px 25px rgba(204,251,241,0.5); font-family: inherit; font-size: 1rem; }
+.contact__submit:hover:not(:disabled) { background: linear-gradient(to right, var(--color-turquoise-700), var(--color-orange-600)); }
+.contact__submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.contact__success { text-align: center; padding: 4rem 0; }
+.contact__success-icon { width: 4rem; height: 4rem; border-radius: 50%; background: var(--color-turquoise-50); border: 1px solid var(--color-turquoise-200); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--color-turquoise-600); }
+.contact__success-title { font-size: 1.5rem; font-weight: 600; color: var(--color-slate-900); margin-bottom: 0.5rem; }
+.contact__success-text { color: var(--color-slate-500); }
+.contact__error { color: var(--color-orange-600); font-size: 0.875rem; }

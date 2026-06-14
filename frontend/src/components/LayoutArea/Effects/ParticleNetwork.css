@@ -1,0 +1,15 @@
+.particle-network {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: light) {
+  .particle-network {
+    opacity: 1;
+    mix-blend-mode: normal;
+  }
+}

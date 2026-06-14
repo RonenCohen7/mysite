@@ -1,0 +1,20 @@
+.process__timeline { position: relative; max-width: 48rem; margin: 0 auto; isolation: isolate; }
+.process__line { position: absolute; left: 2rem; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--color-turquoise-300), var(--color-orange-300), var(--color-turquoise-300)); }
+@media (min-width: 768px) { .process__line { left: 50%; transform: translateX(-1px); } }
+.process__line-fill { position: absolute; left: 2rem; top: 0; width: 1px; background: linear-gradient(to bottom, var(--color-turquoise-500), var(--color-orange-500)); transform-origin: top; }
+@media (min-width: 768px) { .process__line-fill { left: 50%; transform: translateX(-1px); } }
+.process__item { position: relative; display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 3rem; z-index: 2; }
+.process__item:last-child { margin-bottom: 0; }
+@media (min-width: 768px) { .process__item--right { flex-direction: row-reverse; text-align: right; } }
+.process__dot { position: absolute; left: 2rem; width: 1rem; height: 1rem; border-radius: 50%; background: #fff; border: 2px solid var(--color-turquoise-500); transform: translateX(-50%); margin-top: 0.25rem; z-index: 3; box-shadow: 0 4px 6px rgba(204,251,241,1); }
+@media (min-width: 768px) { .process__dot { left: 50%; } }
+.process__content { margin-left: 4rem; position: relative; z-index: 2; }
+@media (min-width: 768px) { .process__content { margin-left: 0; width: calc(50% - 2rem); } }
+.process__content-bg { position: relative; overflow: hidden; border-radius: var(--radius-2xl); border: 1px solid rgba(226,232,240,0.8); box-shadow: 0 10px 25px rgba(226,232,240,0.6); }
+.process__step-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.process__step-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom right, rgba(255,255,255,0.92), rgba(255,255,255,0.86), rgba(240,253,250,0.8)); }
+.process__content-inner { position: relative; z-index: 10; padding: 1.5rem; }
+@media (min-width: 768px) { .process__content-inner { padding: 1.75rem; } }
+.process__step { color: var(--color-turquoise-600); font-size: 0.875rem; font-family: monospace; margin-bottom: 0.25rem; }
+.process__title { font-size: 1.25rem; font-weight: 600; color: var(--color-slate-900); margin-bottom: 0.5rem; }
+.process__desc { color: var(--color-slate-500); font-size: 0.875rem; line-height: 1.625; }

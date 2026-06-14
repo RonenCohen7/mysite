@@ -1,0 +1,123 @@
+.about-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--color-bg-subtle), #fff 40%);
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+
+.about-page__container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.about-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-turquoise-600);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: color var(--transition-base);
+}
+
+.about-page__back:hover {
+  color: var(--color-turquoise-700);
+}
+
+.about-page__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .about-page__hero {
+    flex-direction: row;
+    text-align: start;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.about-page__avatar-wrap {
+  flex-shrink: 0;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 32px rgba(13, 148, 136, 0.2);
+}
+
+@media (min-width: 640px) {
+  .about-page__avatar-wrap {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+.about-page__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.about-page__label {
+  color: var(--color-turquoise-600);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.about-page__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-slate-900);
+  font-family: var(--font-display);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .about-page__title {
+    font-size: 2.5rem;
+  }
+}
+
+.about-page__role {
+  font-size: 1.125rem;
+  color: var(--color-orange-500);
+  font-weight: 500;
+}
+
+.about-page__card {
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .about-page__card {
+    padding: 2.5rem;
+  }
+}
+
+.about-page__bio {
+  color: var(--color-slate-600);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.about-page__bio:last-child {
+  margin-bottom: 0;
+}

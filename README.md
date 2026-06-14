@@ -1,12 +1,12 @@
 # mysite — Premium Portfolio
 
-Full-stack TypeScript portfolio with Admin CMS, built in the [see-you-tomorrow](https://github.com/RonenCohen7/see-you-tomorrow) monorepo style.
+Full-stack TypeScript portfolio with Admin CMS.
 
 **GitHub:** [RonenCohen7/mysite](https://github.com/RonenCohen7/mysite)
 
 ## Tech Stack
 
-- **Frontend:** React 19, TypeScript, Vite, TailwindCSS, Framer Motion, GSAP, Axios
+- **Frontend:** React 19, TypeScript, Vite, CSS, MUI, Framer Motion, GSAP, Axios
 - **Backend:** Express, TypeScript, MongoDB, GridFS
 - **Security:** Helmet, rate limiting, CSRF, input sanitization, honeypot
 
@@ -31,8 +31,8 @@ npm run seed           # demo projects
 npm run dev
 
 # Or separately
-cd server/api && npm start   # API :3001
-cd client && npm start       # Vite :5173
+cd backend && npm start    # API :3001
+cd frontend && npm start   # Vite :5173
 ```
 
 Open [http://localhost:5173](http://localhost:5173)
@@ -47,14 +47,28 @@ Open [http://localhost:5173](http://localhost:5173)
 
 ```
 mysite/
-├── client/          @mysite/client
-├── server/
-│   ├── shared/      @mysite/shared
-│   ├── api/         @mysite/api
-│   └── scripts/     seed
+├── frontend/              @mysite/frontend
+│   ├── Models/            site.ts, techStack.ts
+│   └── src/
+│       ├── Components/    *Area folders (Hero, Contact, Admin, Layout, Ui…)
+│       ├── Services/      ApiService, ContactService
+│       ├── Utils/         cn, useScrollSpy
+│       ├── Assets/        Images/, Video/
+│       ├── i18n/
+│       └── styles/
+├── backend/
+│   ├── src/
+│   │   ├── server/        Express app, config, middleware
+│   │   ├── controller/    Route handlers
+│   │   ├── services/      Business logic
+│   │   ├── models/        @mysite/shared (schemas + types)
+│   │   └── utils/
+│   └── scripts/           seed
 ├── docker-compose.yml
 └── package.json
 ```
+
+Each section lives in its own `*Area` folder under `src/components/` (e.g. `HeroArea/Hero/`), with styles in `Component.css`. [MUI](https://mui.com/) is used for tooltips and theme baseline. Layout, routing, and shared UI are in `LayoutArea`, `PagesArea`, and `UiArea`.
 
 ## Build
 
