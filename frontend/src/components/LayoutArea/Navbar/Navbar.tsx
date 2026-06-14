@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Home,
   Layers,
-  Workflow,
   FolderOpen,
   Cpu,
   Route,
@@ -27,7 +26,6 @@ import type { Locale } from "@/i18n/translations";
 const navIcons: Record<(typeof navIds)[number]["key"], LucideIcon> = {
   home: Home,
   services: Layers,
-  solutions: Workflow,
   portfolio: FolderOpen,
   techStack: Cpu,
   process: Route,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Bot, Plug, Layers, Globe, Play, type LucideIcon } from "lucide-react";
+import { Bot, Plug, Layers, Globe, Database, Workflow, Play, type LucideIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Section } from "@/components/LayoutArea/Section/Section";
@@ -8,7 +8,7 @@ import { useReducedMotion } from "@/Utils/useScrollSpy";
 import { cn } from "@/Utils/cn";
 import "./Services.css";
 
-const iconMap: Record<string, LucideIcon> = { Bot, Plug, Layers, Globe };
+const iconMap: Record<string, LucideIcon> = { Bot, Plug, Layers, Globe, Database, Workflow };
 
 const CARD_INTERVAL_MS = 2000;
 

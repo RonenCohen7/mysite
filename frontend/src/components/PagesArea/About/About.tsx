@@ -35,6 +35,7 @@ export function About() {
               <p className="about-page__label">{t.about.label}</p>
               <h1 className="about-page__title">{t.site.name}</h1>
               <p className="about-page__role">{t.site.title}</p>
+              <p className="about-page__experience">{t.about.experience}</p>
             </div>
           </div>
 

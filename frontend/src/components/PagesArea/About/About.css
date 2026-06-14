@@ -98,6 +98,19 @@
   font-weight: 500;
 }
 
+.about-page__experience {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-turquoise-700);
+  background: var(--color-turquoise-50);
+  border: 1px solid var(--color-turquoise-200);
+}
+
 .about-page__card {
   border-radius: var(--radius-2xl);
   padding: 2rem;

@@ -10,7 +10,6 @@ export const translations = {
       home: "Home",
       about: "About",
       services: "Services",
-      solutions: "Solutions",
       portfolio: "Portfolio",
       techStack: "Tech Stack",
       process: "Process",
@@ -28,7 +27,6 @@ export const translations = {
     },
     sections: {
       services: { label: "Services", subtitle: "AI automation, data extraction, custom SaaS, and system integrations for modern businesses." },
-      solutions: { label: "Solutions", subtitle: "Interactive automation pipelines that transform how your business operates." },
       portfolio: { label: "Portfolio", subtitle: "Real-world solutions delivering measurable business impact." },
       techStack: { label: "Tech Stack", subtitle: "Industry-leading tools and platforms for system development, AI-driven automation, and business integrations." },
       process: { label: "Process", subtitle: "A proven methodology delivering results from discovery to deployment." },
@@ -65,6 +63,14 @@ export const translations = {
         tags: ["AI Powered", "Operational Efficiency"],
       },
       {
+        icon: "Workflow",
+        category: "Automations",
+        title: "n8n Automation Development",
+        description: "Custom automations built on demand to optimize workflows, save time, and elevate the quality of service you deliver.",
+        highlights: ["Tailored n8n workflows for your business", "Connect apps, APIs, and databases seamlessly", "Save hours on repetitive manual tasks", "Improve response times and customer experience"],
+        tags: ["n8n", "Workflow Automation"],
+      },
+      {
         icon: "Globe",
         category: "Data Intelligence",
         title: "Web Scraping",
@@ -88,11 +94,14 @@ export const translations = {
         highlights: ["API connections across platforms", "Real-time data synchronization", "CRM, ERP, and third-party tools", "Unified operational workflows"],
         tags: ["Zero Friction", "Connected Systems"],
       },
-    ],
-    solutions: [
-      { title: "Lead Generation Flow", steps: ["Website", "Automation", "AI Analysis", "CRM", "WhatsApp"] },
-      { title: "Data Pipeline", steps: ["API Source", "Transform", "Validate", "Database", "Dashboard"] },
-      { title: "Support Automation", steps: ["Ticket", "AI Classify", "Route", "Resolve", "Follow-up"] },
+      {
+        icon: "Database",
+        category: "Databases",
+        title: "Database Build & Performance",
+        description: "Building, optimizing, and maintaining high-performance databases — indexes, stored procedures, and reliable backups.",
+        highlights: ["Index design and query optimization", "Stored procedures and database logic", "Backup strategies and disaster recovery", "Specialized in MSSQL and MongoDB"],
+        tags: ["MSSQL", "MongoDB"],
+      },
     ],
     process: [
       { step: "01", title: "Discovery", description: "Understanding goals, requirements, and existing systems." },
@@ -102,12 +111,6 @@ export const translations = {
       { step: "05", title: "Automation", description: "Implementing intelligent workflows and triggers." },
       { step: "06", title: "Deployment", description: "Production-ready deployment with CI/CD pipelines." },
       { step: "07", title: "Support", description: "Ongoing maintenance, monitoring, and optimization." },
-    ],
-    stats: [
-      { value: 50, suffix: "+", label: "Automations" },
-      { value: 100, suffix: "+", label: "Integrations" },
-      { value: 20, suffix: "+", label: "Projects" },
-      { value: 5, suffix: "+", label: "Years Experience" },
     ],
     testimonials: [
       { quote: "Ronen transformed our manual processes into fully automated workflows. The ROI was visible within the first month.", name: "Alex Morgan", role: "CTO, TechFlow Inc." },
@@ -136,10 +139,12 @@ export const translations = {
     about: {
       label: "About Me",
       backHome: "Back to Home",
+      experience: "15+ years of experience",
       bio: [
-        "I'm Ronen Cohen — a Full Stack Developer and AI Automation Architect who builds intelligent systems that connect businesses, data, and workflows.",
+        "My name is Ronen Cohen — a Full Stack Developer and AI Automation Architect with over 15 years of experience.",
+        "I build intelligent systems that optimize businesses through automation and custom AI agents tailored to office needs.",
         "I specialize in custom SaaS development, API integrations, web scraping, and AI-powered automation that saves teams countless hours and drives measurable ROI.",
-        "From discovery to deployment, I partner with businesses to design scalable solutions using modern tools like React, TypeScript, Node.js, Python, and n8n.",
+        "I guide businesses end to end — from needs analysis and understanding workflows to finding the best-fit solution — by building scalable solutions with modern tools like React, TypeScript, Node.js, Python, n8n, Claude, Cursor, GPT, DeepSeek, and more.",
       ],
     },
     portfolio: { loading: "Loading projects...", demo: "Live Demo", github: "View on GitHub" },
@@ -159,7 +164,6 @@ export const translations = {
       home: "בית",
       about: "אודות",
       services: "שירותים",
-      solutions: "פתרונות",
       portfolio: "תיק עבודות",
       techStack: "טכנולוגיות",
       process: "תהליך",
@@ -176,7 +180,6 @@ export const translations = {
     },
     sections: {
       services: { label: "שירותים", subtitle: "אוטומציה עם AI, כריית מידע, מערכות SaaS ייעודיות ואינטגרציות בין מערכות לעסקים מודרניים." },
-      solutions: { label: "פתרונות", subtitle: "צינורות אוטומציה אינטראקטיביים שמשנים את אופן הפעולה של העסק." },
       portfolio: { label: "תיק עבודות", subtitle: "פתרונות מהעולם האמיתי עם השפעה עסקית מדידה." },
       techStack: { label: "טכנולוגיות", subtitle: "כלים ופלטפורמות מובילות לפיתוח מערכות, אוטומציה מבוססת AI ואינטגרציות עסקיות." },
       process: { label: "תהליך", subtitle: "מתודולוגיה מוכחת שמספקת תוצאות מגילוי ועד פריסה." },
@@ -213,6 +216,14 @@ export const translations = {
         tags: ["מבוסס AI", "יעילות תפעולית"],
       },
       {
+        icon: "Workflow",
+        category: "אוטומציה",
+        title: "פיתוח אוטומציות ב-n8n",
+        description: "יצירת אוטומציות ייעודיות לפי דרישה לייעול העבודה, חיסכון זמן והגברת איכות השירות.",
+        highlights: ["תהליכי n8n מותאמים לצרכי העסק", "חיבור אפליקציות, APIs ומסדי נתונים", "חיסכון בשעות עבודה על משימות חוזרות", "שיפור זמני תגובה וחוויית לקוח"],
+        tags: ["n8n", "אוטומציית תהליכים"],
+      },
+      {
         icon: "Globe",
         category: "מידע ונתונים",
         title: "Scraping וכריית מידע",
@@ -236,11 +247,14 @@ export const translations = {
         highlights: ["חיבורי API בין פלטפורמות", "סנכרון נתונים בזמן אמת", "CRM, ERP וכלים חיצוניים", "תהליכים עסקיים מאוחדים"],
         tags: ["חיבור חלק", "מערכות מחוברות"],
       },
-    ],
-    solutions: [
-      { title: "זרימת לידים", steps: ["אתר", "אוטומציה", "ניתוח AI", "CRM", "WhatsApp"] },
-      { title: "צינור נתונים", steps: ["מקור API", "טרנספורם", "ולידציה", "מסד נתונים", "דשבורד"] },
-      { title: "אוטומציית תמיכה", steps: ["טיקט", "סיווג AI", "ניתוב", "פתרון", "מעקב"] },
+      {
+        icon: "Database",
+        category: "מסדי נתונים",
+        title: "בנייה ושיפור ביצועים ב-Databases",
+        description: "בנייה, אופטימיזציה ותחזוקה של מסדי נתונים בעלי ביצועים גבוהים — כולל אינדקסים, stored procedures וגיבויים.",
+        highlights: ["תכנון אינדקסים ואופטימיזציית שאילתות", "Stored procedures ולוגיקה בבסיס הנתונים", "אסטרטגיות גיבוי והתאוששות מאסון", "התמחות ב-MSSQL ו-MongoDB"],
+        tags: ["MSSQL", "MongoDB"],
+      },
     ],
     process: [
       { step: "01", title: "גילוי", description: "הבנת מטרות, דרישות ומערכות קיימות." },
@@ -250,12 +264,6 @@ export const translations = {
       { step: "05", title: "אוטומציה", description: "יישום תהליכי עבודה חכמים וטריגרים." },
       { step: "06", title: "פריסה", description: "פריסה production-ready עם CI/CD." },
       { step: "07", title: "תמיכה", description: "תחזוקה, ניטור ואופטימיזציה שוטפים." },
-    ],
-    stats: [
-      { value: 50, suffix: "+", label: "אוטומציות" },
-      { value: 100, suffix: "+", label: "אינטגרציות" },
-      { value: 20, suffix: "+", label: "פרויקטים" },
-      { value: 5, suffix: "+", label: "שנות ניסיון" },
     ],
     testimonials: [
       { quote: "רון הפך את התהליכים הידניים שלנו לתהליכי עבודה אוטומטיים לחלוטין. ה-ROI היה נראה כבר בחודש הראשון.", name: "אלכס מורגן", role: "CTO, TechFlow Inc." },
@@ -284,10 +292,12 @@ export const translations = {
     about: {
       label: "אודות",
       backHome: "חזרה לדף הבית",
+      experience: "מעל 15 שנות ניסיון",
       bio: [
-        "אני רונן כהן — מפתח Full Stack וארכיטקט AI Automation שבונה מערכות חכמות המחברות עסקים, נתונים ותהליכי עבודה.",
+        "שמי רונן כהן — מפתח Full Stack וארכיטקט AI Automation עם מעל 15 שנות ניסיון.",
+        "אני בונה מערכות חכמות המייעלות עסקים בהכנסת אוטומציה וסוכני AI ייעודיים לצרכי המשרד.",
         "אני מתמחה בפיתוח SaaS ייעודי, אינטגרציות API, scraping ואוטומציה מבוססת AI שחוסכת לצוותים שעות רבות ומייצרת ROI מדיד.",
-        "מגילוי ועד פריסה, אני משתף פעולה עם עסקים לתכנון פתרונות סקיילביליים עם כלים מודרניים כמו React, TypeScript, Node.js, Python ו-n8n.",
+        "ליווי עסקי מאיפיון הצורך והבנת תהליכי העבודה ועד למציאת הפתרון המתאים ביותר עבור הלקוח, באמצעות יצירת פתרונות סקיילביליים עם כלים מודרניים כמו React, TypeScript, Node.js, Python, n8n, Claude, Cursor, GPT, DeepSeek ועוד.",
       ],
     },
     portfolio: { loading: "טוען פרויקטים...", demo: "דמו חי", github: "GitHub" },
@@ -306,7 +316,6 @@ export const navIds = [
   { id: "home", key: "home" as const },
   { id: "process", key: "process" as const },
   { id: "services", key: "services" as const },
-  { id: "solutions", key: "solutions" as const },
   { id: "portfolio", key: "portfolio" as const },
   { id: "tech-stack", key: "techStack" as const },
   { id: "contact", key: "contact" as const },
