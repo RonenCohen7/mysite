@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Bot, Plug, Layers, Globe, Database, Workflow, Play, type LucideIcon } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import webScrapingDemo from "@/Assets/Video/VIDEO_ID_WEB_SCRAPING_AUTOMAT.mp4";
+import n8nDemo from "@/Assets/Video/n8n_move.mp4";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Section } from "@/components/LayoutArea/Section/Section";
 import { SectionHeading } from "@/components/UiArea/SectionHeading/SectionHeading";
@@ -9,6 +11,11 @@ import { cn } from "@/Utils/cn";
 import "./Services.css";
 
 const iconMap: Record<string, LucideIcon> = { Bot, Plug, Layers, Globe, Database, Workflow };
+
+const serviceDemoVideos: Record<string, string> = {
+  Globe: webScrapingDemo,
+  Workflow: n8nDemo,
+};
 
 const CARD_INTERVAL_MS = 2000;
 
@@ -60,12 +67,44 @@ function ServiceCard({ category, title, description, highlights, tags, icon }: S
   );
 }
 
+function ServiceDemoVideo({ src, title }: { src: string; title: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.currentTime = 0;
+    void video.play().catch(() => {});
+    return () => {
+      video.pause();
+    };
+  }, [src]);
+
+  return (
+    <div className="services__video-player">
+      <video
+        ref={videoRef}
+        className="services__video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        aria-label={title}
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+    </div>
+  );
+}
+
 export function Services() {
   const { t, dir } = useLanguage();
   const reduced = useReducedMotion();
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const service = t.services[active];
+  const demoVideoSrc = serviceDemoVideos[service.icon];
   const enterX = dir === "rtl" ? -48 : 48;
   const exitX = dir === "rtl" ? 48 : -48;
 
@@ -98,15 +137,38 @@ export function Services() {
               "services__video-slot",
               dir === "rtl" ? "services__video-slot services__video-slot--rtl" : "services__video-slot services__video-slot--ltr"
             )}
-            aria-hidden="true"
           >
-            <div className={"services__video-placeholder"}>
-              <div className={"services__video-icon"}>
-                <Play size={28} className="ms-1" />
-              </div>
-              <p className={"services__video-label"}>{t.servicesShowcase.videoSoon}</p>
-              <p className={"services__video-hint"}>{service.title}</p>
-            </div>
+            <AnimatePresence mode="wait">
+              {demoVideoSrc ? (
+                <motion.div
+                  key={demoVideoSrc}
+                  className="services__video-wrap"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <ServiceDemoVideo src={demoVideoSrc} title={service.title} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="placeholder"
+                  className="services__video-wrap"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className={"services__video-placeholder"}>
+                    <div className={"services__video-icon"}>
+                      <Play size={28} className="ms-1" />
+                    </div>
+                    <p className={"services__video-label"}>{t.servicesShowcase.videoSoon}</p>
+                    <p className={"services__video-hint"}>{service.title}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <div

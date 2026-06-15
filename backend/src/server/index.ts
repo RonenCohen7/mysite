@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import path from "path";
+import { fileURLToPath } from "url";
 import { config, isAllowedOrigin } from "./config.js";
 import { connectDb } from "./db.js";
 import { applySecurityMiddleware } from "./middleware/security.js";
@@ -48,11 +50,23 @@ app.get("/robots.txt", (_req, res) => {
   res.send("User-agent: *\nDisallow: /admin\nDisallow: /api/admin\n");
 });
 
+if (config.isProd) {
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const frontendDist = path.resolve(__dirname, "../../../frontend/dist");
+  app.use(express.static(frontendDist));
+  app.get("*", (req, res, next) => {
+    if (req.path.startsWith("/api")) return next();
+    res.sendFile(path.join(frontendDist, "index.html"), (err) => {
+      if (err) next(err);
+    });
+  });
+}
+
 const PORT = config.port;
 
 async function start() {
   await connectDb();
-  app.listen(PORT, () => {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`[mysite-backend] running on http://localhost:${PORT}`);
     if (config.adminAuthEnabled) {
       console.log(`[mysite-backend] admin auth: ON (password ${config.adminPassword.length} chars)`);

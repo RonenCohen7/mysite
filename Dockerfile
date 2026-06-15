@@ -17,5 +17,6 @@ COPY --from=builder /app/frontend/dist ./frontend/dist
 COPY --from=builder /app/backend/package.json ./backend/
 COPY --from=builder /app/package.json ./
 ENV NODE_ENV=production
-EXPOSE 3001
+ENV PORT=80
+EXPOSE 80
 CMD ["node", "backend/dist/server/index.js"]
