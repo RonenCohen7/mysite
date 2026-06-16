@@ -3,6 +3,9 @@ import { Bot, Plug, Layers, Globe, Database, Workflow, Play, type LucideIcon } f
 import { AnimatePresence, motion } from "framer-motion";
 import webScrapingDemo from "@/Assets/Video/VIDEO_ID_WEB_SCRAPING_AUTOMAT.mp4";
 import n8nDemo from "@/Assets/Video/n8n_move.mp4";
+import aiPowerDemo from "@/Assets/Video/ai_power.mp4";
+import databasesDemo from "@/Assets/Video/databases.mp4";
+import systemIntegrationsDemo from "@/Assets/Video/System Integrations.mp4";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Section } from "@/components/LayoutArea/Section/Section";
 import { SectionHeading } from "@/components/UiArea/SectionHeading/SectionHeading";
@@ -13,8 +16,11 @@ import "./Services.css";
 const iconMap: Record<string, LucideIcon> = { Bot, Plug, Layers, Globe, Database, Workflow };
 
 const serviceDemoVideos: Record<string, string> = {
-  Globe: webScrapingDemo,
+  Bot: aiPowerDemo,
   Workflow: n8nDemo,
+  Globe: webScrapingDemo,
+  Plug: systemIntegrationsDemo,
+  Database: databasesDemo,
 };
 
 const CARD_INTERVAL_MS = 2000;
