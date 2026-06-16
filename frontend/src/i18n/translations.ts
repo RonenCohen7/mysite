@@ -10,7 +10,7 @@ export const translations = {
       home: "Home",
       about: "About",
       services: "Services",
-      portfolio: "Portfolio",
+      portfolio: "Projects",
       techStack: "Tech Stack",
       process: "Process",
       contact: "Contact",
@@ -27,10 +27,10 @@ export const translations = {
     },
     sections: {
       services: { label: "Services", subtitle: "AI automation, data extraction, custom SaaS, and system integrations for modern businesses." },
-      portfolio: { label: "Portfolio", subtitle: "Real-world solutions delivering measurable business impact." },
+      portfolio: { subtitle: "Real-world solutions delivering measurable business impact." },
       techStack: { label: "Tech Stack", subtitle: "Industry-leading tools and platforms for system development, AI-driven automation, and business integrations." },
       process: { label: "Process", subtitle: "A proven methodology delivering results from discovery to deployment." },
-      testimonials: { label: "Testimonials", subtitle: "Trusted by teams who demand excellence." },
+      testimonials: { label: "Collaboration with" },
       contact: { label: "Contact", subtitle: "Tell me about your automation, integration or digital project. I'll review your request and get back to you as soon as possible." },
     },
     techTooltips: {
@@ -112,11 +112,6 @@ export const translations = {
       { step: "06", title: "Deployment", description: "Production-ready deployment with CI/CD pipelines." },
       { step: "07", title: "Support", description: "Ongoing maintenance, monitoring, and optimization." },
     ],
-    testimonials: [
-      { quote: "Ronen transformed our manual processes into fully automated workflows. The ROI was visible within the first month.", name: "Alex Morgan", role: "CTO, TechFlow Inc." },
-      { quote: "Exceptional full-stack skills combined with deep AI automation knowledge. Delivered beyond expectations.", name: "Sarah Chen", role: "Product Director, Nexus Labs" },
-      { quote: "The CRM integration alone saved our team 20 hours per week. Professional, fast, and incredibly skilled.", name: "David Klein", role: "Operations Manager, ScaleUp" },
-    ],
     contact: {
       name: "Full name",
       email: "Email",
@@ -164,7 +159,7 @@ export const translations = {
       home: "בית",
       about: "אודות",
       services: "שירותים",
-      portfolio: "תיק עבודות",
+      portfolio: "פרויקטים",
       techStack: "טכנולוגיות",
       process: "תהליך",
       contact: "צור קשר",
@@ -180,10 +175,10 @@ export const translations = {
     },
     sections: {
       services: { label: "שירותים", subtitle: "אוטומציה עם AI, כריית מידע, מערכות SaaS ייעודיות ואינטגרציות בין מערכות לעסקים מודרניים." },
-      portfolio: { label: "תיק עבודות", subtitle: "פתרונות מהעולם האמיתי עם השפעה עסקית מדידה." },
+      portfolio: { subtitle: "פתרונות מהעולם האמיתי עם השפעה עסקית מדידה." },
       techStack: { label: "טכנולוגיות", subtitle: "כלים ופלטפורמות מובילות לפיתוח מערכות, אוטומציה מבוססת AI ואינטגרציות עסקיות." },
       process: { label: "תהליך", subtitle: "מתודולוגיה מוכחת שמספקת תוצאות מגילוי ועד פריסה." },
-      testimonials: { label: "המלצות", subtitle: "זכיתי באמון של צוותים שדורשים מצוינות." },
+      testimonials: { label: "שיתוף פעולה עם" },
       contact: { label: "צור קשר", subtitle: "ספר לי על האוטומציה, האינטגרציה או הפרויקט הדיגיטלי שלך. אבדוק את הבקשה ואחזור אליך בהקדם." },
     },
     techTooltips: {
@@ -264,11 +259,6 @@ export const translations = {
       { step: "05", title: "אוטומציה", description: "יישום תהליכי עבודה חכמים וטריגרים." },
       { step: "06", title: "פריסה", description: "פריסה production-ready עם CI/CD." },
       { step: "07", title: "תמיכה", description: "תחזוקה, ניטור ואופטימיזציה שוטפים." },
-    ],
-    testimonials: [
-      { quote: "רון הפך את התהליכים הידניים שלנו לתהליכי עבודה אוטומטיים לחלוטין. ה-ROI היה נראה כבר בחודש הראשון.", name: "אלכס מורגן", role: "CTO, TechFlow Inc." },
-      { quote: "יכולות Full Stack יוצאות דופן בשילוב ידע עמוק באוטומציה עם AI. מסיר מעל ומעבר לציפיות.", name: "שרה צ'ן", role: "Product Director, Nexus Labs" },
-      { quote: "אינטגרציית ה-CRM לבדה חסכה לצוות 20 שעות בשבוע. מקצועי, מהיר ומיומן בטירוף.", name: "דוד קlein", role: "Operations Manager, ScaleUp" },
     ],
     contact: {
       name: "שם מלא",

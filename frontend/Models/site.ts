@@ -6,6 +6,8 @@ export const siteConfig = {
   linkedin: "https://www.linkedin.com/in/ronen-cohen7/",
   github: "https://github.com/RonenCohen7",
   whatsapp: "https://wa.me/972000000000",
+  /** Set true to show the "Collaboration with" partners section on the homepage. */
+  showPartnersSection: false,
   techStack: [
     "React", "TypeScript", "Node.js", "Python", "FastAPI",
     "MongoDB", "MySQL", "PostgreSQL", "Docker", "Linux", "OpenAI", "Git", "AWS",

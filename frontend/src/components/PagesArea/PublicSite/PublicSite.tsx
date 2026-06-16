@@ -11,6 +11,7 @@ import { Portfolio } from "@/components/PortfolioArea/Portfolio/Portfolio";
 import { TechStack } from "@/components/TechStackArea/TechStack/TechStack";
 import { Testimonials } from "@/components/TestimonialsArea/Testimonials/Testimonials";
 import { Contact } from "@/components/ContactArea/Contact/Contact";
+import { siteConfig } from "@models/site";
 
 export function PublicSite() {
   return (
@@ -26,7 +27,7 @@ export function PublicSite() {
         <Services />
         <Portfolio />
         <TechStack />
-        <Testimonials />
+        {siteConfig.showPartnersSection ? <Testimonials /> : null}
         <Contact />
       </main>
       <Footer />

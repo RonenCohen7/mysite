@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { partners } from "@models/partners";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Section } from "@/components/LayoutArea/Section/Section";
 import { SectionHeading } from "@/components/UiArea/SectionHeading/SectionHeading";
@@ -7,22 +8,38 @@ import { staggerContainer, staggerItem } from "@/styles/animations";
 import "./Testimonials.css";
 
 export function Testimonials() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <Section id="testimonials">
-      <SectionHeading label={t.sections.testimonials.label} subtitle={t.sections.testimonials.subtitle} />
-      <motion.div className={"testimonials__grid"} variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        {t.testimonials.map((item) => (
-          <motion.div key={item.name} variants={staggerItem}>
-            <GlassCard className="h-full">
-              <p className={"testimonials__mark"}>&ldquo;</p>
-              <p className={"testimonials__quote"}>{item.quote}</p>
-              <p className={"testimonials__name"}>{item.name}</p>
-              <p className={"testimonials__role"}>{item.role}</p>
+      <SectionHeading label={t.sections.testimonials.label} />
+      <motion.div
+        className="testimonials__grid"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {partners.map((partner) => {
+          const name = partner.name[locale];
+          const content = (
+            <GlassCard className="testimonials__card" hover={false}>
+              <img src={partner.logo} alt={name} className="testimonials__logo" loading="lazy" />
             </GlassCard>
-          </motion.div>
-        ))}
+          );
+
+          return (
+            <motion.div key={partner.id} variants={staggerItem} className="testimonials__item">
+              {partner.url ? (
+                <a href={partner.url} target="_blank" rel="noopener noreferrer" className="testimonials__link">
+                  {content}
+                </a>
+              ) : (
+                content
+              )}
+            </motion.div>
+          );
+        })}
       </motion.div>
     </Section>
   );
