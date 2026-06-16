@@ -15,7 +15,7 @@ export function applySecurityMiddleware(app: Express): void {
               scriptSrc: ["'self'"],
               styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
               fontSrc: ["'self'", "https://fonts.gstatic.com"],
-              imgSrc: ["'self'", "data:", "blob:"],
+              imgSrc: ["'self'", "data:", "blob:", "https://cdn.simpleicons.org"],
               mediaSrc: ["'self'", "blob:"],
               connectSrc: ["'self'"],
             },

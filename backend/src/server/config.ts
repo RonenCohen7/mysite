@@ -12,7 +12,7 @@ export const config = {
   /** Set ADMIN_AUTH_ENABLED=true in production before going live. */
   adminAuthEnabled: process.env.ADMIN_AUTH_ENABLED === "true",
   jwtSecret: process.env.JWT_SECRET || "dev-secret-change-in-production",
-  clientUrl: process.env.CLIENT_URL || "http://localhost:5173",
+  clientUrl: process.env.CLIENT_URL || "https://ronencohen.dev",
   nodeEnv: process.env.NODE_ENV || "development",
   isProd: process.env.NODE_ENV === "production",
   n8nContactWebhookUrl: (process.env.N8N_CONTACT_WEBHOOK_URL || "").trim(),
