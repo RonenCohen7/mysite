@@ -5,7 +5,6 @@ import { AuroraBackground } from "@/components/LayoutArea/Effects/AuroraBackgrou
 import { ParticleNetwork } from "@/components/LayoutArea/Effects/ParticleNetwork";
 import { MouseGlow } from "@/components/LayoutArea/Effects/MouseGlow";
 import { Hero } from "@/components/HeroArea/Hero/Hero";
-import { Process } from "@/components/ProcessArea/Process/Process";
 import { Services } from "@/components/ServicesArea/Services/Services";
 import { Portfolio } from "@/components/PortfolioArea/Portfolio/Portfolio";
 import { TechStack } from "@/components/TechStackArea/TechStack/TechStack";
@@ -23,7 +22,6 @@ export function PublicSite() {
       <Navbar />
       <main>
         <Hero />
-        <Process />
         <Services />
         <Portfolio />
         <TechStack />

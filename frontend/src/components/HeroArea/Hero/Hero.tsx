@@ -50,14 +50,16 @@ export function Hero() {
           })}
         </motion.div>
 
-        <motion.p
-          className={"hero__subtitle"}
+        <motion.div
+          className={"hero__subtitle-block"}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          {t.hero.subtitle}
-        </motion.p>
+          <p className={"hero__subtitle"}>{t.hero.subtitle}</p>
+          <p className={"hero__subtitle-extra"}>{t.hero.subtitleLine2}</p>
+          <p className={"hero__subtitle-extra"}>{t.hero.subtitleLine3}</p>
+        </motion.div>
 
         <motion.div
           className={"hero__actions"}

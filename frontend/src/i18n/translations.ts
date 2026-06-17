@@ -21,17 +21,20 @@ export const translations = {
       line3: "Connected Everything",
       subtitle:
         "Full Stack Development, AI Automation, API Integrations and Digital Transformation.",
+      subtitleLine2: "Stop working for the business. Let the business work for you.",
+      subtitleLine3:
+        "If you're still updating spreadsheets, copying data between systems, or doing repetitive tasks manually — it's time for automation.",
       ctaCall: "Schedule a Call",
       ctaProjects: "View Projects",
       scroll: "Scroll",
     },
     sections: {
-      services: { label: "Services", subtitle: "AI automation, data extraction, custom SaaS, and system integrations for modern businesses." },
+      services: { label: "Services", subtitle: "AI automation — turning manual processes into automated ones and connecting all your business systems, so day-to-day operations run on their own, without errors and without wasted time." },
       portfolio: { subtitle: "Real-world solutions delivering measurable business impact." },
       techStack: { label: "Tech Stack", subtitle: "Industry-leading tools and platforms for system development, AI-driven automation, and business integrations." },
       process: { label: "Process", subtitle: "A proven methodology delivering results from discovery to deployment." },
       testimonials: { label: "Collaboration with" },
-      contact: { label: "Contact", subtitle: "Tell me about your automation, integration or digital project. I'll review your request and get back to you as soon as possible." },
+      contact: { label: "Let's talk", subtitle: "" },
     },
     techTooltips: {
       react: "React — JavaScript library for building fast, interactive user interfaces.",
@@ -77,14 +80,6 @@ export const translations = {
         description: "Mining information from the open web for any purpose — market research, lead generation, monitoring, and more.",
         highlights: ["Extract data from public web sources", "Market research and competitor tracking", "Lead generation pipelines", "Scheduled monitoring and alerts"],
         tags: ["Data Mining", "Real-Time Insights"],
-      },
-      {
-        icon: "Layers",
-        category: "Product Development",
-        title: "Custom SaaS Development",
-        description: "Dedicated SaaS systems built around your workflow, team structure, and operational needs.",
-        highlights: ["Tailored to your business workflow", "Scalable cloud-ready architecture", "Role-based access and dashboards", "Full ownership of your platform"],
-        tags: ["Custom Build", "Production Ready"],
       },
       {
         icon: "Plug",
@@ -169,17 +164,20 @@ export const translations = {
       line2: "אוטומציה עסקית",
       line3: "חיבור מלא",
       subtitle: "פיתוח Full Stack, אוטומציה עם AI, אינטגרציות API וטרנספורמציה דיגיטלית.",
+      subtitleLine2: "תפסיקו לעבוד בשביל העסק. תנו לעסק לעבוד בשבילכם.",
+      subtitleLine3:
+        "אם אתם עדיין מעדכנים אקסלים, מעתיקים מידע בין מערכות או מבצעים משימות חוזרות באופן ידני – הגיע הזמן לאוטומציה.",
       ctaCall: "קביעת שיחה",
       ctaProjects: "צפייה בפרויקטים",
       scroll: "גלילה",
     },
     sections: {
-      services: { label: "שירותים", subtitle: "אוטומציה עם AI, כריית מידע, מערכות SaaS ייעודיות ואינטגרציות בין מערכות לעסקים מודרניים." },
+      services: { label: "שירותים", subtitle: "אוטומציה עם AI , הופכים תהליכים ידניים לאוטומטים ומחברים בין כל המערכות בעסק, כך שהפעיליות השוטפות מתבצעות לבד- בלי טעויות ובלי בזבוז זמן" },
       portfolio: { subtitle: "פתרונות מהעולם האמיתי עם השפעה עסקית מדידה." },
       techStack: { label: "טכנולוגיות", subtitle: "כלים ופלטפורמות מובילות לפיתוח מערכות, אוטומציה מבוססת AI ואינטגרציות עסקיות." },
       process: { label: "תהליך", subtitle: "מתודולוגיה מוכחת שמספקת תוצאות מגילוי ועד פריסה." },
       testimonials: { label: "שיתוף פעולה עם" },
-      contact: { label: "צור קשר", subtitle: "ספר לי על האוטומציה, האינטגרציה או הפרויקט הדיגיטלי שלך. אבדוק את הבקשה ואחזור אליך בהקדם." },
+      contact: { label: "בואו נדבר", subtitle: "" },
     },
     techTooltips: {
       react: "React — ספריית JavaScript לבניית ממשקי משתמש אינטראקטיביים.",
@@ -225,14 +223,6 @@ export const translations = {
         description: "שירותי scraping — כריית מידע מהרשת הגלויה לכל מטרה: מחקר שוק, לידים, ניטור ועוד.",
         highlights: ["חילוץ מידע ממקורות ציבוריים", "מחקר שוק ומעקב מתחרים", "צינורות לידים אוטומטיים", "ניטור ודוחות מתוזמנים"],
         tags: ["כריית מידע", "תובנות בזמן אמת"],
-      },
-      {
-        icon: "Layers",
-        category: "פיתוח מוצר",
-        title: "פיתוח מערכות SaaS",
-        description: "פיתוח מערכות SaaS ייעודיות לפי מבנה העבודה, הצוות והצרכים התפעוליים של הלקוח.",
-        highlights: ["התאמה אישית למבנה העבודה שלכם", "ארכיטקטורה סקיילבילית בענן", "הרשאות, תפקידים ודשבורדים", "בעלות מלאה על הפלטפורמה"],
-        tags: ["פיתוח ייעודי", "Production Ready"],
       },
       {
         icon: "Plug",
@@ -304,7 +294,6 @@ export type TranslationKeys = typeof translations.en;
 
 export const navIds = [
   { id: "home", key: "home" as const },
-  { id: "process", key: "process" as const },
   { id: "services", key: "services" as const },
   { id: "portfolio", key: "portfolio" as const },
   { id: "tech-stack", key: "techStack" as const },

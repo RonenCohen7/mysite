@@ -23,7 +23,7 @@ const serviceDemoVideos: Record<string, string> = {
   Database: databasesDemo,
 };
 
-const CARD_INTERVAL_MS = 2000;
+const CARD_INTERVAL_MS = 5000;
 
 interface ServiceCardProps {
   category: string;
