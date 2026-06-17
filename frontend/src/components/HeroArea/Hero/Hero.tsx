@@ -78,7 +78,7 @@ export function Hero() {
             tooltip={t.hero.ctaProjects}
             variant="ghost"
             size="lg"
-            onClick={() => scrollToSection("portfolio")}
+            onClick={() => scrollToSection("services")}
           />
         </motion.div>
       </div>

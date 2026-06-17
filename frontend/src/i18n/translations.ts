@@ -295,7 +295,6 @@ export type TranslationKeys = typeof translations.en;
 export const navIds = [
   { id: "home", key: "home" as const },
   { id: "services", key: "services" as const },
-  { id: "portfolio", key: "portfolio" as const },
   { id: "tech-stack", key: "techStack" as const },
   { id: "contact", key: "contact" as const },
 ];
