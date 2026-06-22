@@ -14,6 +14,7 @@ services:
       PORT: "80"
       NODE_ENV: production
       MONGODB_URI: mongodb://mongo:27017/mysite
+      CLIENT_URL: ${CLIENT_URL:-https://ronencohen.dev}
     env_file:
       - .env
     depends_on:

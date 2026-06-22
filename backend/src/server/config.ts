@@ -59,9 +59,26 @@ export const config = {
   },
 };
 
+/** Normalize origin/URL for comparison (no trailing slash). */
+function normalizeOrigin(url: string): string {
+  return url.replace(/\/$/, "");
+}
+
 /** Allowed browser origins in development (localhost vs 127.0.0.1 must both work). */
 export function isAllowedOrigin(origin: string | undefined): boolean {
   if (!origin) return true;
-  if (config.isProd) return origin === config.clientUrl;
-  return /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  const normalized = normalizeOrigin(origin);
+  if (config.isProd) {
+    const allowed = normalizeOrigin(config.clientUrl);
+    if (normalized === allowed) return true;
+    // Allow www ↔ apex mismatch (e.g. ronencohen.dev vs www.ronencohen.dev)
+    try {
+      const originHost = new URL(normalized).hostname.replace(/^www\./, "");
+      const allowedHost = new URL(allowed).hostname.replace(/^www\./, "");
+      return originHost === allowedHost;
+    } catch {
+      return false;
+    }
+  }
+  return /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(normalized);
 }
