@@ -69,9 +69,13 @@ async function start() {
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`[mysite-backend] running on http://localhost:${PORT}`);
     if (config.adminAuthEnabled) {
-      console.log(`[mysite-backend] admin auth: ON (password ${config.adminPassword.length} chars)`);
+      if (!config.adminPassword) {
+        console.error("[mysite-backend] FATAL: ADMIN_PASSWORD is required in production");
+      } else {
+        console.log(`[mysite-backend] admin auth: ON (password ${config.adminPassword.length} chars)`);
+      }
     } else {
-      console.log(`[mysite-backend] admin auth: OFF (open admin — enable ADMIN_AUTH_ENABLED=true for production)`);
+      console.log(`[mysite-backend] admin auth: OFF (dev only — set ADMIN_AUTH_ENABLED=true to test login)`);
     }
   });
 }

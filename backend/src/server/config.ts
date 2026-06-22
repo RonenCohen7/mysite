@@ -9,11 +9,9 @@ export const config = {
   port: parseInt(process.env.PORT || "3001", 10),
   mongoUri: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/mysite",
   adminPassword: (process.env.ADMIN_PASSWORD || "").trim(),
-  /** Enabled by default in production. Set ADMIN_AUTH_ENABLED=false only to disable. */
+  /** Always on in production — cannot be disabled. Dev: set ADMIN_AUTH_ENABLED=true to test login. */
   adminAuthEnabled:
-    process.env.NODE_ENV === "production"
-      ? process.env.ADMIN_AUTH_ENABLED !== "false"
-      : process.env.ADMIN_AUTH_ENABLED === "true",
+    process.env.NODE_ENV === "production" || process.env.ADMIN_AUTH_ENABLED === "true",
   jwtSecret: process.env.JWT_SECRET || "dev-secret-change-in-production",
   clientUrl: process.env.CLIENT_URL || "https://ronencohen.dev",
   nodeEnv: process.env.NODE_ENV || "development",

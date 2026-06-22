@@ -1,8 +1,22 @@
 import { useCallback, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { checkAuth } from "@/Services/ApiService";
+import { checkAuth, getAdminProjects } from "@/Services/ApiService";
 import { AdminLogin } from "@/components/AdminArea/AdminLogin/AdminLogin";
 import "../AdminDashboard/Admin.css";
+
+async function verifyAdminAccess(): Promise<boolean> {
+  const res = await checkAuth();
+  if (!res.authenticated) return false;
+
+  if (!import.meta.env.PROD) return true;
+
+  try {
+    await getAdminProjects();
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 export function AdminGuard() {
   const [loading, setLoading] = useState(true);
@@ -10,8 +24,8 @@ export function AdminGuard() {
 
   const refresh = useCallback(() => {
     setLoading(true);
-    checkAuth()
-      .then((res) => setAuthenticated(res.authenticated))
+    verifyAdminAccess()
+      .then(setAuthenticated)
       .catch(() => setAuthenticated(false))
       .finally(() => setLoading(false));
   }, []);

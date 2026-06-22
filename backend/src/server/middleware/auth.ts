@@ -20,6 +20,11 @@ export function requireAuth(req: Request, res: Response, next: NextFunction): vo
     return;
   }
 
+  if (!config.adminPassword) {
+    res.status(503).json({ success: false, error: "Admin not configured" });
+    return;
+  }
+
   const token = req.cookies?.[getCookieName()];
   if (!token) {
     res.status(401).json({ success: false, error: "Unauthorized" });

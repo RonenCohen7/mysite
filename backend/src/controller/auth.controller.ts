@@ -49,6 +49,11 @@ router.get("/me", (req, res) => {
     return;
   }
 
+  if (!config.adminPassword) {
+    res.json({ success: true, data: { authenticated: false } });
+    return;
+  }
+
   const token = req.cookies?.[getCookieName()];
   if (!token) {
     res.json({ success: true, data: { authenticated: false } });
