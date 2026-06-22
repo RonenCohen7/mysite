@@ -89,7 +89,7 @@ async function seed() {
 
   const password = process.env.ADMIN_PASSWORD || "change-me-secure-password";
   console.log(`[seed] Admin password: ${password}`);
-  console.log("[seed] Login at /admin/login");
+  console.log("[seed] Login at /ronen");
 
   await client.close();
 }

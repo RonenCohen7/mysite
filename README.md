@@ -39,8 +39,9 @@ Open [http://localhost:5173](http://localhost:5173)
 
 ## Admin
 
-- URL: [http://localhost:5173/admin](http://localhost:5173/admin) — **open in dev** (no password)
-- Before production: set `ADMIN_AUTH_ENABLED=true` and `ADMIN_PASSWORD=...` in `.env`
+- URL: [http://localhost:5173/ronen](http://localhost:5173/ronen) — password in dev only if `ADMIN_AUTH_ENABLED=true`
+- Production: auth is **on by default** — set `ADMIN_PASSWORD=...` in `.env` on the server
+- `/admin` returns 404 (hidden path)
 - Keep `VITE_API_URL` **empty** in dev
 
 ## Project Structure

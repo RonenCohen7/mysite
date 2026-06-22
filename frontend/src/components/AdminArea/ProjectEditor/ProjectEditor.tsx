@@ -34,7 +34,7 @@ export function ProjectEditor() {
     if (!isNew && id) {
       getAdminProject(id)
         .then((p) => {
-          if (!p) return navigate("/admin");
+          if (!p) return navigate("/ronen");
           setTitle(p.title);
           setDescription(p.description);
           setTechStack(p.techStack.join(", "));
@@ -45,7 +45,7 @@ export function ProjectEditor() {
           setImages(p.images || []);
           setVideo(p.video);
         })
-        .catch(() => navigate("/admin"))
+        .catch(() => navigate("/ronen"))
         .finally(() => setLoading(false));
     }
   }, [id, isNew, navigate]);
@@ -100,7 +100,7 @@ export function ProjectEditor() {
       } else if (id) {
         await updateProject(id, data);
       }
-      navigate("/admin");
+      navigate("/ronen");
     } catch {
       alert("Save failed");
     } finally {
@@ -112,7 +112,7 @@ export function ProjectEditor() {
     if (!id || isNew || !confirm("Delete this project?")) return;
     try {
       await deleteProject(id);
-      navigate("/admin");
+      navigate("/ronen");
     } catch {
       alert("Delete failed");
     }
@@ -124,7 +124,7 @@ export function ProjectEditor() {
     <div className={"admin"}>
       <div className={"admin__container"}>
         <div className={"admin__header"}>
-          <IconButton icon={<ArrowLeft size={20} />} tooltip="Back" variant="ghost" onClick={() => navigate("/admin")} />
+          <IconButton icon={<ArrowLeft size={20} />} tooltip="Back" variant="ghost" onClick={() => navigate("/ronen")} />
           <h1 className={"admin__title"}>{isNew ? "New Project" : "Edit Project"}</h1>
           <div />
         </div>

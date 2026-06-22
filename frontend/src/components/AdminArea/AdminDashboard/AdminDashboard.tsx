@@ -23,7 +23,7 @@ export function AdminDashboard() {
       <div className={"admin__container"}>
         <div className={"admin__header"}>
           <h1 className={"admin__title"}>Projects</h1>
-          <Link to="/admin/projects/new">
+          <Link to="/ronen/projects/new">
             <IconButton icon={<Plus size={20} />} tooltip="Add Project" />
           </Link>
         </div>
@@ -46,7 +46,7 @@ export function AdminDashboard() {
                 </span>
               </p>
             </div>
-            <Link to={`/admin/projects/${p._id}`}>
+            <Link to={`/ronen/projects/${p._id}`}>
               <IconButton icon={<Pencil size={18} />} tooltip="Edit Project" variant="ghost" />
             </Link>
           </div>

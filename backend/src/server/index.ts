@@ -47,7 +47,7 @@ app.use(csrfErrorHandler);
 
 app.get("/robots.txt", (_req, res) => {
   res.type("text/plain");
-  res.send("User-agent: *\nDisallow: /admin\nDisallow: /api/admin\n");
+  res.send("User-agent: *\nDisallow: /ronen\nDisallow: /admin\nDisallow: /api/admin\n");
 });
 
 if (config.isProd) {

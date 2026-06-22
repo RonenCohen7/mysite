@@ -20,3 +20,9 @@
 .admin__actions { display: flex; align-items: center; gap: 0.5rem; justify-content: flex-end; padding-top: 1rem; }
 .admin__muted { color: var(--color-slate-500); font-size: 0.875rem; margin-top: 0.5rem; }
 .admin__error { color: var(--color-orange-600); font-size: 0.875rem; }
+.admin__login { max-width: 24rem; margin: 4rem auto 0; }
+.admin__login-header { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.admin__login-icon { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: var(--radius-xl); color: var(--color-turquoise-700); background: var(--color-turquoise-50); border: 1px solid var(--color-turquoise-200); }
+.admin__submit { padding: 0.75rem 1.5rem; border-radius: var(--radius-xl); border: none; background: linear-gradient(135deg, var(--color-turquoise-600), var(--color-cyan)); color: #fff; font-weight: 600; font-family: inherit; cursor: pointer; transition: opacity var(--transition-base); }
+.admin__submit:hover:not(:disabled) { opacity: 0.92; }
+.admin__submit:disabled { opacity: 0.6; cursor: not-allowed; }
