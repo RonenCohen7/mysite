@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { PublicSite } from "@/components/PagesArea/PublicSite/PublicSite";
 import { About } from "@/components/PagesArea/About/About";
+import { NotFound } from "@/components/PagesArea/NotFound/NotFound";
 
 const AdminLogin = lazy(() =>
   import("@/components/AdminArea/AdminLogin/AdminLogin").then((m) => ({ default: m.AdminLogin }))
@@ -30,6 +31,7 @@ export function Routing() {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/projects/:id" element={<ProjectEditor />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );

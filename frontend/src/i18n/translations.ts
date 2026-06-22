@@ -137,6 +137,10 @@ export const translations = {
         "I guide businesses end to end — from needs analysis and understanding workflows to finding the best-fit solution — by building scalable solutions with modern tools like React, TypeScript, Node.js, Python, n8n, Claude, Cursor, GPT, DeepSeek, and more.",
       ],
     },
+    notFound: {
+      title: "This page does not exist",
+      backHome: "Back to Home",
+    },
     portfolio: { loading: "Loading projects...", demo: "Live Demo", github: "View on GitHub" },
     servicesShowcase: {
       videoSoon: "Demo video coming soon",
@@ -279,6 +283,10 @@ export const translations = {
         "אני מתמחה בפיתוח SaaS ייעודי, אינטגרציות API, scraping ואוטומציה מבוססת AI שחוסכת לצוותים שעות רבות ומייצרת ROI מדיד.",
         "ליווי עסקי מאיפיון הצורך והבנת תהליכי העבודה ועד למציאת הפתרון המתאים ביותר עבור הלקוח, באמצעות יצירת פתרונות סקיילביליים עם כלים מודרניים כמו React, TypeScript, Node.js, Python, n8n, Claude, Cursor, GPT, DeepSeek ועוד.",
       ],
+    },
+    notFound: {
+      title: "דף זה לא קיים",
+      backHome: "חזרה לדף הבית",
     },
     portfolio: { loading: "טוען פרויקטים...", demo: "דמו חי", github: "GitHub" },
     servicesShowcase: {
