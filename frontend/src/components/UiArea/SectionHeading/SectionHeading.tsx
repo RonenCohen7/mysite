@@ -12,6 +12,7 @@ export function SectionHeading({ label, title, subtitle }: SectionHeadingProps) 
     <motion.div
       className={"section-heading"}
       initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}

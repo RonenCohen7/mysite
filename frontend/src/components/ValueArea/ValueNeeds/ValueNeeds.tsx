@@ -9,7 +9,7 @@ import "./ValueNeeds.css";
 const needIcons: LucideIcon[] = [Clock3, Link2, Puzzle, TrendingUp];
 
 export function ValueNeeds() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const items = t.valueNeeds.items;
 
   return (
@@ -22,16 +22,18 @@ export function ValueNeeds() {
         />
 
         <motion.div
+          key={locale}
           className="value-needs__grid"
           variants={staggerContainer}
           initial="hidden"
+          animate="visible"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
           {items.map((item, i) => {
             const Icon = needIcons[i] ?? Clock3;
             return (
-              <motion.article key={item.title} className="value-needs__card" variants={staggerItem}>
+              <motion.article key={i} className="value-needs__card" variants={staggerItem}>
                 <div className="value-needs__icon">
                   <Icon size={22} strokeWidth={1.75} />
                 </div>

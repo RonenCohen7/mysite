@@ -129,7 +129,7 @@ export function Services() {
       {reduced ? (
         <div className={"services__static-grid"}>
           {t.services.map((item) => (
-            <ServiceCard key={item.title} {...item} />
+            <ServiceCard key={item.icon} {...item} />
           ))}
         </div>
       ) : (
@@ -185,7 +185,7 @@ export function Services() {
           >
             <AnimatePresence mode="wait">
               <motion.div
-                key={service.title}
+                key={service.icon}
                 className={"services__card-wrap"}
                 initial={{ opacity: 0, x: enterX, scale: 0.94, filter: "blur(6px)" }}
                 animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
@@ -199,7 +199,7 @@ export function Services() {
             <div className={"services__dots"} role="tablist" aria-label={t.servicesShowcase.carouselLabel}>
               {t.services.map((item, index) => (
                 <button
-                  key={item.title}
+                  key={item.icon}
                   type="button"
                   role="tab"
                   aria-selected={index === active}

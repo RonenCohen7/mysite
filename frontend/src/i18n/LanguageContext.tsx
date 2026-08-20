@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { translations, type Locale, type TranslationKeys } from "./translations";
 
 const STORAGE_KEY = "mysite-locale";
@@ -30,8 +30,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.dir = dir;
   }, [locale, dir]);
 
+  const value = useMemo<LanguageContextValue>(
+    () => ({
+      locale,
+      t: translations[locale] as TranslationKeys,
+      setLocale,
+      dir,
+    }),
+    [locale, dir]
+  );
+
   return (
-    <LanguageContext.Provider value={{ locale, t: translations[locale] as TranslationKeys, setLocale, dir }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
