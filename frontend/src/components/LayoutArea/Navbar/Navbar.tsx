@@ -4,7 +4,6 @@ import {
   Home,
   Layers,
   FolderOpen,
-  Cpu,
   Mail,
   Calendar,
   Menu,
@@ -26,7 +25,6 @@ const navIcons: Record<(typeof navIds)[number]["key"], LucideIcon> = {
   home: Home,
   services: Layers,
   portfolio: FolderOpen,
-  techStack: Cpu,
   contact: Mail,
 };
 

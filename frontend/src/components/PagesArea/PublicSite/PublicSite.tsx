@@ -5,7 +5,6 @@ import { ValueNeeds } from "@/components/ValueArea/ValueNeeds/ValueNeeds";
 import { Services } from "@/components/ServicesArea/Services/Services";
 import { Portfolio } from "@/components/PortfolioArea/Portfolio/Portfolio";
 import { WhyCustom } from "@/components/ValueArea/WhyCustom/WhyCustom";
-import { TechStack } from "@/components/TechStackArea/TechStack/TechStack";
 import { Testimonials } from "@/components/TestimonialsArea/Testimonials/Testimonials";
 import { Contact } from "@/components/ContactArea/Contact/Contact";
 import { siteConfig } from "@models/site";
@@ -21,7 +20,6 @@ export function PublicSite() {
         <Portfolio />
         <Services />
         <WhyCustom />
-        <TechStack />
         {siteConfig.showPartnersSection ? <Testimonials /> : null}
         <Contact />
       </main>
