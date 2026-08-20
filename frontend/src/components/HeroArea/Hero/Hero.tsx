@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BrainCircuit, Bot, Network, Calendar, FolderOpen, ChevronDown, ArrowRight } from "lucide-react";
+import { Search, PenTool, CircleCheck, Calendar, FolderOpen, ChevronDown, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
 import { scrollToSection } from "@/Utils/useScrollSpy";
@@ -7,9 +7,9 @@ import { cn } from "@/Utils/cn";
 import "./Hero.css";
 
 const heroIcons = [
-  { Icon: BrainCircuit, key: "line1" as const, variant: "turquoise" as const },
-  { Icon: Bot, key: "line2" as const, variant: "orange" as const },
-  { Icon: Network, key: "line3" as const, variant: "redOrange" as const },
+  { Icon: Search, key: "line1" as const, variant: "turquoise" as const },
+  { Icon: PenTool, key: "line2" as const, variant: "orange" as const },
+  { Icon: CircleCheck, key: "line3" as const, variant: "redOrange" as const },
 ];
 
 export function Hero() {
@@ -35,12 +35,22 @@ export function Hero() {
         </motion.h1>
 
         <motion.div
+          className="hero__punch"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className="hero__punch-line">{t.hero.punchLine1}</p>
+          <p className="hero__punch-line">{t.hero.punchLine2}</p>
+        </motion.div>
+
+        <motion.div
           className={"hero__icon-row"}
           initial="hidden"
           animate="visible"
           variants={{
             hidden: {},
-            visible: { transition: { staggerChildren: 0.2 } },
+            visible: { transition: { staggerChildren: 0.2, delayChildren: 0.25 } },
           }}
         >
           {heroIcons.map(({ Icon, key, variant }, i) => {
@@ -76,11 +86,9 @@ export function Hero() {
           className={"hero__subtitle-block"}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
+          transition={{ delay: 0.55, duration: 0.8 }}
         >
           <p className={"hero__subtitle"}>{t.hero.subtitle}</p>
-          <p className={"hero__subtitle-extra"}>{t.hero.subtitleLine2}</p>
-          <p className={"hero__subtitle-extra"}>{t.hero.subtitleLine3}</p>
         </motion.div>
 
         <motion.div

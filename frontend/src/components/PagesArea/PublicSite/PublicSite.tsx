@@ -28,8 +28,8 @@ export function PublicSite() {
       <Navbar />
       <main>
         <Hero />
-        <ValueNeeds />
         <Portfolio />
+        <ValueNeeds />
         <Services />
         <WhyCustom />
         {siteConfig.showPartnersSection ? <Testimonials /> : null}
