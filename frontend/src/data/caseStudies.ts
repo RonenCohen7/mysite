@@ -50,7 +50,7 @@ export const fallbackCaseStudies: Project[] = [
     images: [],
     featured: true,
     published: true,
-    order: 0,
+    order: 2,
     createdAt: new Date(0).toISOString(),
     updatedAt: new Date(0).toISOString(),
   },
@@ -152,7 +152,7 @@ export const fallbackCaseStudies: Project[] = [
     images: [],
     featured: true,
     published: true,
-    order: 2,
+    order: 3,
     createdAt: new Date(0).toISOString(),
     updatedAt: new Date(0).toISOString(),
   },
@@ -198,7 +198,7 @@ export const fallbackCaseStudies: Project[] = [
     images: [],
     featured: true,
     published: true,
-    order: 3,
+    order: 4,
     createdAt: new Date(0).toISOString(),
     updatedAt: new Date(0).toISOString(),
   },
@@ -247,7 +247,7 @@ export const fallbackCaseStudies: Project[] = [
     images: [],
     featured: true,
     published: true,
-    order: 4,
+    order: 0,
     createdAt: new Date(0).toISOString(),
     updatedAt: new Date(0).toISOString(),
   },
@@ -265,14 +265,31 @@ const IGNORED_DEMO_SLUGS = new Set([
   "python-backend-system",
 ]);
 
+/** Fixed public portfolio order — do not rely on array declaration order. */
+const PORTFOLIO_SLUG_ORDER = [
+  "hamasgeria-hadar-pub",
+  "tmore-talent-pool",
+  "see-you-tomorrow",
+  "vacation-abroad",
+  "lowproject-court-judgments",
+] as const;
+
+function portfolioRank(slug: string, order = 999): number {
+  const i = (PORTFOLIO_SLUG_ORDER as readonly string[]).indexOf(slug);
+  return i === -1 ? 1000 + order : i;
+}
+
 export function pickStoryProjects(apiProjects: Project[]): Project[] {
+  const sortProjects = (list: Project[]) =>
+    [...list].sort((a, b) => portfolioRank(a.slug, a.order) - portfolioRank(b.slug, b.order));
+
   const realFromApi = apiProjects.filter(
     (p) =>
       !IGNORED_DEMO_SLUGS.has(p.slug) &&
       Boolean(p.challenge || p.coverUrl || (p.galleryUrls && p.galleryUrls.length))
   );
 
-  if (realFromApi.length === 0) return fallbackCaseStudies;
+  if (realFromApi.length === 0) return sortProjects(fallbackCaseStudies);
 
   const bySlug = new Map(fallbackCaseStudies.map((p) => [p.slug, p]));
   for (const p of realFromApi) {
@@ -299,9 +316,10 @@ export function pickStoryProjects(apiProjects: Project[]): Project[] {
       coverUrl: p.coverUrl || base.coverUrl,
       galleryUrls,
       githubUrl: p.githubUrl || base.githubUrl,
+      order: base.order,
     });
   }
-  return Array.from(bySlug.values()).sort((a, b) => a.order - b.order);
+  return sortProjects(Array.from(bySlug.values()));
 }
 
 export function findStoryProjectBySlug(slug: string, apiProjects: Project[] = []): Project | undefined {

@@ -55,7 +55,7 @@ const seedProjects = [
     githubUrl: "https://github.com/RonenCohen7/see-you-tomorrow",
     featured: true,
     published: true,
-    order: 0,
+    order: 2,
     images: [],
   },
   {
@@ -151,7 +151,7 @@ const seedProjects = [
     githubUrl: "https://github.com/RonenCohen7/vecationProject2",
     featured: true,
     published: true,
-    order: 2,
+    order: 3,
     images: [],
   },
   {
@@ -194,7 +194,7 @@ const seedProjects = [
     githubUrl: "https://github.com/RonenCohen7/LowProject",
     featured: true,
     published: true,
-    order: 3,
+    order: 4,
     images: [],
   },
   {
@@ -240,7 +240,7 @@ const seedProjects = [
     githubUrl: "https://github.com/RonenCohen7/hamasgeriaHadar",
     featured: true,
     published: true,
-    order: 4,
+    order: 0,
     images: [],
   },
 ];
