@@ -217,6 +217,8 @@ export const translations = {
       solution: "What I built",
       outcome: "The result",
       screenshot: "Screenshot",
+      gallery: "Project screenshots",
+      backToProjects: "Back to projects",
     },
     servicesShowcase: {
       videoSoon: "Demo video coming soon",
@@ -228,7 +230,7 @@ export const translations = {
   he: {
     site: {
       name: "רונן כהן",
-      title: "מערכות בהתאמה אישית לעסקים קטנים | Full Stack ו-AI",
+      title: "מערכות בהתאמה אישית לעסקים  | Full Stack ו-AI",
     },
     nav: {
       home: "בית",
@@ -441,6 +443,8 @@ export const translations = {
       solution: "מה בניתי",
       outcome: "התוצאה",
       screenshot: "צילום מסך",
+      gallery: "צילומי מסך מהפרויקט",
+      backToProjects: "חזרה לפרויקטים",
     },
     servicesShowcase: {
       videoSoon: "סרטון דוגמה בקרוב",

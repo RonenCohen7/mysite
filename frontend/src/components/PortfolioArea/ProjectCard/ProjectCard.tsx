@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, type MouseEvent, type KeyboardEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { ExternalLink, Github } from "lucide-react";
 import type { Project } from "@mysite/shared";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -6,6 +7,7 @@ import { GlassCard } from "@/components/UiArea/GlassCard/GlassCard";
 import { Badge } from "@/components/UiArea/Badge/Badge";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
 import { getMediaUrl } from "@/Services/ApiService";
+import { getProjectGallery } from "@/data/caseStudies";
 import { cn } from "@/Utils/cn";
 import "../Portfolio/Portfolio.css";
 
@@ -16,17 +18,10 @@ function pick(locale: "en" | "he", en?: string, he?: string): string | undefined
 
 export function ProjectCard({ project }: { project: Project }) {
   const { t, locale } = useLanguage();
-  const uploaded = (project.images || []).map((img) => getMediaUrl(img.fileId));
-  const gallery = [
-    ...(project.galleryUrls || []),
-    ...uploaded,
-  ].filter(Boolean);
-  if (project.coverUrl && !gallery.includes(project.coverUrl)) {
-    gallery.unshift(project.coverUrl);
-  }
-
+  const navigate = useNavigate();
+  const gallery = getProjectGallery(project, getMediaUrl);
   const [activeIndex, setActiveIndex] = useState(0);
-  const coverUrl = gallery[activeIndex] || project.coverUrl || uploaded[0] || null;
+  const coverUrl = gallery[activeIndex] || gallery[0] || null;
 
   const title = pick(locale, project.title, project.titleHe) || project.title;
   const description = pick(locale, project.description, project.descriptionHe) || project.description;
@@ -35,8 +30,31 @@ export function ProjectCard({ project }: { project: Project }) {
   const outcome = pick(locale, project.outcome, project.outcomeHe);
   const industry = pick(locale, project.industry, project.industryHe);
 
+  function openProject() {
+    navigate(`/projects/${project.slug}`);
+  }
+
+  function onCardKeyDown(e: KeyboardEvent<HTMLElement>) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openProject();
+    }
+  }
+
+  function stop(e: MouseEvent) {
+    e.stopPropagation();
+  }
+
   return (
-    <GlassCard className={"portfolio__card"} hover>
+    <GlassCard
+      className={"portfolio__card portfolio__card--clickable"}
+      hover
+      role="link"
+      tabIndex={0}
+      aria-label={title}
+      onClick={openProject}
+      onKeyDown={onCardKeyDown}
+    >
       <div className={"portfolio__image-wrap"}>
         {coverUrl ? (
           <img src={coverUrl} alt={title} className={"portfolio__image"} loading="lazy" />
@@ -50,12 +68,15 @@ export function ProjectCard({ project }: { project: Project }) {
 
       {gallery.length > 1 && (
         <div className="portfolio__thumbs" role="list">
-          {gallery.map((url, i) => (
+          {gallery.slice(0, 5).map((url, i) => (
             <button
               key={`${url}-${i}`}
               type="button"
               className={cn("portfolio__thumb", i === activeIndex && "portfolio__thumb--active")}
-              onClick={() => setActiveIndex(i)}
+              onClick={(e) => {
+                stop(e);
+                setActiveIndex(i);
+              }}
               aria-label={`${t.portfolio.screenshot} ${i + 1}`}
             >
               <img src={url} alt="" loading="lazy" />
@@ -97,14 +118,14 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {(project.demoUrl || project.githubUrl) && (
-        <div className={"portfolio__actions"}>
+        <div className={"portfolio__actions"} onClick={stop}>
           {project.demoUrl && (
-            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={stop}>
               <IconButton icon={<ExternalLink size={18} />} tooltip={t.portfolio.demo} />
             </a>
           )}
           {project.githubUrl && (
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" onClick={stop}>
               <IconButton icon={<Github size={18} />} tooltip={t.portfolio.github} variant="ghost" />
             </a>
           )}

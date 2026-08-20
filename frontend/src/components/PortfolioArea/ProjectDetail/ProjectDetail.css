@@ -1,0 +1,195 @@
+.project-detail {
+  min-height: 100vh;
+  padding: 6.5rem 1.25rem 4rem;
+  background:
+    radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.06) 0, transparent 45%),
+    radial-gradient(at 100% 10%, rgba(249, 115, 22, 0.05) 0, transparent 40%),
+    var(--color-page-bg, #faf8ff);
+}
+
+.project-detail__container {
+  max-width: 72rem;
+  margin-inline: auto;
+}
+
+.project-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-turquoise-700);
+  text-decoration: none;
+}
+.project-detail__back:hover {
+  color: var(--color-orange-600);
+}
+
+.project-detail__status {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--color-slate-400);
+}
+
+.project-detail__header {
+  margin-bottom: 1.5rem;
+  max-width: 48rem;
+}
+
+.project-detail__industry {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-slate-700);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-slate-200);
+}
+
+.project-detail__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-slate-900);
+}
+
+.project-detail__desc {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-slate-600);
+}
+
+.project-detail__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-detail__hero {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid var(--color-slate-200);
+  background: #0f172a;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+  margin-bottom: 1rem;
+}
+.project-detail__hero img {
+  display: block;
+  width: 100%;
+  max-height: min(78vh, 820px);
+  object-fit: contain;
+  object-position: top center;
+  background: #0f172a;
+}
+
+.project-detail__thumbs {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  margin-bottom: 2rem;
+  scrollbar-width: thin;
+}
+.project-detail__thumb {
+  flex: 0 0 auto;
+  width: 7.5rem;
+  height: 4.75rem;
+  padding: 0;
+  border-radius: 0.65rem;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: var(--color-slate-100);
+  cursor: pointer;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+.project-detail__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.project-detail__thumb:hover {
+  transform: translateY(-1px);
+}
+.project-detail__thumb--active {
+  border-color: var(--color-turquoise-500);
+}
+
+.project-detail__gallery {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 900px) {
+  .project-detail__gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-detail__shot {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1.1rem;
+  border: 1px solid var(--color-slate-200);
+  background: #0f172a;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+}
+.project-detail__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.project-detail__story {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+@media (min-width: 900px) {
+  .project-detail__story {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-detail__story-block {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: rgba(241, 245, 249, 0.85);
+  border-inline-start: 3px solid var(--color-turquoise-400);
+}
+.project-detail__story-block--outcome {
+  background: rgba(255, 247, 237, 0.9);
+  border-inline-start-color: var(--color-orange-500);
+}
+.project-detail__story-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-turquoise-700);
+  margin-bottom: 0.45rem;
+}
+.project-detail__story-block--outcome .project-detail__story-label {
+  color: var(--color-orange-700);
+}
+.project-detail__story-block p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-slate-600);
+}
+
+.project-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

@@ -13,12 +13,14 @@
   }
 }
 
-.portfolio__card {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.portfolio__card--clickable {
+  cursor: pointer;
 }
+.portfolio__card--clickable:focus-visible {
+  outline: 2px solid var(--color-turquoise-500);
+  outline-offset: 3px;
+}
+
 .portfolio__card:hover .portfolio__image {
   transform: scale(1.04);
 }

@@ -303,3 +303,16 @@ export function pickStoryProjects(apiProjects: Project[]): Project[] {
   }
   return Array.from(bySlug.values()).sort((a, b) => a.order - b.order);
 }
+
+export function findStoryProjectBySlug(slug: string, apiProjects: Project[] = []): Project | undefined {
+  return pickStoryProjects(apiProjects).find((p) => p.slug === slug);
+}
+
+export function getProjectGallery(project: Project, mediaUrl?: (fileId: string) => string): string[] {
+  const uploaded = (project.images || []).map((img) => (mediaUrl ? mediaUrl(img.fileId) : img.fileId));
+  const gallery = [...(project.galleryUrls || []), ...uploaded].filter(Boolean);
+  if (project.coverUrl && !gallery.includes(project.coverUrl)) {
+    gallery.unshift(project.coverUrl);
+  }
+  return gallery;
+}
