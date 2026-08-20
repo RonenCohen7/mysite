@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>See You Tomorrow — סוכן עזרה</title>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --orange: #f97316; --sky: #0ea5e9; --slate: #0f172a; --muted: #64748b;
+    --bg: #fafaf9; --border: rgba(15,23,42,0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Assistant, system-ui, sans-serif; color: var(--slate);
+    background:
+      radial-gradient(at 0% 0%, rgba(249,115,22,0.07) 0, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(14,165,233,0.07) 0, transparent 50%),
+      var(--bg);
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 1.5rem; }
+  h1 { margin: 0; font-size: 1.45rem; font-weight: 800; }
+  .sub { margin: 0.35rem 0 1.2rem; color: var(--muted); }
+  .chat {
+    background: #fff; border: 1px solid var(--border); border-radius: 18px;
+    box-shadow: 0 10px 32px rgba(15,23,42,0.06); overflow: hidden; min-height: 560px;
+    display: flex; flex-direction: column;
+  }
+  .chat-hd {
+    display: flex; align-items: center; gap: 0.75rem; padding: 0.95rem 1.1rem;
+    border-bottom: 1px solid var(--border); background: linear-gradient(90deg, #fff7ed, #e0f2fe);
+  }
+  .chat-hd img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; background: #fff; }
+  .chat-hd strong { display: block; font-size: 1rem; }
+  .chat-hd span { color: var(--muted); font-size: 0.8rem; font-weight: 600; }
+  .msgs { flex: 1; padding: 1.1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .msg { max-width: 78%; padding: 0.75rem 0.95rem; border-radius: 14px; font-size: 0.9rem; line-height: 1.45; font-weight: 600; }
+  .bot { align-self: flex-start; background: #f1f5f9; border: 1px solid var(--border); }
+  .user { align-self: flex-end; background: rgba(249,115,22,0.12); color: #9a3412; }
+  .msg small { display: block; margin-top: 0.35rem; color: var(--muted); font-size: 0.72rem; font-weight: 700; }
+  .perms {
+    margin: 0 1.1rem 0.85rem; padding: 0.65rem 0.85rem; border-radius: 12px;
+    background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.2);
+    font-size: 0.78rem; font-weight: 700; color: #0369a1;
+  }
+  .composer {
+    display: flex; gap: 0.55rem; padding: 0.85rem 1.1rem; border-top: 1px solid var(--border);
+  }
+  .composer input {
+    flex: 1; border: 1px solid var(--border); border-radius: 12px; padding: 0.7rem 0.9rem;
+    font-family: inherit; font-size: 0.9rem;
+  }
+  .composer button {
+    border: 0; border-radius: 12px; padding: 0.7rem 1rem; background: var(--orange);
+    color: #fff; font-weight: 800; font-family: inherit;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>סוכן עזרה במערכת</h1>
+  <p class="sub">עונה על כל שאלה שקיימת במערכת — בגבולות ההרשאות שניתנו לו</p>
+  <div class="chat">
+    <div class="chat-hd">
+      <img src="../help-avatar.png" alt="" />
+      <div>
+        <strong>SYT Help Agent</strong>
+        <span>מחובר · הרשאה: מנהל מחלקה</span>
+      </div>
+    </div>
+    <div class="msgs">
+      <div class="msg bot">
+        שלום! אני יכול לעזור עם שיבוצים, בקשות עובדים, חוקים, וחריגים שממתינים לאישור שלך.
+        <small>מבוסס על נתוני הארגון שלך בלבד</small>
+      </div>
+      <div class="msg user">מי במחלקה שלי במיקור חוץ בשבועיים הקרובים?</div>
+      <div class="msg bot">
+        לפי הלוח השקוף: <b>יואב כהן</b> (20–24.08) ו־<b>דניאל שמש</b> (29–31.08). שניהם אושרו ע״י סוכן השיבוץ לפי חוקי המינימום במשרד.
+        <small>מקור: לוח מחלקת פיתוח</small>
+      </div>
+      <div class="msg user">למה בקשת הלימודים של מיכל לא אושרה אוטומטית?</div>
+      <div class="msg bot">
+        כי היא ביקשה יומיים לימודים באותו שבוע, וחוק המנהל מגביל ליום אחד. החריג מחכה ב־תור AI לאישור סופי שלך.
+        <small>לא מוצג מידע מחוץ להרשאות המנהל</small>
+      </div>
+    </div>
+    <div class="perms">היקף הרשאות: נתוני מחלקה · חוקי שיבוץ · בקשות וחריגים · ללא גישה לשכר / HR רגיש</div>
+    <div class="composer">
+      <input value="כמה שעות שיבוץ נחסכו החודש?" readonly />
+      <button>שלח</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

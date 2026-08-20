@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>T.MORE Admin — חיפוש טאלנטים</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue: #3b82f6; --blue-deep: #2d6a9f; --text: #14122b; --muted: #64748b;
+    --border: #e2e8f0; --bg: #faf8ff; --magenta: #d946ef;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Rubik, system-ui, sans-serif; color: var(--text);
+    background: var(--bg); padding: 1.35rem 1.5rem 2rem;
+  }
+  .hd { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.1rem; }
+  .hd img { height: 32px; }
+  h1 { margin: 0.55rem 0 0.35rem; font-size: 1.45rem; color: var(--blue-deep); font-weight: 800; }
+  .sub { margin: 0; color: var(--muted); font-size: 0.95rem; max-width: 40rem; }
+  .badge {
+    background: #fff; border: 1px solid var(--border); border-radius: 12px;
+    padding: 0.65rem 0.9rem; font-size: 0.8rem; font-weight: 700; color: var(--muted);
+  }
+  .filters {
+    background: #fff; border: 1px solid var(--border); border-radius: 16px;
+    padding: 1rem 1.1rem; margin-bottom: 1rem; box-shadow: 0 4px 24px rgba(15,23,42,0.05);
+  }
+  .row { display: grid; grid-template-columns: 1.4fr 1fr auto; gap: 0.75rem; align-items: end; }
+  label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.35rem; }
+  input, select {
+    width: 100%; padding: 0.65rem 0.85rem; border-radius: 10px; border: 1px solid var(--border);
+    font: inherit; background: #fff;
+  }
+  button {
+    border: 0; border-radius: 10px; padding: 0.7rem 1.25rem; background: var(--blue);
+    color: #fff; font-weight: 700; font-family: inherit; white-space: nowrap;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; }
+  .chip {
+    font-size: 0.72rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 999px;
+    background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: default;
+  }
+  .chip.on { background: linear-gradient(135deg, #3b82f6, #a855f7); color: #fff; border-color: transparent; }
+  .table-wrap {
+    background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(15,23,42,0.05);
+  }
+  .meta {
+    padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; font-weight: 600;
+    background: rgba(13,110,138,0.06); display: flex; justify-content: space-between;
+  }
+  .meta em { color: var(--magenta); font-style: normal; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th, td { padding: 0.7rem 0.85rem; border-bottom: 1px solid var(--border); text-align: right; vertical-align: top; }
+  th { background: rgba(13,110,138,0.08); font-weight: 700; font-size: 0.75rem; color: var(--muted); }
+  .tag {
+    display: inline-block; padding: 0.2rem 0.5rem; border-radius: 8px; font-size: 0.72rem; font-weight: 700;
+    background: #eef2ff; color: #4338ca;
+  }
+  .about { color: var(--muted); font-size: 0.78rem; max-width: 14rem; }
+  .match-score {
+    font-weight: 800; color: #15803d; background: rgba(34,197,94,0.12);
+    padding: 0.2rem 0.45rem; border-radius: 8px; font-size: 0.75rem;
+  }
+</style>
+</head>
+<body>
+  <div class="hd">
+    <div>
+      <img src="../tmore-logo-full.png" alt="T.MORE" />
+      <h1>מאגר טאלנטים — חיפוש והתאמה</h1>
+      <p class="sub">סינון לפי מקצועיות הפרילנסר והתאמה לצורך המקצועי של הפרויקט — במקום קורות חיים שמגיעים במייל או בהודעה.</p>
+    </div>
+    <div class="badge">/admin · חיפוש בעברית / English</div>
+  </div>
+
+  <div class="filters">
+    <div class="row">
+      <div>
+        <label>חיפוש חופשי</label>
+        <input value="ייעוץ טכנו פדגוגי · למידה" readonly />
+      </div>
+      <div>
+        <label>סינון לפי מקצועיות</label>
+        <select>
+          <option>ייעוץ טכנו פדגוגי</option>
+          <option>הנחיית סדנאות</option>
+          <option>עיצוב גרפי</option>
+          <option>כל ההתמחויות</option>
+        </select>
+      </div>
+      <button>חיפוש והתאמה</button>
+    </div>
+    <div class="chips">
+      <span class="chip">הנחיית סדנאות</span>
+      <span class="chip">מפתחי למידה מאקרו</span>
+      <span class="chip">ייעוץ ארגוני</span>
+      <span class="chip on">ייעוץ טכנו פדגוגי</span>
+      <span class="chip">אנימטורים</span>
+      <span class="chip">עיצוב גרפי</span>
+      <span class="chip">דיבוב וקריינות</span>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="meta">
+      <span>נמצאו <em>4 התאמות</em> לצורך: פיתוח למידה דיגיטלית + הנחייה</span>
+      <span>ממוין לפי רלוונטיות מקצועית</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th><th>שם</th><th>מקצוע</th><th>התאמה</th><th>קצת על עצמי</th><th>מסמכים</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>128</td>
+          <td>יעל אדרי</td>
+          <td><span class="tag">ייעוץ טכנו פדגוגי</span></td>
+          <td><span class="match-score">96%</span></td>
+          <td class="about">10 שנות פיתוח למידה ארגונית, התמחות בפלטפורמות LMS והנחיית מנחים.</td>
+          <td>CV · 2 תעודות</td>
+        </tr>
+        <tr>
+          <td>119</td>
+          <td>עמית כהן</td>
+          <td><span class="tag">מפתחי למידה מאקרו</span></td>
+          <td><span class="match-score">91%</span></td>
+          <td class="about">בניית מסלולי למידה מקצה לקצה לחברות הייטק והכשרות פנימיות.</td>
+          <td>CV · תעודה</td>
+        </tr>
+        <tr>
+          <td>104</td>
+          <td>נועה שמש</td>
+          <td><span class="tag">הנחיית סדנאות</span></td>
+          <td><span class="match-score">84%</span></td>
+          <td class="about">הנחיית סדנאות מנהיגות ותקשורת — יום שלם / גמיש לפי צורך.</td>
+          <td>CV · 3 תעודות</td>
+        </tr>
+        <tr>
+          <td>97</td>
+          <td>דניאל לוי</td>
+          <td><span class="tag">עיצוב גרפי</span></td>
+          <td><span class="match-score">72%</span></td>
+          <td class="about">עיצוב ממשקי למידה, מצגות ומיתוג לקורסים דיגיטליים.</td>
+          <td>CV · פורטפוליו</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

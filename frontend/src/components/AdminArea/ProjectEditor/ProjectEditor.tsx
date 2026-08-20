@@ -18,7 +18,19 @@ export function ProjectEditor() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
+  const [titleHe, setTitleHe] = useState("");
   const [description, setDescription] = useState("");
+  const [descriptionHe, setDescriptionHe] = useState("");
+  const [challenge, setChallenge] = useState("");
+  const [challengeHe, setChallengeHe] = useState("");
+  const [solution, setSolution] = useState("");
+  const [solutionHe, setSolutionHe] = useState("");
+  const [outcome, setOutcome] = useState("");
+  const [outcomeHe, setOutcomeHe] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [industryHe, setIndustryHe] = useState("");
+  const [clientName, setClientName] = useState("");
+  const [coverUrl, setCoverUrl] = useState("");
   const [techStack, setTechStack] = useState("");
   const [demoUrl, setDemoUrl] = useState("");
   const [githubUrl, setGithubUrl] = useState("");
@@ -36,7 +48,19 @@ export function ProjectEditor() {
         .then((p) => {
           if (!p) return navigate("/ronen");
           setTitle(p.title);
+          setTitleHe(p.titleHe || "");
           setDescription(p.description);
+          setDescriptionHe(p.descriptionHe || "");
+          setChallenge(p.challenge || "");
+          setChallengeHe(p.challengeHe || "");
+          setSolution(p.solution || "");
+          setSolutionHe(p.solutionHe || "");
+          setOutcome(p.outcome || "");
+          setOutcomeHe(p.outcomeHe || "");
+          setIndustry(p.industry || "");
+          setIndustryHe(p.industryHe || "");
+          setClientName(p.clientName || "");
+          setCoverUrl(p.coverUrl || "");
           setTechStack(p.techStack.join(", "));
           setDemoUrl(p.demoUrl || "");
           setGithubUrl(p.githubUrl || "");
@@ -85,7 +109,19 @@ export function ProjectEditor() {
     setSaving(true);
     const data = {
       title,
+      titleHe: titleHe || undefined,
       description,
+      descriptionHe: descriptionHe || undefined,
+      challenge: challenge || undefined,
+      challengeHe: challengeHe || undefined,
+      solution: solution || undefined,
+      solutionHe: solutionHe || undefined,
+      outcome: outcome || undefined,
+      outcomeHe: outcomeHe || undefined,
+      industry: industry || undefined,
+      industryHe: industryHe || undefined,
+      clientName: clientName || undefined,
+      coverUrl: coverUrl || undefined,
       techStack: techStack.split(",").map((s) => s.trim()).filter(Boolean),
       demoUrl: demoUrl || undefined,
       githubUrl: githubUrl || undefined,
@@ -131,12 +167,60 @@ export function ProjectEditor() {
 
         <form className={"admin__form glass-card"} onSubmit={handleSubmit}>
           <div className={"admin__field"}>
-            <label className={"admin__label"}>Title</label>
+            <label className={"admin__label"}>Title (EN)</label>
             <input className={"admin__input"} value={title} onChange={(e) => setTitle(e.target.value)} required />
           </div>
           <div className={"admin__field"}>
-            <label className={"admin__label"}>Description</label>
+            <label className={"admin__label"}>Title (HE)</label>
+            <input className={"admin__input"} value={titleHe} onChange={(e) => setTitleHe(e.target.value)} dir="rtl" />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>Short summary (EN)</label>
             <textarea className="admin__input admin__textarea" value={description} onChange={(e) => setDescription(e.target.value)} required />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>Short summary (HE)</label>
+            <textarea className="admin__input admin__textarea" value={descriptionHe} onChange={(e) => setDescriptionHe(e.target.value)} dir="rtl" />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>The need / requirement (EN)</label>
+            <textarea className="admin__input admin__textarea" value={challenge} onChange={(e) => setChallenge(e.target.value)} />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>The need / requirement (HE)</label>
+            <textarea className="admin__input admin__textarea" value={challengeHe} onChange={(e) => setChallengeHe(e.target.value)} dir="rtl" />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>What I built (EN)</label>
+            <textarea className="admin__input admin__textarea" value={solution} onChange={(e) => setSolution(e.target.value)} />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>What I built (HE)</label>
+            <textarea className="admin__input admin__textarea" value={solutionHe} onChange={(e) => setSolutionHe(e.target.value)} dir="rtl" />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>The result (EN)</label>
+            <textarea className="admin__input admin__textarea" value={outcome} onChange={(e) => setOutcome(e.target.value)} />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>The result (HE)</label>
+            <textarea className="admin__input admin__textarea" value={outcomeHe} onChange={(e) => setOutcomeHe(e.target.value)} dir="rtl" />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>Industry (EN)</label>
+            <input className={"admin__input"} value={industry} onChange={(e) => setIndustry(e.target.value)} />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>Industry (HE)</label>
+            <input className={"admin__input"} value={industryHe} onChange={(e) => setIndustryHe(e.target.value)} dir="rtl" />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>Client name (optional)</label>
+            <input className={"admin__input"} value={clientName} onChange={(e) => setClientName(e.target.value)} />
+          </div>
+          <div className={"admin__field"}>
+            <label className={"admin__label"}>Cover image URL (e.g. /projects/foo.jpg)</label>
+            <input className={"admin__input"} value={coverUrl} onChange={(e) => setCoverUrl(e.target.value)} />
           </div>
           <div className={"admin__field"}>
             <label className={"admin__label"}>Tech Stack (comma separated)</label>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { BrainCircuit, Bot, Network, Calendar, FolderOpen, ChevronDown, ArrowRight } from "lucide-react";
-import { HeroVideoBackground } from "@/components/HeroArea/HeroVideoBackground/HeroVideoBackground";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
 import { scrollToSection } from "@/Utils/useScrollSpy";
@@ -19,8 +18,22 @@ export function Hero() {
 
   return (
     <section id="home" className={"hero"}>
-      <HeroVideoBackground />
+      <div className="hero__ambient" aria-hidden="true">
+        <span className="hero__blob hero__blob--a" />
+        <span className="hero__blob hero__blob--b" />
+        <span className="hero__blob hero__blob--c" />
+      </div>
+
       <div className={"hero__content"}>
+        <motion.h1
+          className="hero__headline"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {t.hero.headline}
+        </motion.h1>
+
         <motion.div
           className={"hero__icon-row"}
           initial="hidden"
@@ -32,10 +45,19 @@ export function Hero() {
         >
           {heroIcons.map(({ Icon, key, variant }, i) => {
             return (
-              <motion.div key={key} className="hero__icon-group" variants={{
-                hidden: { opacity: 0, y: 40, scale: 0.8 },
-                visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-              }}>
+              <motion.div
+                key={key}
+                className="hero__icon-group"
+                variants={{
+                  hidden: { opacity: 0, y: 40, scale: 0.8 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+              >
                 {i > 0 && (
                   <Arrow className={cn("hero__connector", dir === "rtl" && "hero__connector--rtl")} size={28} />
                 )}
@@ -78,7 +100,7 @@ export function Hero() {
             tooltip={t.hero.ctaProjects}
             variant="ghost"
             size="lg"
-            onClick={() => scrollToSection("services")}
+            onClick={() => scrollToSection("portfolio")}
           />
         </motion.div>
       </div>

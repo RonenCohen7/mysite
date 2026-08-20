@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Home,
   Layers,
+  FolderOpen,
   Cpu,
   Mail,
   Calendar,
@@ -24,6 +25,7 @@ import type { Locale } from "@/i18n/translations";
 const navIcons: Record<(typeof navIds)[number]["key"], LucideIcon> = {
   home: Home,
   services: Layers,
+  portfolio: FolderOpen,
   techStack: Cpu,
   contact: Mail,
 };
@@ -94,11 +96,11 @@ export function Navbar() {
                 className={cn(
                   "navbar__logo-text",
                   "navbar__logo-brand",
-                  navScrolled ? "navbar__logo-text--dark" : "navbar__logo-text--light"
+                  "navbar__logo-text--dark"
                 )}
               >
                 {siteConfig.brand}
-                <span className={navScrolled ? "navbar__logo-accent--dark" : "navbar__logo-accent--light"}>.</span>
+                <span className="navbar__logo-accent--dark">.</span>
               </span>
             </button>
           ) : (

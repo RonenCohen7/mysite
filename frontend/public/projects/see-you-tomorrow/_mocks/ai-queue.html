@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>See You Tomorrow — תור AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --orange: #f97316; --sky: #0ea5e9; --green: #22c55e;
+    --slate: #0f172a; --muted: #64748b; --bg: #fafaf9; --border: rgba(15,23,42,0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Assistant, system-ui, sans-serif; color: var(--slate);
+    background:
+      radial-gradient(at 0% 0%, rgba(249,115,22,0.07) 0, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(14,165,233,0.07) 0, transparent 50%),
+      var(--bg);
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 1.5rem 1.5rem 2rem; }
+  .hd { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.1rem; }
+  h1 { margin: 0; font-size: 1.5rem; font-weight: 800; }
+  .sub { margin: 0.35rem 0 0; color: var(--muted); }
+  .badge {
+    background: linear-gradient(135deg, #fff7ed, #e0f2fe); border: 1px solid var(--border);
+    border-radius: 14px; padding: 0.75rem 1rem; font-weight: 700; font-size: 0.88rem;
+  }
+  .badge em { color: var(--orange); font-style: normal; }
+  .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1rem; }
+  .card {
+    background: #fff; border: 1px solid var(--border); border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(15,23,42,0.05); overflow: hidden;
+  }
+  .card-hd {
+    padding: 0.85rem 1.1rem; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .card-hd h2 { margin: 0; font-size: 1rem; }
+  .pill {
+    font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px;
+  }
+  .pill.ok { background: rgba(34,197,94,0.14); color: #15803d; }
+  .pill.warn { background: rgba(245,158,11,0.18); color: #b45309; }
+  .pill.ai { background: rgba(14,165,233,0.14); color: #0369a1; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th, td { padding: 0.7rem 0.85rem; border-bottom: 1px solid var(--border); text-align: right; }
+  th { background: #f8fafc; color: var(--muted); font-size: 0.72rem; }
+  .status {
+    display: inline-block; padding: 0.2rem 0.5rem; border-radius: 8px; font-weight: 700; font-size: 0.72rem;
+  }
+  .office { background: rgba(14,165,233,0.14); color: #0369a1; }
+  .home { background: rgba(249,115,22,0.14); color: #c2410c; }
+  .vacation { background: rgba(34,197,94,0.14); color: #15803d; }
+  .study { background: rgba(234,179,8,0.18); color: #a16207; }
+  .outsource { background: rgba(168,85,247,0.14); color: #7e22ce; }
+  .note { color: var(--muted); font-size: 0.78rem; }
+  .actions { display: flex; gap: 0.45rem; }
+  button {
+    border: 0; border-radius: 10px; padding: 0.45rem 0.8rem; font-weight: 700;
+    font-family: inherit; cursor: default; font-size: 0.8rem;
+  }
+  .btn-p { background: var(--orange); color: #fff; }
+  .btn-g { background: #f1f5f9; color: var(--slate); }
+  .rule-list { list-style: none; margin: 0; padding: 0.5rem 0; }
+  .rule-list li {
+    padding: 0.85rem 1.1rem; border-bottom: 1px solid var(--border);
+    display: flex; gap: 0.75rem; align-items: flex-start;
+  }
+  .ico {
+    width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+    background: rgba(249,115,22,0.12); color: var(--orange); font-weight: 800; flex-shrink: 0;
+  }
+  .rule-list strong { display: block; font-size: 0.9rem; }
+  .rule-list span { color: var(--muted); font-size: 0.78rem; }
+  .banner {
+    margin-bottom: 1rem; padding: 0.9rem 1.1rem; border-radius: 14px;
+    background: linear-gradient(90deg, rgba(14,165,233,0.1), rgba(249,115,22,0.08));
+    border: 1px solid var(--border); font-size: 0.9rem; font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div>
+      <h1>סוכן AI — שיבוץ לפי בקשות וחוקים</h1>
+      <p class="sub">עובר על כל בקשות העובדים, בודק התנגשויות מול חוקי המנהל, ומציע שיבוץ שקוף לכולם</p>
+    </div>
+    <div class="badge">מודל: <em>GPT Scheduling Agent</em> · אצווה #482</div>
+  </div>
+  <div class="banner">
+    נסרקו 38 בקשות לשבועיים הקרובים · 35 שובצו אוטומטית · 3 חריגים ממתינים לאישור מנהל
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-hd">
+        <h2>הצעת שיבוץ (שקוף לצוות)</h2>
+        <span class="pill ok">מוכן לפרסום</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>עובד</th><th>תאריך</th><th>בקשה</th><th>המלצת AI</th><th>הערה</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>נועה לוי</td><td>25.08</td>
+            <td><span class="status study">לימודים</span></td>
+            <td><span class="status study">לימודים</span></td>
+            <td class="note">תואם חוק — עד יום לימודים אחד בשבוע</td>
+          </tr>
+          <tr>
+            <td>יואב כהן</td><td>20–24.08</td>
+            <td><span class="status outsource">מיקור חוץ</span></td>
+            <td><span class="status outsource">מיקור חוץ</span></td>
+            <td class="note">כיסוי משרד נשמר (≥60%)</td>
+          </tr>
+          <tr>
+            <td>מיכל אברהם</td><td>27–28.08</td>
+            <td><span class="status study">לימודים</span></td>
+            <td><span class="status home">בית</span></td>
+            <td class="note">חריג: חריגה ממכסת לימודים — למנהל</td>
+          </tr>
+          <tr>
+            <td>דניאל שמש</td><td>24–26.08</td>
+            <td><span class="status vacation">חופשה</span></td>
+            <td><span class="status vacation">חופשה</span></td>
+            <td class="note">אין התנגשות עם חפיפת צוות</td>
+          </tr>
+          <tr>
+            <td>שירה מזרחי</td><td>21–22.08</td>
+            <td><span class="status home">בית</span></td>
+            <td><span class="status home">בית</span></td>
+            <td class="note">עומד בחוק ימי בית לשבוע</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="padding:0.9rem 1.1rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)">
+        <span class="pill warn">3 חריגים לאישור מנהל</span>
+        <div class="actions">
+          <button class="btn-g">צפייה בחריגים</button>
+          <button class="btn-p">אשר ופרסם שיבוץ</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd">
+        <h2>חוקי מנהל שנבדקו</h2>
+        <span class="pill ai">בדיקה חיה</span>
+      </div>
+      <ul class="rule-list">
+        <li>
+          <div class="ico">1</div>
+          <div>
+            <strong>מינימום 60% נוכחות במשרד</strong>
+            <span>לכל יום עבודה במחלקה</span>
+          </div>
+        </li>
+        <li>
+          <div class="ico">2</div>
+          <div>
+            <strong>עד יום לימודים אחד לעובד בשבוע</strong>
+            <span>חריגה → תור מנהל</span>
+          </div>
+        </li>
+        <li>
+          <div class="ico">3</div>
+          <div>
+            <strong>אין חפיפת חופשות באותו תפקיד קריטי</strong>
+            <span>לפחות עובד אחד זמין</span>
+          </div>
+        </li>
+        <li>
+          <div class="ico">4</div>
+          <div>
+            <strong>מיקור חוץ מדווח מראש</strong>
+            <span>מופיע בלוח לכולם</span>
+          </div>
+        </li>
+        <li>
+          <div class="ico">5</div>
+          <div>
+            <strong>שיבוץ סופי שקוף</strong>
+            <span>כל הצוות רואה את אותו לוח</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

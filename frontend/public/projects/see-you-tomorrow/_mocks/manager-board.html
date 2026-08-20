@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>See You Tomorrow — לוח מנהל</title>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --orange: #f97316; --sky: #0ea5e9; --green: #22c55e; --violet: #8b5cf6;
+    --slate: #0f172a; --muted: #64748b; --bg: #fafaf9; --paper: #fff;
+    --border: rgba(15,23,42,0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Assistant, Heebo, system-ui, sans-serif;
+    background:
+      radial-gradient(at 0% 0%, rgba(249,115,22,0.07) 0, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(14,165,233,0.07) 0, transparent 50%),
+      var(--bg);
+    color: var(--slate); min-height: 100vh;
+  }
+  .shell { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+  .side {
+    background: #0f172a; color: #f1f5f9; padding: 1.25rem 1rem;
+    display: flex; flex-direction: column; gap: 0.35rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1.5rem; padding: 0.25rem 0.5rem; }
+  .brand img { width: 36px; height: 36px; border-radius: 10px; }
+  .brand strong { font-size: 0.95rem; line-height: 1.2; }
+  .brand span { font-size: 0.72rem; color: #94a3b8; display: block; }
+  .nav a {
+    display: block; padding: 0.55rem 0.75rem; border-radius: 10px;
+    color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 0.9rem;
+  }
+  .nav a.active, .nav a:hover { background: rgba(249,115,22,0.18); color: #fff; }
+  .main { padding: 1.25rem 1.5rem 2rem; }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+  h1 { margin: 0; font-size: 1.55rem; font-weight: 800; }
+  .sub { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.95rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.35rem 0.7rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700;
+    background: #fff; border: 1px solid var(--border);
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot.office { background: var(--sky); }
+  .dot.outsource { background: #a855f7; }
+  .dot.vacation { background: var(--green); }
+  .dot.study { background: #eab308; }
+  .dot.home { background: var(--orange); }
+  .card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(15,23,42,0.05); overflow: hidden;
+  }
+  .card-hd {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.9rem 1.1rem; border-bottom: 1px solid var(--border);
+  }
+  .card-hd h2 { margin: 0; font-size: 1.05rem; }
+  .range { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  th, td { padding: 0.55rem 0.45rem; text-align: center; border-bottom: 1px solid var(--border); }
+  th { background: #f8fafc; color: var(--muted); font-weight: 700; font-size: 0.72rem; }
+  td.name { text-align: right; font-weight: 700; padding-inline: 0.9rem; white-space: nowrap; }
+  .cell {
+    display: inline-flex; min-width: 52px; justify-content: center; padding: 0.28rem 0.4rem;
+    border-radius: 8px; font-weight: 700; font-size: 0.7rem;
+  }
+  .office { background: rgba(14,165,233,0.14); color: #0369a1; }
+  .outsource { background: rgba(168,85,247,0.14); color: #7e22ce; }
+  .vacation { background: rgba(34,197,94,0.14); color: #15803d; }
+  .study { background: rgba(234,179,8,0.18); color: #a16207; }
+  .home { background: rgba(249,115,22,0.14); color: #c2410c; }
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1rem;
+  }
+  .stat {
+    background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 0.85rem 1rem;
+  }
+  .stat b { display: block; font-size: 1.35rem; font-weight: 800; }
+  .stat span { color: var(--muted); font-size: 0.8rem; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brand">
+      <img src="../logo.png" alt="" />
+      <div>
+        <strong>See You Tomorrow</strong>
+        <span>ניהול כוח אדם</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#">לוח בקרה</a>
+      <a class="active" href="#">יומן לשבועיים</a>
+      <a href="#">בקשות עובדים</a>
+      <a href="#">תור AI</a>
+      <a href="#">חוקי שיבוץ</a>
+      <a href="#">עזרה</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div>
+        <h1>איפה כל עובד — שבועיים קדימה</h1>
+        <p class="sub">תצוגת מנהל שקופה: משרד · מיקור חוץ · חופשה · לימודים · עבודה מהבית</p>
+      </div>
+      <div class="chips">
+        <span class="chip"><i class="dot office"></i> משרד</span>
+        <span class="chip"><i class="dot outsource"></i> מיקור חוץ</span>
+        <span class="chip"><i class="dot vacation"></i> חופשה</span>
+        <span class="chip"><i class="dot study"></i> לימודים</span>
+        <span class="chip"><i class="dot home"></i> בית</span>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>42</b><span>עובדים פעילים</span></div>
+      <div class="stat"><b>18</b><span>במשרד היום</span></div>
+      <div class="stat"><b>7</b><span>מיקור חוץ</span></div>
+      <div class="stat"><b>3</b><span>חריגים למנהל</span></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">
+        <h2>מחלקת פיתוח</h2>
+        <span class="range">20.08 — 02.09.2026</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>ד׳ 20</th><th>ה׳ 21</th><th>ו׳ 22</th><th>א׳ 24</th><th>ב׳ 25</th><th>ג׳ 26</th><th>ד׳ 27</th>
+            <th>ה׳ 28</th><th>ו׳ 29</th><th>א׳ 31</th><th>ב׳ 1</th><th>ג׳ 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">נועה לוי</td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell study">לימודים</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+          </tr>
+          <tr>
+            <td class="name">יואב כהן</td>
+            <td><span class="cell outsource">מיקור</span></td>
+            <td><span class="cell outsource">מיקור</span></td>
+            <td><span class="cell outsource">מיקור</span></td>
+            <td><span class="cell outsource">מיקור</span></td>
+            <td><span class="cell outsource">מיקור</span></td>
+            <td><span class="cell vacation">חופשה</span></td>
+            <td><span class="cell vacation">חופשה</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+          </tr>
+          <tr>
+            <td class="name">מיכל אברהם</td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell study">לימודים</span></td>
+            <td><span class="cell study">לימודים</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell home">בית</span></td>
+          </tr>
+          <tr>
+            <td class="name">דניאל שמש</td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell vacation">חופשה</span></td>
+            <td><span class="cell vacation">חופשה</span></td>
+            <td><span class="cell vacation">חופשה</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell outsource">מיקור</span></td>
+            <td><span class="cell outsource">מיקור</span></td>
+            <td><span class="cell outsource">מיקור</span></td>
+            <td><span class="cell office">משרד</span></td>
+          </tr>
+          <tr>
+            <td class="name">שירה מזרחי</td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell home">בית</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell study">לימודים</span></td>
+            <td><span class="cell office">משרד</span></td>
+            <td><span class="cell office">משרד</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>T.MORE — מאגר טאלנטים</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue: #3b82f6; --blue-deep: #2d6a9f; --indigo: #6366f1; --magenta: #d946ef;
+    --text: #14122b; --muted: #64748b; --border: #e2e8f0; --bg: #faf8ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Rubik, system-ui, sans-serif; color: var(--text);
+    background:
+      radial-gradient(at 10% 0%, rgba(59,130,246,0.08) 0, transparent 45%),
+      radial-gradient(at 90% 20%, rgba(217,70,239,0.08) 0, transparent 40%),
+      var(--bg);
+  }
+  .top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.75rem; background: #fff; border-bottom: 1px solid var(--border);
+  }
+  .top img { height: 36px; width: auto; }
+  .nav { display: flex; gap: 1.25rem; font-weight: 600; font-size: 0.9rem; color: var(--muted); }
+  .nav span.active { color: var(--blue-deep); }
+  .btn {
+    background: var(--blue); color: #fff; border: 0; border-radius: 12px;
+    padding: 0.65rem 1.1rem; font-weight: 700; font-family: inherit; box-shadow: 0 8px 20px rgba(59,130,246,0.25);
+  }
+  .hero {
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 2rem;
+    max-width: 1180px; margin: 0 auto; padding: 2.25rem 1.75rem 2.5rem; align-items: center;
+  }
+  .eyebrow {
+    display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--indigo);
+    background: #eef2ff; padding: 0.35rem 0.7rem; border-radius: 999px; margin-bottom: 0.85rem;
+  }
+  h1 { margin: 0 0 0.75rem; font-size: 2.35rem; line-height: 1.15; color: var(--blue-deep); font-weight: 800; }
+  .sub { margin: 0 0 1.35rem; color: var(--muted); font-size: 1.05rem; line-height: 1.55; max-width: 34rem; }
+  .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .btn-ghost {
+    background: #fff; color: var(--blue-deep); border: 1px solid var(--border);
+    border-radius: 12px; padding: 0.65rem 1.1rem; font-weight: 700; font-family: inherit;
+  }
+  .specs { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.4rem; }
+  .chip {
+    font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 999px;
+    background: #fff; border: 1px solid var(--border); color: #2d3a6b;
+  }
+  .panel {
+    background: #fff; border: 1px solid var(--border); border-radius: 22px;
+    box-shadow: 0 12px 40px rgba(15,23,42,0.08); overflow: hidden;
+  }
+  .panel-hd {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.15rem; border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, #eff6ff, #fdf4ff);
+  }
+  .who { display: flex; gap: 0.75rem; align-items: center; }
+  .who img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .who strong { display: block; font-size: 0.95rem; }
+  .who span { color: var(--muted); font-size: 0.78rem; font-weight: 600; }
+  .body { padding: 1rem 1.15rem 1.2rem; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-bottom: 0.9rem; }
+  .stat {
+    background: #f8fafc; border: 1px solid var(--border); border-radius: 14px; padding: 0.75rem;
+  }
+  .stat b { display: block; font-size: 1.4rem; color: var(--blue); }
+  .stat span { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+  .match {
+    border-radius: 14px; padding: 0.85rem 0.95rem; background: linear-gradient(135deg, #eff6ff, #faf5ff);
+    border: 1px solid #dbeafe; font-size: 0.88rem; font-weight: 600; line-height: 1.45;
+  }
+  .match em { color: var(--magenta); font-style: normal; font-weight: 800; }
+</style>
+</head>
+<body>
+  <header class="top">
+    <img src="../tmore-logo-full.png" alt="T.MORE" />
+    <div class="nav">
+      <span>יתרונות</span>
+      <span>איך זה עובד</span>
+      <span class="active">הצטרפות</span>
+    </div>
+    <button class="btn">הצטרפו למאגר</button>
+  </header>
+  <section class="hero">
+    <div>
+      <span class="eyebrow">מאגר טאלנטים מסודר</span>
+      <h1>הפלוס של T.MORE לפרילנסרים</h1>
+      <p class="sub">
+        במקום לשלוח קורות חיים במייל או בהודעה — נרשמים למאגר, מציגים את עצמכם,
+        ומאפשרים ל־T.MORE לסנן ולהתאים לפי מקצועיות לצורך המקצועי.
+      </p>
+      <div class="actions">
+        <button class="btn">הצטרפו למאגר הפרילנסרים</button>
+        <button class="btn-ghost">איך זה עובד</button>
+      </div>
+      <div class="specs">
+        <span class="chip">הנחיית סדנאות</span>
+        <span class="chip">מפתחי למידה מאקרו</span>
+        <span class="chip">ייעוץ ארגוני</span>
+        <span class="chip">ייעוץ טכנו פדגוגי</span>
+        <span class="chip">אנימציה</span>
+        <span class="chip">עיצוב גרפי</span>
+        <span class="chip">דיבוב וקריינות</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-hd">
+        <div class="who">
+          <img src="../freelancer-avatar.jpeg" alt="" />
+          <div>
+            <strong>פרופיל פרילנסר במאגר</strong>
+            <span>מוכן לשותפויות עם T.MORE</span>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="stats">
+          <div class="stat"><b>7</b><span>תחומי התמחות במאגר</span></div>
+          <div class="stat"><b>5</b><span>שלבים לרישום מסודר</span></div>
+        </div>
+        <div class="match">
+          חיפוש והתאמה: צורך מקצועי ↔ מקצועיות הפרילנסר — <em>במקום תיבת דואר עמוסה</em>.
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

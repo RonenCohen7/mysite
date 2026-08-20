@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vacation — חופשות בחול</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1e293b; --muted: #64748b; --sea: #0e7490; --sand: #fef3c7;
+    --card: #0477f308; --bg: #f0f9ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Outfit, system-ui, sans-serif; color: var(--ink);
+    background:
+      radial-gradient(at 0% 0%, rgba(14,116,144,0.1) 0, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(251,191,36,0.12) 0, transparent 40%),
+      var(--bg);
+  }
+  .top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.85rem 1.5rem; background: rgba(255,255,255,0.92);
+    border-bottom: 1px solid rgba(14,116,144,0.12); backdrop-filter: blur(8px);
+  }
+  .brand { display: flex; align-items: center; gap: 0.65rem; font-weight: 800; color: darkslategray; }
+  .brand img { height: 40px; width: auto; }
+  .nav { display: flex; gap: 1rem; font-weight: 600; font-size: 0.9rem; color: var(--muted); }
+  .nav .on { color: var(--sea); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 1.35rem 1.5rem 2rem; }
+  h1 { margin: 0 0 0.35rem; font-size: 1.7rem; font-weight: 800; color: darkslategray; }
+  .sub { margin: 0 0 1.1rem; color: var(--muted); }
+  .toolbar { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .filter {
+    padding: 0.45rem 0.9rem; border: none; border-radius: 8px; cursor: default;
+    background: darkslategray; color: wheat; font-weight: 700; font-family: inherit; font-size: 0.85rem;
+  }
+  .filter.active { color: #fff; background: var(--sea); box-shadow: 0 4px 14px rgba(14,116,144,0.35); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.35rem; }
+  .card {
+    position: relative; overflow: hidden; border-radius: 14px; background: #fff;
+    border: 1px solid rgba(14,116,144,0.1); box-shadow: 0 8px 28px rgba(15,23,42,0.06);
+    padding-bottom: 0.85rem;
+  }
+  .img-wrap { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+  .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .dest {
+    position: absolute; inset: auto 0.75rem 0.75rem auto; background: rgba(255,255,255,0.92);
+    color: darkslategray; font-weight: 800; padding: 0.35rem 0.7rem; border-radius: 8px; font-size: 0.95rem;
+  }
+  .like {
+    position: absolute; top: 0.7rem; left: 0.7rem; background: rgba(255,255,255,0.92);
+    border-radius: 999px; padding: 0.3rem 0.55rem; font-size: 0.78rem; font-weight: 700; color: #be123c;
+  }
+  .body { padding: 0.75rem 0.9rem 0.2rem; }
+  .dates { color: var(--sea); font-weight: 700; font-size: 0.82rem; margin-bottom: 0.35rem; }
+  .desc { margin: 0; color: darkslategrey; font-size: 0.84rem; line-height: 1.4; min-height: 2.6em; }
+  .foot {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.55rem 0.9rem 0; margin-top: 0.35rem;
+  }
+  .price { font-weight: 800; font-size: 1.1rem; color: darkslategray; }
+  .price small { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
+  .cta {
+    background: darkslategray; color: wheat; border: 0; border-radius: 8px;
+    padding: 0.4rem 0.75rem; font-weight: 700; font-family: inherit; font-size: 0.8rem;
+  }
+</style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><img src="../homeLogo.png" alt="" /> Vacation Abroad</div>
+    <div class="nav"><span class="on">חופשות</span><span>מפה</span><span>המועדפים שלי</span></div>
+  </header>
+  <div class="wrap">
+    <h1>חופשות בחול — כל היעדים במקום אחד</h1>
+    <p class="sub">עיון ביעדים, סינון לפי פעילות/קרובות, שמירת מועדפים ומעבר לפרטים עם מזג אוויר ומפה</p>
+    <div class="toolbar">
+      <button class="filter active">הכל</button>
+      <button class="filter">פעילות עכשיו</button>
+      <button class="filter">קרובות</button>
+      <button class="filter">רק שאהבתי ♥</button>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="img-wrap">
+          <img src="../destinations/dest-1.jpg" alt="" />
+          <span class="like">♥ 128</span>
+          <span class="dest">סנטוריני</span>
+        </div>
+        <div class="body">
+          <div class="dates">12.09 — 19.09.2026</div>
+          <p class="desc">שקיעות באויה, כפרים לבנים וים האגאי — חופשת איים קלאסית.</p>
+        </div>
+        <div class="foot"><div class="price">₪4,890 <small>/ לאדם</small></div><button class="cta">פרטים</button></div>
+      </article>
+      <article class="card">
+        <div class="img-wrap">
+          <img src="../destinations/dest-2.jpg" alt="" />
+          <span class="like">♥ 96</span>
+          <span class="dest">טוקיו</span>
+        </div>
+        <div class="body">
+          <div class="dates">03.10 — 12.10.2026</div>
+          <p class="desc">עיר שלא נרדמת: מקדשים, רחובות ניאון ואוכל רחוב בלתי נשכח.</p>
+        </div>
+        <div class="foot"><div class="price">₪7,250 <small>/ לאדם</small></div><button class="cta">פרטים</button></div>
+      </article>
+      <article class="card">
+        <div class="img-wrap">
+          <img src="../destinations/dest-3.jpg" alt="" />
+          <span class="like">♥ 74</span>
+          <span class="dest">מאלדיביים</span>
+        </div>
+        <div class="body">
+          <div class="dates">20.11 — 27.11.2026</div>
+          <p class="desc">מערכות אקולוגיות תת־ימיות, וילות על המים ושלווה מוחלטת.</p>
+        </div>
+        <div class="foot"><div class="price">₪9,980 <small>/ לאדם</small></div><button class="cta">פרטים</button></div>
+      </article>
+      <article class="card">
+        <div class="img-wrap">
+          <img src="../destinations/dest-4.jpg" alt="" />
+          <span class="like">♥ 151</span>
+          <span class="dest">פריז</span>
+        </div>
+        <div class="body">
+          <div class="dates">05.08 — 10.08.2026</div>
+          <p class="desc">מוזיאונים, קפה ליד הסיין וסיורי אוכל ברובעים הנסתרים.</p>
+        </div>
+        <div class="foot"><div class="price">₪3,640 <small>/ לאדם</small></div><button class="cta">פרטים</button></div>
+      </article>
+      <article class="card">
+        <div class="img-wrap">
+          <img src="../destinations/dest-5.jpg" alt="" />
+          <span class="like">♥ 63</span>
+          <span class="dest">איסלנד</span>
+        </div>
+        <div class="body">
+          <div class="dates">15.09 — 22.09.2026</div>
+          <p class="desc">מפלים, גייזרים והזוהר הצפוני — טיול טבע בלתי רגיל.</p>
+        </div>
+        <div class="foot"><div class="price">₪6,120 <small>/ לאדם</small></div><button class="cta">פרטים</button></div>
+      </article>
+      <article class="card">
+        <div class="img-wrap">
+          <img src="../destinations/dest-6.jpg" alt="" />
+          <span class="like">♥ 88</span>
+          <span class="dest">באלי</span>
+        </div>
+        <div class="body">
+          <div class="dates">01.12 — 10.12.2026</div>
+          <p class="desc">אורז מדורג, מקדשים בג׳ונגל וחופים לגלישה בשקיעה.</p>
+        </div>
+        <div class="foot"><div class="price">₪5,430 <small>/ לאדם</small></div><button class="cta">פרטים</button></div>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

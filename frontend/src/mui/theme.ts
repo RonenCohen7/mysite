@@ -3,10 +3,11 @@ import { createTheme } from "@mui/material/styles";
 export const muiTheme = createTheme({
   palette: {
     mode: "light",
-    primary: { main: "#0d9488", light: "#14b8a6", dark: "#0f766e" },
+    primary: { main: "#7c3aed", light: "#a78bfa", dark: "#6d28d9" },
     secondary: { main: "#f97316", light: "#fb923c", dark: "#ea580c" },
-    background: { default: "#ffffff", paper: "rgba(255,255,255,0.85)" },
-    text: { primary: "#0f172a", secondary: "#64748b" },
+    info: { main: "#06b6d4" },
+    background: { default: "#faf8ff", paper: "rgba(255,255,255,0.9)" },
+    text: { primary: "#1e1b4b", secondary: "#64748b" },
   },
   typography: {
     fontFamily: '"Inter", system-ui, sans-serif',
@@ -19,14 +20,14 @@ export const muiTheme = createTheme({
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          backgroundColor: "#0f172a",
+          backgroundColor: "#1e1b4b",
           fontSize: "0.75rem",
           fontWeight: 500,
           borderRadius: "0.5rem",
           padding: "6px 12px",
-          boxShadow: "0 4px 16px rgba(15,23,42,0.2)",
+          boxShadow: "0 4px 16px rgba(30,27,75,0.22)",
         },
-        arrow: { color: "#0f172a" },
+        arrow: { color: "#1e1b4b" },
       },
     },
     MuiPaper: {

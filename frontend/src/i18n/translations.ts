@@ -4,7 +4,7 @@ export const translations = {
   en: {
     site: {
       name: "Ronen Cohen",
-      title: "Full Stack Developer | AI Automation Architect",
+      title: "Custom Systems for Small Businesses | Full Stack & AI",
     },
     nav: {
       home: "Home",
@@ -16,25 +16,92 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      line1: "Intelligent Systems",
-      line2: "Business Automation",
-      line3: "Connected Everything",
+      line1: "Less Manual Work",
+      line2: "More Time to Grow",
+      line3: "Systems That Talk",
+      headline: "Custom systems for small businesses",
       subtitle:
-        "Full Stack Development, AI Automation, API Integrations and Digital Transformation.",
+        "I design and build tailored web systems and automations around your real workflow — so the business runs with less friction, fewer errors, and hours saved every week.",
       subtitleLine2: "Stop working for the business. Let the business work for you.",
       subtitleLine3:
-        "If you're still updating spreadsheets, copying data between systems, or doing repetitive tasks manually — it's time for automation.",
+        "From inventory and VIP clubs to tickets and integrations — if it repeats every day, we turn it into a system.",
       ctaCall: "Schedule a Call",
-      ctaProjects: "View Projects",
+      ctaProjects: "See Real Projects",
       scroll: "Scroll",
     },
     sections: {
-      services: { label: "Services", subtitle: "AI automation — turning manual processes into automated ones and connecting all your business systems, so day-to-day operations run on their own, without errors and without wasted time." },
-      portfolio: { subtitle: "Real-world solutions delivering measurable business impact." },
+      services: {
+        label: "Services & automations",
+        subtitle:
+          "Web scraping, AI workflows, integrations, and databases — practical capabilities with demo videos.",
+      },
+      portfolio: {
+        label: "What I build",
+        subtitle: "Real projects for small businesses — the requirement, what we built, and the result.",
+      },
       techStack: { label: "Tech Stack", subtitle: "Industry-leading tools and platforms for system development, AI-driven automation, and business integrations." },
       process: { label: "Process", subtitle: "A proven methodology delivering results from discovery to deployment." },
       testimonials: { label: "Collaboration with" },
       contact: { label: "Let's talk", subtitle: "" },
+    },
+    valueNeeds: {
+      label: "[ When you need a custom system ]",
+      title: "The need behind every build",
+      subtitle:
+        "I don't start from features — I start from the operational pain. Here's when a tailored system creates real value.",
+      items: [
+        {
+          title: "Too much manual work",
+          need: "Your team lives in spreadsheets, WhatsApp, and copy-paste between tools.",
+          value: "Value: reclaim hours every week and cut avoidable mistakes.",
+        },
+        {
+          title: "Systems that don't talk",
+          need: "Stock, customers, sales, and events sit in separate places with no single source of truth.",
+          value: "Value: one connected flow — data moves once, everywhere stays updated.",
+        },
+        {
+          title: "Off-the-shelf isn't enough",
+          need: "Generic software forces your business into someone else's process (VIP clubs, tickets, special workflows).",
+          value: "Value: a system shaped around how you actually operate.",
+        },
+        {
+          title: "Growth without more headcount",
+          need: "Demand grows, but hiring for repetitive ops isn't sustainable.",
+          value: "Value: scale operations with automation instead of extra manual load.",
+        },
+      ],
+    },
+    whyCustom: {
+      label: "[ Why custom ]",
+      title: "Time saved. Clear business value.",
+      subtitle: "Every custom system I build is measured by what it removes from the team — and what it unlocks for the business.",
+      items: [
+        {
+          step: "01",
+          title: "Hours back every week",
+          description:
+            "We map the repetitive tasks first, then automate or digitize them so staff focus on customers — not admin.",
+        },
+        {
+          step: "02",
+          title: "Built around your workflow",
+          description:
+            "Discovery → architecture → build. The product follows your real process, roles, and edge cases — not a template.",
+        },
+        {
+          step: "03",
+          title: "Integrations from day one",
+          description:
+            "APIs, databases, WhatsApp, calendars, payments — connected in the architecture so nothing becomes a fragile afterthought.",
+        },
+        {
+          step: "04",
+          title: "Value you can explain",
+          description:
+            "Fewer errors, faster response, better control of stock/customers/sales — outcomes owners can feel in daily operations.",
+        },
+      ],
     },
     techTooltips: {
       react: "React — JavaScript library for building fast, interactive user interfaces.",
@@ -59,11 +126,11 @@ export const translations = {
     services: [
       {
         icon: "Bot",
-        category: "Automations",
-        title: "AI Business Automation",
-        description: "AI-powered technological automation for businesses that saves countless work hours and optimizes office productivity.",
-        highlights: ["Automate repetitive office workflows", "Reduce manual errors and bottlenecks", "Connect AI to your existing tools", "Scale operations without adding headcount"],
-        tags: ["AI Powered", "Operational Efficiency"],
+        category: "Custom Systems",
+        title: "Tailored Business Systems",
+        description: "Custom web systems built around your process — not generic software — so operations run faster, with less manual work and clearer control.",
+        highlights: ["Map the real need before writing code", "Digitize repetitive office workflows", "Save hours every week for the team", "Grow without adding headcount for admin"],
+        tags: ["Custom Build", "Time Saved"],
       },
       {
         icon: "Workflow",
@@ -141,7 +208,16 @@ export const translations = {
       title: "This page does not exist",
       backHome: "Back to Home",
     },
-    portfolio: { loading: "Loading projects...", demo: "Live Demo", github: "View on GitHub" },
+    portfolio: {
+      loading: "Loading projects...",
+      empty: "Case studies coming soon.",
+      demo: "Live Demo",
+      github: "View on GitHub",
+      challenge: "The need",
+      solution: "What I built",
+      outcome: "The result",
+      screenshot: "Screenshot",
+    },
     servicesShowcase: {
       videoSoon: "Demo video coming soon",
       carouselLabel: "Service cards",
@@ -152,7 +228,7 @@ export const translations = {
   he: {
     site: {
       name: "רונן כהן",
-      title: "מפתח Full Stack | ארכיטקט AI Automation",
+      title: "מערכות בהתאמה אישית לעסקים קטנים | Full Stack ו-AI",
     },
     nav: {
       home: "בית",
@@ -164,24 +240,92 @@ export const translations = {
       contact: "צור קשר",
     },
     hero: {
-      line1: "מערכות חכמות",
-      line2: "אוטומציה עסקית",
-      line3: "חיבור מלא",
-      subtitle: "פיתוח Full Stack, אוטומציה עם AI, אינטגרציות API וטרנספורמציה דיגיטלית.",
+      line1: "פחות עבודה ידנית",
+      line2: "יותר זמן לצמוח",
+      line3: "מערכות שמחוברות",
+      headline: "מערכות בהתאמה אישית לעסקים קטנים",
+      subtitle:
+        "אני מתכנן ובונה מערכות ווב ואוטומציות סביב תהליך העבודה האמיתי שלכם — פחות חיכוך, פחות טעויות, וחיסכון של שעות בכל שבוע.",
       subtitleLine2: "תפסיקו לעבוד בשביל העסק. תנו לעסק לעבוד בשבילכם.",
       subtitleLine3:
-        "אם אתם עדיין מעדכנים אקסלים, מעתיקים מידע בין מערכות או מבצעים משימות חוזרות באופן ידני – הגיע הזמן לאוטומציה.",
+        "ממלאי ומועדון VIP ועד כרטיסים לאירועים ואינטגרציות — אם זה חוזר כל יום, הופכים את זה למערכת.",
       ctaCall: "קביעת שיחה",
-      ctaProjects: "צפייה בפרויקטים",
+      ctaProjects: "פרויקטים אמיתיים",
       scroll: "גלילה",
     },
     sections: {
-      services: { label: "שירותים", subtitle: "אוטומציה עם AI , הופכים תהליכים ידניים לאוטומטים ומחברים בין כל המערכות בעסק, כך שהפעיליות השוטפות מתבצעות לבד- בלי טעויות ובלי בזבוז זמן" },
-      portfolio: { subtitle: "פתרונות מהעולם האמיתי עם השפעה עסקית מדידה." },
+      services: {
+        label: "שירותים ואוטומציות",
+        subtitle:
+          "Scraping, תהליכי AI, אינטגרציות ומסדי נתונים — יכולות פרקטיות עם סרטוני הדגמה.",
+      },
+      portfolio: {
+        label: "מה אני בונה",
+        subtitle: "פרויקטים אמיתיים לעסקים קטנים — הדרישה, מה נבנה, והתוצאה.",
+      },
       techStack: { label: "טכנולוגיות", subtitle: "כלים ופלטפורמות מובילות לפיתוח מערכות, אוטומציה מבוססת AI ואינטגרציות עסקיות." },
       process: { label: "תהליך", subtitle: "מתודולוגיה מוכחת שמספקת תוצאות מגילוי ועד פריסה." },
       testimonials: { label: "שיתוף פעולה עם" },
       contact: { label: "בואו נדבר", subtitle: "" },
+    },
+    valueNeeds: {
+      label: "[ מתי צריך מערכת בהתאמה אישית ]",
+      title: "הצורך מאחורי כל פיתוח",
+      subtitle:
+        "אני לא מתחיל מפיצ'רים — אני מתחיל מכאב תפעולי. אלה הרגעים שבהם מערכת מותאמת מייצרת ערך אמיתי.",
+      items: [
+        {
+          title: "יותר מדי עבודה ידנית",
+          need: "הצוות חי באקסלים, ב-WhatsApp, ובהעתקות בין כלים.",
+          value: "הערך: מחזירים שעות בכל שבוע ומקטנים טעויות מיותרות.",
+        },
+        {
+          title: "מערכות שלא מדברות",
+          need: "מלאי, לקוחות, מכירות ואירועים יושבים במקומות נפרדים בלי מקור אמת אחד.",
+          value: "הערך: זרימה מחוברת אחת — הנתונים זזים פעם אחת, והכול מתעדכן.",
+        },
+        {
+          title: "תוכנה מדף לא מספיקה",
+          need: "כלים גנריים כופים תהליך של מישהו אחר (מועדון VIP, כרטיסים, תהליכים מיוחדים).",
+          value: "הערך: מערכת שמעוצבת לפי איך שהעסק באמת עובד.",
+        },
+        {
+          title: "צמיחה בלי להגדיל כוח אדם",
+          need: "הביקוש עולה, אבל גיוס רק לתפעול חוזר לא משתלם.",
+          value: "הערך: מרחיבים תפעול עם אוטומציה במקום עוד עומס ידני.",
+        },
+      ],
+    },
+    whyCustom: {
+      label: "[ למה בהתאמה אישית ]",
+      title: "חיסכון זמן. ערך עסקי ברור.",
+      subtitle: "כל מערכת שאני בונה נמדדת במה שהיא מורידה מהצוות — ובמה שהיא פותחת לעסק.",
+      items: [
+        {
+          step: "01",
+          title: "שעות חוזרות לצוות",
+          description:
+            "קודם ממפים את המשימות החוזרות, ואז הופכים אותן לאוטומטיות או דיגיטליות — כדי שהצוות יתמקד בלקוחות ולא באדמין.",
+        },
+        {
+          step: "02",
+          title: "בנויה סביב התהליך שלכם",
+          description:
+            "גילוי → ארכיטקטורה → פיתוח. המוצר הולך אחרי התהליך, התפקידים והמקרים החריגים שלכם — לא אחרי תבנית.",
+        },
+        {
+          step: "03",
+          title: "אינטגרציות מהיום הראשון",
+          description:
+            "API, מסדי נתונים, WhatsApp, יומנים, תשלומים — מחוברים בארכיטקטורה, לא כטלאי שברירי בסוף.",
+        },
+        {
+          step: "04",
+          title: "ערך שאפשר להסביר",
+          description:
+            "פחות טעויות, תגובה מהירה יותר, שליטה טובה יותר במלאי/לקוחות/מכירות — תוצאות שבעל העסק מרגיש בתפעול היומיומי.",
+        },
+      ],
     },
     techTooltips: {
       react: "React — ספריית JavaScript לבניית ממשקי משתמש אינטראקטיביים.",
@@ -206,11 +350,11 @@ export const translations = {
     services: [
       {
         icon: "Bot",
-        category: "אוטומציה",
-        title: "אוטומציה טכנולוגית עם AI",
-        description: "שירותי אוטומציה טכנולוגית מבוססת AI לעסקים אשר חוסכים שעות עבודה רבות ומייעלים את תפוקות המשרד.",
-        highlights: ["אוטומציה של תהליכי משרד חוזרים", "הפחתת טעויות וצווארי בקבוק", "חיבור AI לכלים הקיימים בארגון", "צמיחה בלי הגדלת כוח אדם"],
-        tags: ["מבוסס AI", "יעילות תפעולית"],
+        category: "מערכות מותאמות",
+        title: "מערכות עסקיות בהתאמה אישית",
+        description: "מערכות ווב שנבנות סביב התהליך שלכם — לא תוכנה גנרית — כדי שהתפעול ירוץ מהר יותר, עם פחות עבודה ידנית ושליטה ברורה יותר.",
+        highlights: ["ממפים את הצורך האמיתי לפני כתיבת קוד", "מדיגיטלים תהליכי משרד חוזרים", "חוסכים שעות בכל שבוע לצוות", "צומחים בלי להגדיל כוח אדם לאדמין"],
+        tags: ["פיתוח מותאם", "חיסכון זמן"],
       },
       {
         icon: "Workflow",
@@ -276,9 +420,9 @@ export const translations = {
     about: {
       label: "אודות",
       backHome: "חזרה לדף הבית",
-      experience: "מעל 15 שנות ניסיון",
+      experience: " שנים רבות בעולם המידע והפיתוח ",
       bio: [
-        "שמי רונן כהן — מפתח Full Stack וארכיטקט AI Automation עם מעל 15 שנות ניסיון.",
+        "שמי רונן כהן — מפתח Full Stack וארכיטקט AI Automation עם המון ניסיון.",
         "אני בונה מערכות חכמות המייעלות עסקים בהכנסת אוטומציה וסוכני AI ייעודיים לצרכי המשרד.",
         "אני מתמחה בפיתוח SaaS ייעודי, אינטגרציות API, scraping ואוטומציה מבוססת AI שחוסכת לצוותים שעות רבות ומייצרת ROI מדיד.",
         "ליווי עסקי מאיפיון הצורך והבנת תהליכי העבודה ועד למציאת הפתרון המתאים ביותר עבור הלקוח, באמצעות יצירת פתרונות סקיילביליים עם כלים מודרניים כמו React, TypeScript, Node.js, Python, n8n, Claude, Cursor, GPT, DeepSeek ועוד.",
@@ -288,7 +432,16 @@ export const translations = {
       title: "דף זה לא קיים",
       backHome: "חזרה לדף הבית",
     },
-    portfolio: { loading: "טוען פרויקטים...", demo: "דמו חי", github: "GitHub" },
+    portfolio: {
+      loading: "טוען פרויקטים...",
+      empty: "תיקי עבודה בקרוב.",
+      demo: "דמו חי",
+      github: "GitHub",
+      challenge: "הצורך",
+      solution: "מה בניתי",
+      outcome: "התוצאה",
+      screenshot: "צילום מסך",
+    },
     servicesShowcase: {
       videoSoon: "סרטון דוגמה בקרוב",
       carouselLabel: "כרטיסיות שירות",
@@ -302,6 +455,7 @@ export type TranslationKeys = typeof translations.en;
 
 export const navIds = [
   { id: "home", key: "home" as const },
+  { id: "portfolio", key: "portfolio" as const },
   { id: "services", key: "services" as const },
   { id: "tech-stack", key: "techStack" as const },
   { id: "contact", key: "contact" as const },

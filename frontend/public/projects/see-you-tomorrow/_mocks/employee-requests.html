@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>See You Tomorrow — בקשות עובד</title>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --orange: #f97316; --sky: #0ea5e9; --slate: #0f172a; --muted: #64748b;
+    --bg: #fafaf9; --border: rgba(15,23,42,0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Assistant, system-ui, sans-serif; color: var(--slate);
+    background:
+      radial-gradient(at 0% 0%, rgba(249,115,22,0.07) 0, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(14,165,233,0.07) 0, transparent 50%),
+      var(--bg);
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 1.5rem; }
+  h1 { margin: 0; font-size: 1.45rem; font-weight: 800; }
+  .sub { margin: 0.35rem 0 1.2rem; color: var(--muted); }
+  .card {
+    background: #fff; border: 1px solid var(--border); border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(15,23,42,0.05); padding: 1.15rem 1.25rem; margin-bottom: 1rem;
+  }
+  .card h2 { margin: 0 0 0.85rem; font-size: 1.05rem; }
+  .week { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.65rem; }
+  .day {
+    border: 1px solid var(--border); border-radius: 12px; padding: 0.7rem;
+    background: #f8fafc;
+  }
+  .day b { display: block; font-size: 0.82rem; margin-bottom: 0.45rem; }
+  select, textarea {
+    width: 100%; border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.45rem 0.55rem; font-family: inherit; font-size: 0.82rem; background: #fff;
+  }
+  textarea { min-height: 88px; resize: none; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+  .field label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--muted); margin-bottom: 0.3rem; }
+  .footer {
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 0.5rem;
+  }
+  .hint { color: var(--muted); font-size: 0.82rem; font-weight: 600; max-width: 28rem; }
+  button {
+    border: 0; border-radius: 12px; padding: 0.7rem 1.15rem; font-weight: 800;
+    font-family: inherit; background: var(--orange); color: #fff; font-size: 0.9rem;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+  .chip {
+    font-size: 0.72rem; font-weight: 700; padding: 0.28rem 0.55rem; border-radius: 999px;
+    background: rgba(14,165,233,0.1); color: #0369a1;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>הגשת בקשות שיבוץ מראש</h1>
+  <p class="sub">סמנו לכל יום: משרד · בית · מיקור חוץ · חופשה · לימודים — הסוכן יבדוק מול חוקי המנהל</p>
+  <div class="card">
+    <h2>שבוע 24–28.08.2026</h2>
+    <div class="week">
+      <div class="day"><b>א׳ 24</b><select><option>משרד</option><option selected>מיקור חוץ</option><option>בית</option><option>חופשה</option><option>לימודים</option></select></div>
+      <div class="day"><b>ב׳ 25</b><select><option>משרד</option><option>מיקור חוץ</option><option>בית</option><option>חופשה</option><option selected>לימודים</option></select></div>
+      <div class="day"><b>ג׳ 26</b><select><option selected>משרד</option><option>מיקור חוץ</option><option>בית</option><option>חופשה</option><option>לימודים</option></select></div>
+      <div class="day"><b>ד׳ 27</b><select><option>משרד</option><option>מיקור חוץ</option><option selected>בית</option><option>חופשה</option><option>לימודים</option></select></div>
+      <div class="day"><b>ה׳ 28</b><select><option selected>משרד</option><option>מיקור חוץ</option><option>בית</option><option>חופשה</option><option>לימודים</option></select></div>
+    </div>
+    <div class="chips">
+      <span class="chip">נשמר טיוטה</span>
+      <span class="chip">יישלח לסוכן AI ביום ה׳ 16:00</span>
+    </div>
+  </div>
+  <div class="card">
+    <h2>פירוט לבקשה</h2>
+    <div class="row">
+      <div class="field">
+        <label>סיבת מיקור חוץ (24.08)</label>
+        <select><option>פרויקט לקוח חיצוני</option><option>אתר ספק</option></select>
+      </div>
+      <div class="field">
+        <label>קורס / לימודים (25.08)</label>
+        <select><option>קורס ענן מתקדם</option><option>הכשרה פנימית</option></select>
+      </div>
+    </div>
+    <div class="field" style="margin-top:0.85rem">
+      <label>הערה למנהל (אופציונלי)</label>
+      <textarea>ביום שני אהיה אצל הלקוח בת״א. ביום שלישי קורס בוקר — אשמח ליום לימודים.</textarea>
+    </div>
+    <div class="footer">
+      <p class="hint">אחרי שליחה הסוכן בודק שאין סתירה לחוקים. חריגים עוברים לאישור סופי של המנהל — השיבוץ שקוף לכולם.</p>
+      <button>שלח בקשות לשבוע</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LowProject — ניהול איסוף פסקי דין</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0f1419; --surface: #1a2332; --border: #2d3a4d; --text: #e7ecf3;
+    --muted: #8b9cb3; --accent: #3b82f6; --success: #22c55e; --warn: #f59e0b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Rubik, system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 1.1rem 1.35rem 1.75rem; }
+  .hd { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+  h1 { margin: 0; font-size: 1.35rem; font-weight: 800; }
+  .sub { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.9rem; max-width: 36rem; }
+  .pill {
+    background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.45);
+    color: #93c5fd; font-weight: 700; font-size: 0.78rem; padding: 0.4rem 0.75rem; border-radius: 8px;
+  }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.65rem; margin-bottom: 1rem; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 0.85rem 1rem;
+  }
+  .stat b { display: block; font-size: 1.35rem; font-weight: 800; color: #93c5fd; }
+  .stat span { color: var(--muted); font-size: 0.78rem; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0.85rem; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+  }
+  .card-hd {
+    padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .card-hd h2 { margin: 0; font-size: 0.95rem; }
+  .live { color: var(--success); font-size: 0.72rem; font-weight: 800; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  th, td { padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--border); text-align: right; }
+  th { color: var(--muted); font-size: 0.72rem; background: rgba(0,0,0,0.2); }
+  .ok { color: var(--success); font-weight: 700; }
+  .run { color: var(--accent); font-weight: 700; }
+  .flow { list-style: none; margin: 0; padding: 0.4rem 0; }
+  .flow li {
+    display: flex; gap: 0.7rem; padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); align-items: flex-start;
+  }
+  .n {
+    width: 28px; height: 28px; border-radius: 8px; background: rgba(59,130,246,0.2); color: #93c5fd;
+    display: grid; place-items: center; font-weight: 800; font-size: 0.75rem; flex-shrink: 0;
+  }
+  .flow strong { display: block; font-size: 0.88rem; }
+  .flow span { color: var(--muted); font-size: 0.75rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div>
+      <h1>LowProject — איסוף פסקי דין מבתי המשפט</h1>
+      <p class="sub">סוכנים אוספים מטא־דאטה ומסמכים מ־court.gov.il, ממירים ל־JSON ומעלים ל־MongoDB — בסיס ל־RAG ולחיפוש משפטי.</p>
+    </div>
+    <span class="pill">מצב רציף · סוכנים פעילים</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>12,480</b><span>תיקים שנאספו</span></div>
+    <div class="stat"><b>38.2K</b><span>מסמכי פסקי דין</span></div>
+    <div class="stat"><b>9</b><span>סוכני רקע</span></div>
+    <div class="stat"><b>RAG</b><span>אינדקס מוכן לחיפוש</span></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-hd"><h2>סוכני איסוף</h2><span class="live">● חי</span></div>
+      <table>
+        <thead><tr><th>סוכן</th><th>תפקיד</th><th>סטטוס</th></tr></thead>
+        <tbody>
+          <tr><td>Orchestrator</td><td>תיאום מקביליות</td><td class="ok">פעיל</td></tr>
+          <tr><td>Metadata</td><td>רשימות תיקים יומיות</td><td class="run">רץ</td></tr>
+          <tr><td>Case Download</td><td>הורדת פסקי דין</td><td class="run">רץ</td></tr>
+          <tr><td>Completion</td><td>המרה → MongoDB</td><td class="ok">פעיל</td></tr>
+          <tr><td>Supervisor</td><td>ניטור ושחזור כשלים</td><td class="ok">פעיל</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-hd"><h2>צינור העבודה</h2><span class="live">court.gov.il</span></div>
+      <ul class="flow">
+        <li><div class="n">1</div><div><strong>Scraping מטא־דאטה</strong><span>CSV יומי של תיקים</span></div></li>
+        <li><div class="n">2</div><div><strong>הורדת מסמכים</strong><span>Word / PDF / ZIP לתיק</span></div></li>
+        <li><div class="n">3</div><div><strong>המרה ל־JSON</strong><span>טקסט מובנה + מטא־דאטה</span></div></li>
+        <li><div class="n">4</div><div><strong>MongoDB + RAG</strong><span>אינדקס לחיפוש פסקי דין רלוונטיים</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

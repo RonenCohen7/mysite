@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LowProject — חיפוש RAG בפסקי דין</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0f1419; --surface: #1a2332; --border: #2d3a4d; --text: #e7ecf3;
+    --muted: #8b9cb3; --accent: #3b82f6; --success: #22c55e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Rubik, system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 1.25rem 1.4rem 2rem; }
+  h1 { margin: 0 0 0.35rem; font-size: 1.4rem; font-weight: 800; }
+  .sub { margin: 0 0 1.15rem; color: var(--muted); font-size: 0.92rem; max-width: 40rem; }
+  .search {
+    display: grid; grid-template-columns: 1fr auto; gap: 0.55rem; margin-bottom: 0.75rem;
+  }
+  input {
+    width: 100%; padding: 0.85rem 1rem; border-radius: 12px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text); font: inherit; font-size: 0.95rem;
+  }
+  button {
+    border: 0; border-radius: 12px; padding: 0.85rem 1.2rem; background: var(--accent);
+    color: #fff; font-weight: 800; font-family: inherit; white-space: nowrap;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.1rem; }
+  .chip {
+    font-size: 0.72rem; font-weight: 700; padding: 0.3rem 0.6rem; border-radius: 999px;
+    background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.35); color: #93c5fd;
+  }
+  .meta {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;
+    color: var(--muted); font-size: 0.82rem; font-weight: 600;
+  }
+  .meta em { color: var(--success); font-style: normal; }
+  .result {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 1rem 1.1rem; margin-bottom: 0.7rem;
+  }
+  .result-hd { display: flex; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.45rem; }
+  .result h2 { margin: 0; font-size: 1rem; font-weight: 800; }
+  .score {
+    background: rgba(34,197,94,0.15); color: #86efac; font-weight: 800; font-size: 0.75rem;
+    padding: 0.25rem 0.55rem; border-radius: 8px; height: fit-content;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.55rem; }
+  .tag {
+    font-size: 0.7rem; font-weight: 700; color: var(--muted); background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); padding: 0.2rem 0.45rem; border-radius: 6px;
+  }
+  .snip { margin: 0; color: #cbd5e1; font-size: 0.86rem; line-height: 1.5; }
+  .snip mark { background: rgba(59,130,246,0.35); color: #fff; padding: 0 0.15rem; border-radius: 3px; }
+  .agent {
+    margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 12px;
+    background: linear-gradient(90deg, rgba(59,130,246,0.15), rgba(34,197,94,0.08));
+    border: 1px solid rgba(59,130,246,0.35); font-size: 0.86rem; font-weight: 600; line-height: 1.45;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>סוכן חיפוש — פסקי דין רלוונטיים (RAG)</h1>
+  <p class="sub">עורך הדין מחפש מידע משפטי לייצוג לקוחות — במקום מאגרים יקרים ומורכבים, החיפוש רץ על מאגר שנאסף ב־scraping ונבנה כ־RAG.</p>
+  <div class="search">
+    <input value="רשלנות רפואית · נזקי גוף · אחריות בית חולים" readonly />
+    <button>מצא פסקי דין</button>
+  </div>
+  <div class="chips">
+    <span class="chip">RAG על טקסט פסקי דין</span>
+    <span class="chip">התאמה לשאילתה</span>
+    <span class="chip">הצגת קטעים רלוונטיים</span>
+  </div>
+  <div class="meta">
+    <span>נמצאו <em>3 פסקי דין רלוונטיים</em> מתוך מאגר מקומי</span>
+    <span>סוכן RAG · דירוג לפי דמיון סמנטי</span>
+  </div>
+
+  <article class="result">
+    <div class="result-hd">
+      <h2>ע״א 1234/19 · פלוני נ׳ בית חולים…</h2>
+      <span class="score">רלוונטיות 94%</span>
+    </div>
+    <div class="tags">
+      <span class="tag">רשלנות רפואית</span>
+      <span class="tag">נזקי גוף</span>
+      <span class="tag">בית משפט עליון</span>
+    </div>
+    <p class="snip">«…נקבע כי <mark>חובת הזהירות של המוסד הרפואי</mark> כוללת גם פיקוח על נהלים פנימיים, וכי הפרתה עשויה להקים אחריות בנזיקין…»</p>
+  </article>
+
+  <article class="result">
+    <div class="result-hd">
+      <h2>ת״א 7788/21 · אלמוני נ׳ קופת חולים…</h2>
+      <span class="score">רלוונטיות 88%</span>
+    </div>
+    <div class="tags">
+      <span class="tag">רשלנות רפואית</span>
+      <span class="tag">אבחון מאוחר</span>
+      <span class="tag">מחוזי</span>
+    </div>
+    <p class="snip">«…המבחן הוא אם <mark>רופא סביר באותן נסיבות</mark> היה נוהג אחרת — והראיות מצביעות על סטייה מהסטנדרט המקובל…»</p>
+  </article>
+
+  <article class="result">
+    <div class="result-hd">
+      <h2>ע״א 4501/18 · פלונית נ׳ מדינת ישראל…</h2>
+      <span class="score">רלוונטיות 81%</span>
+    </div>
+    <div class="tags">
+      <span class="tag">אחריות רשויות</span>
+      <span class="tag">נזיקין</span>
+    </div>
+    <p class="snip">«…בהתייחס ל־<mark>קשר הסיבתי בין המחדל לנזק</mark>, נקבע כי יש לבחון את שרשרת האירועים לאור חוות דעת מומחים…»</p>
+  </article>
+
+  <div class="agent">
+    הסוכן מאתר פסקי דין לפי השאילתה, שולף קטעים מה־RAG, ומציג לעורך הדין את המידע הרלוונטי — בלי לשלם על גישה מורכבת ויקרה לכל חיפוש.
+  </div>
+</div>
+</body>
+</html>

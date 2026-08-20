@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>T.MORE — רישום פרילנסר</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue: #3b82f6; --blue-deep: #2d6a9f; --indigo: #6366f1; --magenta: #d946ef;
+    --text: #14122b; --muted: #64748b; --border: #e2e8f0; --bg: #faf8ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Rubik, system-ui, sans-serif; color: var(--text);
+    background:
+      radial-gradient(at 0% 0%, rgba(59,130,246,0.08) 0, transparent 45%),
+      radial-gradient(at 100% 100%, rgba(217,70,239,0.08) 0, transparent 40%),
+      var(--bg);
+    min-height: 100vh; display: grid; place-items: center; padding: 1.5rem;
+  }
+  .card {
+    width: 100%; max-width: 520px; background: #fff; border: 1px solid var(--border);
+    border-radius: 22px; box-shadow: 0 16px 48px rgba(15,23,42,0.08); overflow: hidden;
+  }
+  .top {
+    padding: 1.1rem 1.25rem 0.85rem; text-align: center;
+    background: linear-gradient(180deg, #eff6ff, #fff);
+    border-bottom: 1px solid var(--border);
+  }
+  .top img { height: 34px; margin-bottom: 0.65rem; }
+  .warm { margin: 0; color: var(--muted); font-size: 0.88rem; font-weight: 600; line-height: 1.45; }
+  .progress {
+    display: flex; gap: 0.35rem; padding: 0.9rem 1.25rem 0; justify-content: center;
+  }
+  .dot {
+    height: 6px; flex: 1; max-width: 56px; border-radius: 999px; background: #e2e8f0;
+  }
+  .dot.on { background: linear-gradient(90deg, var(--blue), var(--magenta)); }
+  .body { padding: 1.15rem 1.35rem 1.35rem; }
+  h1 { margin: 0 0 0.35rem; font-size: 1.25rem; color: var(--blue-deep); font-weight: 800; }
+  .hint { margin: 0 0 1rem; color: var(--muted); font-size: 0.85rem; }
+  label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.35rem; }
+  select, input {
+    width: 100%; padding: 0.7rem 0.85rem; border-radius: 12px; border: 1px solid var(--border);
+    font: inherit; margin-bottom: 0.85rem; background: #f8fafc;
+  }
+  .opts { display: grid; gap: 0.45rem; margin-bottom: 1rem; }
+  .opt {
+    border: 1px solid var(--border); border-radius: 12px; padding: 0.7rem 0.85rem;
+    font-weight: 700; font-size: 0.88rem; background: #fff; display: flex; justify-content: space-between;
+  }
+  .opt.active {
+    border-color: #93c5fd; background: #eff6ff; color: #1d4ed8;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+  }
+  .opt small { color: var(--muted); font-weight: 600; }
+  .footer { display: flex; justify-content: space-between; gap: 0.75rem; }
+  button {
+    border: 0; border-radius: 12px; padding: 0.7rem 1.1rem; font-weight: 800;
+    font-family: inherit; font-size: 0.9rem;
+  }
+  .back { background: #f1f5f9; color: var(--text); }
+  .next { background: var(--blue); color: #fff; box-shadow: 0 8px 20px rgba(59,130,246,0.25); }
+  .step { font-size: 0.75rem; font-weight: 700; color: var(--indigo); margin-bottom: 0.35rem; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <img src="../tmore-logo-full.png" alt="T.MORE" />
+      <p class="warm">אנחנו רק רוצים להכיר אותך קצת יותר טוב — בקצב שנוח לך. בסה״כ 5 שלבים קצרים.</p>
+    </div>
+    <div class="progress">
+      <div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="body">
+      <div class="step">שלב 2 מתוך 5</div>
+      <h1>מה תחום ההתמחות?</h1>
+      <p class="hint">כך נוכל לסנן ולהתאים אתכם לצורך המקצועי של הפרויקטים ב־T.MORE</p>
+      <div class="opts">
+        <div class="opt">הנחיית סדנאות</div>
+        <div class="opt">מפתחי למידה מאקרו</div>
+        <div class="opt">ייעוץ ארגוני</div>
+        <div class="opt active">ייעוץ טכנו פדגוגי <small>נבחר</small></div>
+        <div class="opt">אנימטורים</div>
+        <div class="opt">עיצוב גרפי</div>
+        <div class="opt">דיבוב וקריינות</div>
+      </div>
+      <div class="footer">
+        <button class="back">חזרה</button>
+        <button class="next">המשך</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

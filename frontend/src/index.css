@@ -28,24 +28,45 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.site-shell {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+/* Static wash only — no moving lines / particles */
+.site-shell__wash {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(196, 181, 253, 0.38), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 92% 12%, rgba(103, 232, 249, 0.28), transparent 52%),
+    radial-gradient(ellipse 50% 40% at 78% 100%, rgba(253, 186, 116, 0.22), transparent 55%),
+    linear-gradient(165deg, #faf8ff 0%, #ffffff 38%, #f0f9ff 72%, #fff7ed 100%);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(221, 214, 254, 0.7);
+  box-shadow: 0 16px 44px rgba(91, 33, 182, 0.07);
 }
 
 .glow-border {
-  box-shadow: 0 0 0 1px rgba(13, 148, 136, 0.2), 0 8px 32px rgba(249, 115, 22, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(167, 139, 250, 0.35),
+    0 12px 36px rgba(249, 115, 22, 0.08);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #0d9488 0%, #06b6d4 35%, #f97316 70%, #ea580c 100%);
+  background: linear-gradient(125deg, #7c3aed 0%, #06b6d4 45%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -66,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-bg-muted);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #0d9488, #f97316);
+  background: linear-gradient(180deg, #7c3aed, #06b6d4, #f97316);
   border-radius: 3px;
 }
 
@@ -76,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 1rem;
   z-index: 9999;
   padding: 0.75rem 1.5rem;
-  background: var(--color-turquoise);
+  background: var(--color-violet-600);
   color: #ffffff;
   border-radius: var(--radius-sm);
   font-weight: 600;
@@ -88,13 +109,4 @@ h1, h2, h3, h4, h5, h6 {
 
 [dir="rtl"] .section-container {
   text-align: right;
-}
-
-@keyframes services-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.animate-services-marquee {
-  animation: services-marquee 48s linear infinite;
 }

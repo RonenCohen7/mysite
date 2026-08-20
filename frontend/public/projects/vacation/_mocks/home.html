@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vacation — Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; font-family: Outfit, system-ui, sans-serif;
+    display: grid; place-items: center;
+    background:
+      linear-gradient(120deg, rgba(15,23,42,0.55), rgba(14,116,144,0.45)),
+      url("../destinations/dest-5.jpg") center/cover no-repeat;
+    color: #fff; text-align: center; padding: 2rem;
+  }
+  .box {
+    max-width: 640px; background: rgba(255,255,255,0.12); backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.25); border-radius: 24px; padding: 2rem 2.2rem 2.2rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  }
+  img { height: 72px; margin-bottom: 1rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+  h1 { margin: 0 0 0.75rem; font-size: 2.1rem; font-weight: 800; letter-spacing: -0.02em; }
+  p { margin: 0 0 1.4rem; line-height: 1.55; font-size: 1.05rem; opacity: 0.95; font-weight: 500; }
+  button {
+    border: 0; border-radius: 12px; padding: 0.85rem 1.4rem; font-weight: 800;
+    font-family: inherit; background: wheat; color: darkslategray; font-size: 0.95rem;
+  }
+</style>
+</head>
+<body>
+  <div class="box">
+    <img src="../homeLogo.png" alt="Vacation" />
+    <h1>Live to Dream. Travel in style.</h1>
+    <p>
+      Browse overseas vacations, compare destinations, save favorites,
+      and organize trips in one smart system — beaches, cities, and adventure.
+    </p>
+    <button>Explore Vacations</button>
+  </div>
+</body>
+</html>
