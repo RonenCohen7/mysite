@@ -59,25 +59,25 @@ const seedProjects = [
     images: [],
   },
   {
-    title: "T.MORE Freelancer Talent Pool",
-    titleHe: "מאגר טאלנטים לפרילנסרים — T.MORE",
+    title: "T.MORE Talent Pool for Freelancers",
+    titleHe: "מאגר טאלנטים — פרילנסרים עבור T.MORE",
     slug: "tmore-talent-pool",
     description:
-      "Structured talent pool for freelancers who want to partner with T.MORE: register once, filter by specialty, and match professional need to freelancer expertise — instead of CVs arriving by email or chat.",
+      "A dynamic professional pool of content experts for T.MORE — filter by specialty, location, availability, and price.",
     descriptionHe:
-      "מאגר טאלנטים מסודר לפרילנסרים שרוצים להרחיב שותפויות עם T.MORE: נרשמים פעם אחת, מסננים לפי מקצועיות, ומתאימים בין הצורך המקצועי להתמחות — במקום קורות חיים שמגיעים במייל או בהודעה.",
+      "מאגר דינמי ומקצועי של מומחי תוכן עבור T.MORE — עם מסננים לפי התמחות מקצועית, מיקום, זמינות ומחיר.",
     challenge:
-      "Freelancers who wanted to present themselves and grow partnerships with T.MORE were contacting the company and sending CVs by email or message. There was no structured pool to filter by specialty or match a project need to the right professional.",
+      "The company needed a system to manage a dynamic, professional pool of content experts, and to grow collaboration through filters on relevant topics such as specialty, location, availability, and price.",
     challengeHe:
-      "פרילנסרים שרצו להציג את עצמם ולהרחיב שותפויות עם T.MORE היו פונים לחברה ושולחים קורות חיים במייל או בהודעה. לא היה מאגר מסודר לסינון לפי מקצועיות או להתאמה בין צורך מקצועי להתמחות הנכונה.",
+      "מערכת שמאפשרת לחברה לנהל מאגר דינמי ומקצועי של מומחי תוכן. המערכת מאפשרת הגדלת שיתוף פעולה על ידי יצירת מסננים לפי נושאים רלוונטיים כגון: התמחות מקצועית, מיקום, זמינות ומחיר.",
     solution:
-      "Built a Next.js + MongoDB landing and registration flow (5-step wizard) so freelancers join a shared pool with specialty, CV, and certificates. An admin search filters by professionalism and supports Hebrew/English matching between project need and freelancer expertise.",
+      "A simple, fast registration system that gathers all information into one database, so the client can grow business collaboration with talents by pulling the right information quickly, easily, and conveniently.",
     solutionHe:
-      "בניתי דף נחיתה ורישום ב־Next.js + MongoDB (אשף 5 שלבים) שבו פרילנסרים נכנסים למאגר משותף עם התמחות, קורות חיים ותעודות. ממשק אדמין מאפשר חיפוש וסינון לפי מקצועיות והתאמה בעברית/אנגלית בין הצורך המקצועי לבין הפרילנסר.",
+      "מערכת רישום פשוטה ומהירה שמאגדת למאגר נתונים אחד את כלל המידע, ומאפשרת ללקוח להגדיל את שיתוף הפעולה העסקי עם הטאלנטים על ידי מיצוי המידע בצורה מהירה, קלה ונוחה.",
     outcome:
-      "T.MORE works from one searchable talent pool: filter by specialty, find the right match faster, and freelancers present themselves once instead of chasing inboxes.",
+      "One talent pool, filtered by specialty, location, availability, and price — so matching and collaboration with freelancers is fast, easy, and convenient.",
     outcomeHe:
-      "T.MORE עובדת ממקום אחד: מאגר שניתן לסנן לפי מקצועיות, למצוא התאמה מהר יותר, והפרילנסרים מציגים את עצמם פעם אחת במקום לרדוף אחרי תיבות דואר.",
+      "מאגר אחד, מסונן לפי התמחות מקצועית, מיקום, זמינות ומחיר — כך שיתוף הפעולה עם הטאלנטים נהיה מהיר, קל ונוח.",
     industry: "Learning / Talent Marketplace",
     industryHe: "למידה / מאגר טאלנטים",
     clientName: "T.MORE",
@@ -87,17 +87,7 @@ const seedProjects = [
       "/projects/tmore/landing.jpg",
       "/projects/tmore/register.jpg",
     ],
-    techStack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "MongoDB",
-      "Mongoose",
-      "Zod",
-      "Docker",
-    ],
+    techStack: [],
     githubUrl: "https://github.com/RonenCohen7/t.more-landig-page",
     demoUrl: "https://www.t-more.co.il/",
     featured: true,
