@@ -217,6 +217,8 @@ export const translations = {
             outcome: "The result",
             screenshot: "Screenshot",
             gallery: "Project screenshots",
+            screens: "What you see on screen",
+            screensSubtitle: "Each image is a real screen from the system.",
             backToProjects: "Back to projects",
         },
         servicesShowcase: {
@@ -442,6 +444,8 @@ export const translations = {
             outcome: "התוצאה",
             screenshot: "צילום מסך",
             gallery: "צילומי מסך מהפרויקט",
+            screens: "מה רואים במסכים",
+            screensSubtitle: "כל תמונה היא מסך אמיתי מהמערכת, עם הסבר קצר.",
             backToProjects: "חזרה לפרויקטים",
         },
         servicesShowcase: {

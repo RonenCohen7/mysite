@@ -5,12 +5,12 @@ import type { Project } from "@mysite/shared";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { getProjects, getMediaUrl } from "@/Services/ApiService";
 import { findStoryProjectBySlug, getProjectGallery } from "@/data/caseStudies";
+import { getExplainedScreens } from "@/data/galleryCaptions";
 import { getProjectIcon } from "@/data/projectIcons";
 import { Navbar } from "@/components/LayoutArea/Navbar/Navbar";
 import { Footer } from "@/components/LayoutArea/Footer/Footer";
 import { Badge } from "@/components/UiArea/Badge/Badge";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
-import { cn } from "@/Utils/cn";
 import "./ProjectDetail.css";
 
 function pick(locale: "en" | "he", en?: string, he?: string): string | undefined {
@@ -25,11 +25,9 @@ export function ProjectDetail() {
 
   const [project, setProject] = useState<Project | undefined>(() => findStoryProjectBySlug(slug));
   const [loading, setLoading] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setActiveIndex(0);
     setLoading(true);
     getProjects()
       .then((api) => setProject(findStoryProjectBySlug(slug, api)))
@@ -68,7 +66,7 @@ export function ProjectDetail() {
   }
 
   const gallery = getProjectGallery(project, getMediaUrl);
-  const activeImage = gallery[activeIndex] || gallery[0];
+  const screens = getExplainedScreens(project.slug, gallery, locale);
   const title = pick(locale, project.title, project.titleHe) || project.title;
   const description = pick(locale, project.description, project.descriptionHe) || project.description;
   const challenge = pick(locale, project.challenge, project.challengeHe);
@@ -103,38 +101,6 @@ export function ProjectDetail() {
             </div>
           </header>
 
-          {activeImage && (
-            <div className="project-detail__hero">
-              <img src={activeImage} alt={`${title} — ${t.portfolio.screenshot} ${activeIndex + 1}`} />
-            </div>
-          )}
-
-          {gallery.length > 1 && (
-            <div className="project-detail__thumbs" role="list">
-              {gallery.map((url, i) => (
-                <button
-                  key={`${url}-${i}`}
-                  type="button"
-                  className={cn("project-detail__thumb", i === activeIndex && "project-detail__thumb--active")}
-                  onClick={() => setActiveIndex(i)}
-                  aria-label={`${t.portfolio.screenshot} ${i + 1}`}
-                >
-                  <img src={url} alt="" loading="lazy" />
-                </button>
-              ))}
-            </div>
-          )}
-
-          {gallery.length > 1 && (
-            <section className="project-detail__gallery" aria-label={t.portfolio.gallery}>
-              {gallery.map((url, i) => (
-                <figure key={`full-${url}-${i}`} className="project-detail__shot">
-                  <img src={url} alt={`${title} — ${t.portfolio.screenshot} ${i + 1}`} loading="lazy" />
-                </figure>
-              ))}
-            </section>
-          )}
-
           {(challenge || solution || outcome) && (
             <section className="project-detail__story">
               {challenge && (
@@ -155,6 +121,30 @@ export function ProjectDetail() {
                   <p>{outcome}</p>
                 </div>
               )}
+            </section>
+          )}
+
+          {screens.length > 0 && (
+            <section className="project-detail__screens" aria-label={t.portfolio.gallery}>
+              <div className="project-detail__screens-head">
+                <h2 className="project-detail__screens-title">{t.portfolio.screens}</h2>
+                <p className="project-detail__screens-sub">{t.portfolio.screensSubtitle}</p>
+              </div>
+              {screens.map((screen, i) => (
+                <figure key={`${screen.url}-${i}`} className="project-detail__pair">
+                  <div className="project-detail__pair-media">
+                    <img
+                      src={screen.url}
+                      alt={`${title} — ${screen.caption}`}
+                      loading={i === 0 ? "eager" : "lazy"}
+                    />
+                  </div>
+                  <figcaption className="project-detail__pair-copy">
+                    <span className="project-detail__pair-index">{String(i + 1).padStart(2, "0")}</span>
+                    <p>{screen.caption}</p>
+                  </figcaption>
+                </figure>
+              ))}
             </section>
           )}
 
