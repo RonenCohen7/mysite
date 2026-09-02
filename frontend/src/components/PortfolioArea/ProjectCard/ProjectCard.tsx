@@ -16,6 +16,14 @@ function pick(locale: "en" | "he", en?: string, he?: string): string | undefined
   return en || he;
 }
 
+function liveHost(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
+
 export function ProjectCard({ project }: { project: Project }) {
   const { t, locale } = useLanguage();
   const navigate = useNavigate();
@@ -111,17 +119,27 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       )}
 
-      <div className={"portfolio__tags"}>
-        {project.techStack.slice(0, 6).map((tech) => (
-          <Badge key={tech}>{tech}</Badge>
-        ))}
-      </div>
+      {project.techStack.length > 0 && (
+        <div className={"portfolio__tags"}>
+          {project.techStack.slice(0, 6).map((tech) => (
+            <Badge key={tech}>{tech}</Badge>
+          ))}
+        </div>
+      )}
 
       {(project.demoUrl || project.githubUrl) && (
         <div className={"portfolio__actions"} onClick={stop}>
           {project.demoUrl && (
-            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={stop}>
-              <IconButton icon={<ExternalLink size={18} />} tooltip={t.portfolio.demo} />
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio__live-link"
+              aria-label={`${t.portfolio.demo}: ${liveHost(project.demoUrl)}`}
+              onClick={stop}
+            >
+              <ExternalLink size={16} />
+              <span>{liveHost(project.demoUrl)}</span>
             </a>
           )}
           {project.githubUrl && (

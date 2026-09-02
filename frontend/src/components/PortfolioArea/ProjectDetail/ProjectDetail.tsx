@@ -17,6 +17,14 @@ function pick(locale: "en" | "he", en?: string, he?: string): string | undefined
   return en || he;
 }
 
+function liveHost(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
+
 export function ProjectDetail() {
   const { slug = "" } = useParams();
   const { t, locale, dir } = useLanguage();
@@ -92,8 +100,15 @@ export function ProjectDetail() {
             {(project.demoUrl || project.githubUrl) && (
               <div className="project-detail__actions">
                 {project.demoUrl && (
-                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                    <IconButton icon={<ExternalLink size={18} />} tooltip={t.portfolio.demo} />
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-detail__live-link"
+                    aria-label={`${t.portfolio.demo}: ${liveHost(project.demoUrl)}`}
+                  >
+                    <ExternalLink size={16} />
+                    <span>{liveHost(project.demoUrl)}</span>
                   </a>
                 )}
                 {project.githubUrl && (

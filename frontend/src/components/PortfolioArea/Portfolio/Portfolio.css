@@ -171,6 +171,24 @@
   gap: 0.5rem;
   margin-top: auto;
 }
+.portfolio__live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-turquoise-700);
+  border: 1px solid var(--color-turquoise-200);
+  background: var(--color-turquoise-50);
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.portfolio__live-link:hover {
+  background: var(--color-turquoise-100);
+  border-color: var(--color-turquoise-400);
+}
 .portfolio__loading,
 .portfolio__empty {
   text-align: center;

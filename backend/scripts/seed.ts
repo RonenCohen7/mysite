@@ -202,21 +202,21 @@ const seedProjects = [
     titleHe: "מערכת לניהול פאב",
     slug: "hamasgeria-hadar-pub",
     description:
-      "A pub management platform for inventory control, event ticket sales, and running a VIP club.",
+      "A practical pub inventory system that replaces stacks of Excel files with live control over stock, orders, and receiving goods.",
     descriptionHe:
-      "פלטפורמה לניהול פאב המאפשרת שליטה במלאי, מכירת כרטיסים לאירועים וניהול מועדון VIP.",
+      "מערכת יישומית לניהול מלאי בפאב — מחליפה כמויות של קבצי אקסל בשליטה אונליין על מלאי, הזמנות וקבלת סחורה.",
     challenge:
-      "The venue manager was overloaded with Excel files for inventory tracking and event ticket sales. There was a clear need for a VIP customer club — with a membership card used for payments that unlocks on-site benefits.",
+      "A practical solution was needed to replace stacks of Excel files that required close tracking and many work hours every month.",
     challengeHe:
-      "מנהל המקום מצא עצמו עמוס בקבצי אקסל עבור מעקב אחר ניהול מלאי ושליטה במכירת כרטיסים לאירועים במקום. זוהה צורך בבניית מועדון לקוחות VIP המאפשר לייצר כרטיס מועדון אשר ישמש לביצוע תשלום המזכה בהטבות במקום.",
+      "מציאת פתרון יישומי שמחליף כמויות של קבצי אקסל, שדורשים מעקב צמוד והמון שעות עבודה בחודש.",
     solution:
-      "Built React + Node + MySQL end-to-end: product inventory with stock levels, a public events home with ticket/VIP pricing, VIP cards with POS charge/recharge, a customer VIP dashboard with chef dishes and exclusive cocktails, and a full transactions page for loads and payments.",
+      "A system that's simple to use and gives complete control over inventory management — saving many work hours and cutting inventory costs, including supplier orders and receiving goods.",
     solutionHe:
-      "בניתי מקצה לקצה ב-React + Node + MySQL: ניהול מוצרים ומלאי, דף בית ציבורי עם כל האירועים ומחירי כרטיס/VIP, כרטיסי VIP עם חיוב/טעינה בקופה, דשבורד לקוח VIP עם מנות שף וקוקטיילים בלעדיים, ומסך עסקאות מלא לטעינות ולחיובים.",
+      "מערכת שמאפשרת פשטות בשימוש ומייצרת שליטה מוחלטת בניהול המלאי. חיסכון בשעות עבודה רבות וחיסכון בהוצאות ניהול המלאי — לרבות הזמנות וקבלת הסחורה.",
     outcome:
-      "Staff manage stock and sell with VIP Card at the bar; members log in to see exclusive menu perks and their full card history — loads, charges, and balance.",
+      "Online information for every product sold, at any moment, with current stock and minimum-stock levels ready for a supplier order. Reports online — not only after a physical count. Full sync for complete management control.",
     outcomeHe:
-      "הצוות מנהל מלאי ומוכר עם כרטיס VIP בבר; החברים נכנסים לפורטל, רואים הטבות ומנות בלעדיות, ואת כל היסטוריית הכרטיס — טעינות, חיובים ויתרה.",
+      "קבלת מידע אונליין עבור כל מוצר שנמכר, בכל רגע, תוך עדכון מלאי קיים ומלאי מינימום להכנת הזמנה מהספק. הפקת דוחות אונליין — ולא רק לאחר ספירת מלאי. סנכרון מלא לשליטה מלאה של ההנהלה.",
     industry: "Hospitality / Pub",
     industryHe: "מסעדנות / פאב",
     clientName: "פאב",
@@ -236,7 +236,8 @@ const seedProjects = [
       "/projects/hamasgeria/pub-drinks.jpg",
       "/projects/hamasgeria/exp-aaffd62f.jpg",
     ],
-    techStack: ["React", "TypeScript", "Node.js", "Express", "MySQL", "Socket.io", "Redux"],
+    techStack: [],
+    demoUrl: "https://hamasgeria.com/",
     githubUrl: "https://github.com/RonenCohen7/hamasgeriaHadar",
     featured: true,
     published: true,

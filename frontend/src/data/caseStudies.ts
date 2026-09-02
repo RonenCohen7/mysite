@@ -208,21 +208,21 @@ export const fallbackCaseStudies: Project[] = [
     titleHe: "מערכת לניהול פאב",
     slug: "hamasgeria-hadar-pub",
     description:
-      "A pub management platform for inventory control, event ticket sales, and running a VIP club.",
+      "A practical pub inventory system that replaces stacks of Excel files with live control over stock, orders, and receiving goods.",
     descriptionHe:
-      "פלטפורמה לניהול פאב המאפשרת שליטה במלאי, מכירת כרטיסים לאירועים וניהול מועדון VIP.",
+      "מערכת יישומית לניהול מלאי בפאב — מחליפה כמויות של קבצי אקסל בשליטה אונליין על מלאי, הזמנות וקבלת סחורה.",
     challenge:
-      "The venue manager was overloaded with Excel files for inventory tracking and event ticket sales. There was a clear need for a VIP customer club — with a membership card used for payments that unlocks on-site benefits.",
+      "A practical solution was needed to replace stacks of Excel files that required close tracking and many work hours every month.",
     challengeHe:
-      "מנהל המקום מצא עצמו עמוס בקבצי אקסל עבור מעקב אחר ניהול מלאי ושליטה במכירת כרטיסים לאירועים במקום. זוהה צורך בבניית מועדון לקוחות VIP המאפשר לייצר כרטיס מועדון אשר ישמש לביצוע תשלום המזכה בהטבות במקום.",
+      "מציאת פתרון יישומי שמחליף כמויות של קבצי אקסל, שדורשים מעקב צמוד והמון שעות עבודה בחודש.",
     solution:
-      "Built React + Node + MySQL end-to-end: product inventory with stock levels, a public events home with ticket/VIP pricing, VIP cards with POS charge/recharge, a customer VIP dashboard with chef dishes and exclusive cocktails, and a full transactions page for loads and payments.",
+      "A system that's simple to use and gives complete control over inventory management — saving many work hours and cutting inventory costs, including supplier orders and receiving goods.",
     solutionHe:
-      "בניתי מקצה לקצה ב-React + Node + MySQL: ניהול מוצרים ומלאי, דף בית ציבורי עם כל האירועים ומחירי כרטיס/VIP, כרטיסי VIP עם חיוב/טעינה בקופה, דשבורד לקוח VIP עם מנות שף וקוקטיילים בלעדיים, ומסך עסקאות מלא לטעינות ולחיובים.",
+      "מערכת שמאפשרת פשטות בשימוש ומייצרת שליטה מוחלטת בניהול המלאי. חיסכון בשעות עבודה רבות וחיסכון בהוצאות ניהול המלאי — לרבות הזמנות וקבלת הסחורה.",
     outcome:
-      "Staff manage stock and sell with VIP Card at the bar; members log in to see exclusive menu perks and their full card history — loads, charges, and balance.",
+      "Online information for every product sold, at any moment, with current stock and minimum-stock levels ready for a supplier order. Reports online — not only after a physical count. Full sync for complete management control.",
     outcomeHe:
-      "הצוות מנהל מלאי ומוכר עם כרטיס VIP בבר; החברים נכנסים לפורטל, רואים הטבות ומנות בלעדיות, ואת כל היסטוריית הכרטיס — טעינות, חיובים ויתרה.",
+      "קבלת מידע אונליין עבור כל מוצר שנמכר, בכל רגע, תוך עדכון מלאי קיים ומלאי מינימום להכנת הזמנה מהספק. הפקת דוחות אונליין — ולא רק לאחר ספירת מלאי. סנכרון מלא לשליטה מלאה של ההנהלה.",
     industry: "Hospitality / Pub",
     industryHe: "מסעדנות / פאב",
     clientName: "פאב",
@@ -242,7 +242,8 @@ export const fallbackCaseStudies: Project[] = [
       "/projects/hamasgeria/pub-drinks.jpg",
       "/projects/hamasgeria/exp-aaffd62f.jpg",
     ],
-    techStack: ["React", "TypeScript", "Node.js", "Express", "MySQL", "Socket.io", "Redux"],
+    techStack: [],
+    demoUrl: "https://hamasgeria.com/",
     githubUrl: "https://github.com/RonenCohen7/hamasgeriaHadar",
     images: [],
     featured: true,
@@ -305,17 +306,21 @@ export function pickStoryProjects(apiProjects: Project[]): Project[] {
     bySlug.set(p.slug, {
       ...base,
       ...p,
-      titleHe: p.titleHe || base.titleHe,
-      descriptionHe: p.descriptionHe || base.descriptionHe,
-      challenge: p.challenge || base.challenge,
-      challengeHe: p.challengeHe || base.challengeHe,
-      solution: p.solution || base.solution,
-      solutionHe: p.solutionHe || base.solutionHe,
-      outcome: p.outcome || base.outcome,
-      outcomeHe: p.outcomeHe || base.outcomeHe,
-      // Curated portfolio visuals & copy order win over stale API data.
+      title: base.title || p.title,
+      titleHe: base.titleHe || p.titleHe,
+      description: base.description || p.description,
+      descriptionHe: base.descriptionHe || p.descriptionHe,
+      challenge: base.challenge || p.challenge,
+      challengeHe: base.challengeHe || p.challengeHe,
+      solution: base.solution || p.solution,
+      solutionHe: base.solutionHe || p.solutionHe,
+      outcome: base.outcome || p.outcome,
+      outcomeHe: base.outcomeHe || p.outcomeHe,
+      // Curated portfolio copy, live URL, and visuals win over stale API data.
       coverUrl: base.coverUrl || p.coverUrl,
       galleryUrls: base.galleryUrls?.length ? base.galleryUrls : galleryUrls,
+      techStack: base.techStack,
+      demoUrl: base.demoUrl || p.demoUrl,
       githubUrl: p.githubUrl || base.githubUrl,
       order: base.order,
     });

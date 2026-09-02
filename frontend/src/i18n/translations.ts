@@ -210,7 +210,7 @@ export const translations = {
         portfolio: {
             loading: "Loading projects...",
             empty: "Case studies coming soon.",
-            demo: "Live Demo",
+            demo: "Visit site",
             github: "View on GitHub",
             challenge: "The need",
             solution: "What I built",
@@ -435,7 +435,7 @@ export const translations = {
         portfolio: {
             loading: "טוען פרויקטים...",
             empty: "תיקי עבודה בקרוב.",
-            demo: "דמו חי",
+            demo: "לאתר",
             github: "GitHub",
             challenge: "הצורך",
             solution: "מה בניתי",
