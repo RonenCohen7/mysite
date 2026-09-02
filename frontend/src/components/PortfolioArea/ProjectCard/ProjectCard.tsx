@@ -1,8 +1,9 @@
 import { useState, type MouseEvent, type KeyboardEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { ExternalLink, Github } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 import type { Project } from "@mysite/shared";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { siteConfig } from "@models/site";
 import { GlassCard } from "@/components/UiArea/GlassCard/GlassCard";
 import { Badge } from "@/components/UiArea/Badge/Badge";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
@@ -15,14 +16,6 @@ import "../Portfolio/Portfolio.css";
 function pick(locale: "en" | "he", en?: string, he?: string): string | undefined {
   if (locale === "he") return he || en;
   return en || he;
-}
-
-function liveHost(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return url;
-  }
 }
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -132,28 +125,22 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       )}
 
-      {(project.demoUrl || project.githubUrl) && (
-        <div className={"portfolio__actions"} onClick={stop}>
-          {project.demoUrl && (
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="portfolio__live-link"
-              aria-label={`${t.portfolio.demo}: ${liveHost(project.demoUrl)}`}
-              onClick={stop}
-            >
-              <ExternalLink size={16} />
-              <span>{liveHost(project.demoUrl)}</span>
-            </a>
-          )}
-          {project.githubUrl && (
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" onClick={stop}>
-              <IconButton icon={<Github size={18} />} tooltip={t.portfolio.github} variant="ghost" />
-            </a>
-          )}
-        </div>
-      )}
+      <div className={"portfolio__actions"} onClick={stop}>
+        <a
+          href={project.githubUrl || siteConfig.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={stop}
+        >
+          <IconButton icon={<Github size={18} />} tooltip={t.portfolio.github} variant="ghost" />
+        </a>
+        <IconButton
+          icon={<Mail size={18} />}
+          tooltip={t.nav.contact}
+          variant="ghost"
+          onClick={() => navigate("/#contact")}
+        />
+      </div>
     </GlassCard>
   );
 }

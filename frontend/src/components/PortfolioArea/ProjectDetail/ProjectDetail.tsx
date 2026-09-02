@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ArrowRight, Github, Mail } from "lucide-react";
 import type { Project } from "@mysite/shared";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { siteConfig } from "@models/site";
 import { getProjects, getMediaUrl } from "@/Services/ApiService";
 import { findStoryProjectBySlug, getProjectGallery } from "@/data/caseStudies";
 import { getProjectIcon } from "@/data/projectIcons";
@@ -16,14 +17,6 @@ import "./ProjectDetail.css";
 function pick(locale: "en" | "he", en?: string, he?: string): string | undefined {
   if (locale === "he") return he || en;
   return en || he;
-}
-
-function liveHost(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return url;
-  }
 }
 
 export function ProjectDetail() {
@@ -104,27 +97,18 @@ export function ProjectDetail() {
             </div>
             <h1 className="project-detail__title">{title}</h1>
             <p className="project-detail__desc">{description}</p>
-            {(project.demoUrl || project.githubUrl) && (
-              <div className="project-detail__actions">
-                {project.demoUrl && (
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-detail__live-link"
-                    aria-label={`${t.portfolio.demo}: ${liveHost(project.demoUrl)}`}
-                  >
-                    <ExternalLink size={16} />
-                    <span>{liveHost(project.demoUrl)}</span>
-                  </a>
-                )}
-                {project.githubUrl && (
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <IconButton icon={<Github size={18} />} tooltip={t.portfolio.github} variant="ghost" />
-                  </a>
-                )}
-              </div>
-            )}
+            <div className="project-detail__actions">
+              <a
+                href={project.githubUrl || siteConfig.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconButton icon={<Github size={18} />} tooltip={t.portfolio.github} variant="ghost" />
+              </a>
+              <Link to="/#contact">
+                <IconButton icon={<Mail size={18} />} tooltip={t.nav.contact} variant="ghost" />
+              </Link>
+            </div>
           </header>
 
           {activeImage && (
