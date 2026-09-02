@@ -85,24 +85,24 @@ const seedProjects = [
   },
   {
     title: "Vacation Abroad — Overseas Trip Catalog",
-    titleHe: "Vacation Abroad — קטלוג חופשות בחול",
+    titleHe: "Vacation Abroad — קטלוג חופשות בחו״ל",
     slug: "vacation-abroad",
     description:
-      "Overseas vacation catalog with per-trip weather forecast and an AI agent that recommends art tours, local food, and activities for the destination.",
+      "An overseas vacation catalog with weather for the trip dates, and local recommendations for art, food, and activities.",
     descriptionHe:
-      "קטלוג חופשות בחול עם חיזוי מזג אוויר לפי תאריכי החופשה, וסוכן AI שממליץ על סיורי אומנות, אוכל ובילויים בהתאם ליעד.",
+      "קטלוג חופשות בחו״ל עם מזג אוויר לפי תאריכי החופשה, והמלצות לאומנות, אוכל ובילויים לפי היעד.",
     challenge:
-      "Browsing overseas vacations wasn’t enough — travelers also needed the expected weather for those exact trip dates, plus local ideas for art, food, and nightlife without searching ten different sites.",
+      "Seeing overseas vacations wasn’t enough. Travelers also needed the expected weather for those exact dates, and local ideas for art, food, and nightlife — without searching ten different sites.",
     challengeHe:
-      "רק לראות חופשות בחול לא הספיק — היה צריך גם חיזוי מזג אוויר צפוי לפי תאריכי החופשה, והמלצות מקומיות לאומנות, אוכל ובילויים בלי לחפש בעשרה אתרים.",
+      "רק לראות חופשות בחו״ל לא הספיק. היה צריך גם לדעת איך יהיה מזג האוויר בתאריכי החופשה, ולקבל המלצות מקומיות לאומנות, אוכל ובילויים — בלי לחפש בעשרה אתרים.",
     solution:
-      "Built a microservices vacation app (React, Node, Docker): each trip shows a destination weather forecast filtered to the package dates, and an AI recommendation agent returns cultural places, local food, and adventure/activities for that vacation destination.",
+      "A catalog where every trip shows the expected weather for those dates, and returns recommendations for art tours, local food, and activities at the destination.",
     solutionHe:
-      "בניתי אפליקציית חופשות במיקרו־שירותים (React, Node, Docker): בכל חופשה מוצג חיזוי מזג אוויר ליעד מסונן לתאריכי החבילה, וסוכן AI מחזיר המלצות לסיורי אומנות/תרבות, אוכל מקומי ובילויים לפי יעד החופשה.",
+      "מערכת קטלוג שבה כל חופשה מציגה את מזג האוויר הצפוי ליעד באותם תאריכים, ומחזירה המלצות לסיורי אומנות, אוכל מקומי ובילויים.",
     outcome:
-      "Users pick a trip, see the expected weather for that vacation window, and get AI-curated local recommendations for art, food, and more — all inside the same product.",
+      "The user picks a vacation, sees the weather for those days, and gets local recommendations — all in one place.",
     outcomeHe:
-      "המשתמש בוחר חופשה, רואה את מזג האוויר הצפוי לאותם תאריכים, ומקבל מהסוכן המלצות מקומיות לאומנות, אוכל ובילויים — בתוך אותו מוצר.",
+      "המשתמש בוחר חופשה, רואה את מזג האוויר לאותם ימים, ומקבל המלצות מקומיות — הכול במקום אחד.",
     industry: "Travel / Vacations",
     industryHe: "תיירות / חופשות",
     clientName: "Vacation Project",
@@ -114,18 +114,7 @@ const seedProjects = [
       "/projects/vacation/details.jpg",
       "/projects/vacation/home.jpg",
     ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "Redux",
-      "Node.js",
-      "Express",
-      "MySQL",
-      "MongoDB",
-      "Docker",
-      "OpenAI",
-      "Weather API",
-    ],
+    techStack: [],
     githubUrl: "https://github.com/RonenCohen7/vecationProject2",
     featured: true,
     published: true,
@@ -133,25 +122,25 @@ const seedProjects = [
     images: [],
   },
   {
-    title: "Court Judgments Scraping + RAG Search",
-    titleHe: "איסוף פסקי דין + חיפוש RAG",
+    title: "Court Judgments Search System",
+    titleHe: "מערכת לחיפוש פסקי דין",
     slug: "lowproject-court-judgments",
     description:
-      "Legal intelligence system for attorneys: scraping agents collect Israeli court judgments, the corpus becomes a RAG index, and search agents return relevant rulings for the query — without expensive, complex access.",
+      "A legal information system for attorneys — a judgments library with simple search, without expensive or complicated access.",
     descriptionHe:
-      "מערכת מידע משפטי לעורכי דין: סוכני scraping אוספים פסקי דין מבתי המשפט, מהמאגר נבנה RAG, וסוכני חיפוש מוצאים פסק דין רלוונטי לפי השאילתה ומציגים את המידע — בלי גישה יקרה ומורכבת מדי.",
+      "מערכת מידע משפטי לעורכי דין — מאגר פסקי דין וחיפוש פשוט, בלי גישה יקרה ומסורבלת.",
     challenge:
-      "An attorney needed legal information to represent clients, but access to judgments today is too expensive and too complex for day-to-day research.",
+      "An attorney needed legal information to represent clients, but access to court judgments today is too expensive and too complicated for day-to-day research.",
     challengeHe:
-      "עורך דין פנה בחיפוש אחר מידע משפטי לייצוג לקוחות — אבל הנגישות לפסקי דין כיום יקרה ומורכבת מדי לעבודת מחקר שוטפת.",
+      "עורך דין נזקק למידע משפטי לייצוג לקוחות — אבל הגישה לפסקי דין כיום יקרה ומורכבת מדי לעבודת מחקר שוטפת.",
     solution:
-      "Built a Python pipeline with scraping agents on court.gov.il (metadata → download → JSON → MongoDB), turned the corpus into a RAG knowledge base, and added agents that retrieve and present relevant judgments for a given search.",
+      "A system that gathers court judgments into one library, and lets the lawyer search in plain language to find the relevant ruling with the important excerpts.",
     solutionHe:
-      "בניתי צינור Python עם סוכני scraping על court.gov.il (מטא־דאטה → הורדה → JSON → MongoDB), יצרתי מהמידע RAG, והוספתי סוכנים שמוצאים פסק דין רלוונטי לפי חיפוש ומציגים את המידע.",
+      "מערכת שאוספת פסקי דין מבתי המשפט למאגר אחד, ומאפשרת לחפש בשפה פשוטה ולקבל את הפסק הרלוונטי יחד עם הקטעים החשובים.",
     outcome:
-      "The lawyer searches in plain language and gets relevant court rulings with cited excerpts from a locally owned corpus — instead of fighting costly, hard-to-use legal portals.",
+      "The lawyer searches freely and gets relevant judgments from a library they control — instead of fighting expensive, cumbersome legal sites.",
     outcomeHe:
-      "עורך הדין מחפש בשפה חופשית ומקבל פסקי דין רלוונטיים עם קטעים מצוטטים ממאגר שבבעלותו — במקום להיאבק בפורטלים משפטיים יקרים ומסורבלים.",
+      "עורך הדין מחפש חופשי ומקבל פסקי דין רלוונטיים ממאגר שבשליטתו — במקום להיאבק באתרים יקרים ומסורבלים.",
     industry: "LegalTech / Research",
     industryHe: "משפט / מחקר משפטי",
     clientName: "עורכי דין — מחקר פסקי דין",
@@ -160,15 +149,7 @@ const seedProjects = [
       "/projects/lowproject/rag-search.jpg",
       "/projects/lowproject/admin-pipeline.jpg",
     ],
-    techStack: [
-      "Python",
-      "FastAPI",
-      "Selenium",
-      "MongoDB",
-      "RAG",
-      "OpenAI",
-      "Pydantic",
-    ],
+    techStack: [],
     githubUrl: "https://github.com/RonenCohen7/LowProject",
     featured: true,
     published: true,
