@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Github, Mail } from "lucide-react";
+import { ArrowLeft, ArrowRight, Mail } from "lucide-react";
 import type { Project } from "@mysite/shared";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { siteConfig } from "@models/site";
 import { getProjects, getMediaUrl } from "@/Services/ApiService";
 import { findStoryProjectBySlug, getProjectGallery } from "@/data/caseStudies";
 import { getProjectIcon } from "@/data/projectIcons";
@@ -98,13 +97,6 @@ export function ProjectDetail() {
             <h1 className="project-detail__title">{title}</h1>
             <p className="project-detail__desc">{description}</p>
             <div className="project-detail__actions">
-              <a
-                href={project.githubUrl || siteConfig.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IconButton icon={<Github size={18} />} tooltip={t.portfolio.github} variant="ghost" />
-              </a>
               <Link to="/#contact">
                 <IconButton icon={<Mail size={18} />} tooltip={t.nav.contact} variant="ghost" />
               </Link>

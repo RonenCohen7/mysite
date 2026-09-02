@@ -1,9 +1,8 @@
 import { useState, type MouseEvent, type KeyboardEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import type { Project } from "@mysite/shared";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { siteConfig } from "@models/site";
 import { GlassCard } from "@/components/UiArea/GlassCard/GlassCard";
 import { Badge } from "@/components/UiArea/Badge/Badge";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
@@ -126,14 +125,6 @@ export function ProjectCard({ project }: { project: Project }) {
       )}
 
       <div className={"portfolio__actions"} onClick={stop}>
-        <a
-          href={project.githubUrl || siteConfig.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={stop}
-        >
-          <IconButton icon={<Github size={18} />} tooltip={t.portfolio.github} variant="ghost" />
-        </a>
         <IconButton
           icon={<Mail size={18} />}
           tooltip={t.nav.contact}
