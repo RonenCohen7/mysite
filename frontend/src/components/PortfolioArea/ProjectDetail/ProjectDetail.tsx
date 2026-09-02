@@ -5,6 +5,7 @@ import type { Project } from "@mysite/shared";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { getProjects, getMediaUrl } from "@/Services/ApiService";
 import { findStoryProjectBySlug, getProjectGallery } from "@/data/caseStudies";
+import { getProjectIcon } from "@/data/projectIcons";
 import { Navbar } from "@/components/LayoutArea/Navbar/Navbar";
 import { Footer } from "@/components/LayoutArea/Footer/Footer";
 import { Badge } from "@/components/UiArea/Badge/Badge";
@@ -82,6 +83,7 @@ export function ProjectDetail() {
   const solution = pick(locale, project.solution, project.solutionHe);
   const outcome = pick(locale, project.outcome, project.outcomeHe);
   const industry = pick(locale, project.industry, project.industryHe);
+  const ProjectIcon = getProjectIcon(project.slug);
 
   return (
     <>
@@ -94,7 +96,12 @@ export function ProjectDetail() {
           </Link>
 
           <header className="project-detail__header">
-            {industry && <span className="project-detail__industry">{industry}</span>}
+            <div className="project-detail__kicker">
+              <span className="project-detail__type-icon" aria-hidden="true">
+                <ProjectIcon size={18} strokeWidth={1.75} />
+              </span>
+              {industry && <span className="project-detail__industry">{industry}</span>}
+            </div>
             <h1 className="project-detail__title">{title}</h1>
             <p className="project-detail__desc">{description}</p>
             {(project.demoUrl || project.githubUrl) && (

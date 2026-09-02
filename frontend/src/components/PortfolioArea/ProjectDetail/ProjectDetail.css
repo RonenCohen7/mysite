@@ -37,9 +37,26 @@
   max-width: 48rem;
 }
 
+.project-detail__kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+.project-detail__type-icon {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.85rem;
+  color: var(--color-turquoise-700);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--color-slate-200);
+}
 .project-detail__industry {
   display: inline-block;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
   font-size: 0.75rem;

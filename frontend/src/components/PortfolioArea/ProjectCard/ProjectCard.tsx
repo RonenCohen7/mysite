@@ -8,6 +8,7 @@ import { Badge } from "@/components/UiArea/Badge/Badge";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
 import { getMediaUrl } from "@/Services/ApiService";
 import { getProjectGallery } from "@/data/caseStudies";
+import { getProjectIcon } from "@/data/projectIcons";
 import { cn } from "@/Utils/cn";
 import "../Portfolio/Portfolio.css";
 
@@ -37,6 +38,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const solution = pick(locale, project.solution, project.solutionHe);
   const outcome = pick(locale, project.outcome, project.outcomeHe);
   const industry = pick(locale, project.industry, project.industryHe);
+  const ProjectIcon = getProjectIcon(project.slug);
 
   function openProject() {
     navigate(`/projects/${project.slug}`);
@@ -72,6 +74,9 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         )}
         {industry && <span className="portfolio__industry">{industry}</span>}
+        <span className="portfolio__type-icon" aria-hidden="true">
+          <ProjectIcon size={18} strokeWidth={1.75} />
+        </span>
       </div>
 
       {gallery.length > 1 && (

@@ -4,25 +4,25 @@ import type { Project } from "@mysite/shared";
 export const fallbackCaseStudies: Project[] = [
   {
     _id: "case-see-you-tomorrow",
-    title: "See You Tomorrow — AI Workforce Scheduling",
-    titleHe: "See You Tomorrow — שיבוץ כוח אדם עם AI",
+    title: "See You Tomorrow — Workforce Scheduling",
+    titleHe: "See You Tomorrow — מערכת לתכנון וניהול שיבוץ עובדים",
     slug: "see-you-tomorrow",
     description:
-      "Hybrid workforce platform that saves managers many hours: employees submit schedule requests, an AI agent resolves conflicts against manager rules, and everyone sees a transparent two-week board — office, outsourcing, vacation, or studies.",
+      "A system for planning and managing employee scheduling. The challenge was never this simple.",
     descriptionHe:
-      "פלטפורמת כוח אדם היברידי שחוסכת למנהלים שעות רבות: עובדים מגישים בקשות שיבוץ, סוכן AI פותר התנגשויות מול חוקי המנהל, וכולם רואים לוח שקוף לשבועיים — משרד, מיקור חוץ, חופשה או לימודים.",
+      "מערכת לתכנון וניהול שיבוץ עובדים. האתגר מעולם לא היה פשוט וקל כל כך.",
     challenge:
-      "Managers were burning hours building schedules by hand and still couldn’t answer, at any moment for the next two weeks, where each employee was — outsourcing, vacation, or studies. Requests collided with coverage rules, and exceptions needed a clear final gate.",
+      "Scheduling a large workforce while maximizing both employee preferences and client requirements. Getting everyone aligned takes many hours and constant changes — until it's exhausting.",
     challengeHe:
-      "מנהלים בזבזו שעות על שיבוץ ידני ועדיין לא יכלו לדעת בכל רגע, לשבועיים הקרובים, איפה כל עובד — במיקור חוץ, בחופשה או בלימודים. בקשות התנגשו עם חוקי כיסוי, וחריגים נזקקו לשער אישור סופי ברור.",
+      "ניהול שיבוץ של כמות עובדים גדולה, שמאפשר התחשבות מקסימלית ברצון העובד ובהתחשבות בדרישות הלקוחות. יצירת תיאום מקסימלי דורשת שעות רבות והמון שינויים עד כדי התשה.",
     solution:
-      "Built a microservices stack (React, Node, MongoDB): employees submit preferences in advance; an AI scheduling agent checks all requests against manager-defined rules, auto-assigns when valid, and routes exceptions to the manager. The published schedule is transparent to the whole team. A permission-scoped help agent answers questions about anything already in the system.",
+      "A management system with AI agents: employees submit their schedule two weeks ahead. The system consolidates everyone's data and assigns according to management requirements; if needed, the agent escalates to the manager for final approval.",
     solutionHe:
-      "בניתי מערכת מיקרו־שירותים (React, Node, MongoDB): עובדים מגישים העדפות מראש; סוכן AI לשיבוץ בודק את כל הבקשות מול חוקים שהמנהל הגדיר, משבץ אוטומטית כשאין סתירה, ומעביר חריגים לאישור סופי של המנהל. השיבוץ שקוף לכולם. סוכן עזרה עונה על כל מה שקיים במערכת — בגבולות ההרשאות שניתנו לו.",
+      "מערכת ניהול בשילוב סוכני AI שמאפשרת לעובד לשלוח את השיבוץ שלו שבועיים מראש. המערכת מתכללת את הנתונים של כולם ומשבצת לפי דרישות ההנהלה — ובמקרה הצורך הסוכן מעלה לאישור מנהל סופי.",
     outcome:
-      "Scheduling that used to take hours becomes a rules-checked pipeline: managers always see the next two weeks of status, the team shares one transparent board, and only real exceptions need a final human decision.",
+      "The schedule is then published on a shared calendar for everyone. It just works — beautifully.",
     outcomeHe:
-      "שיבוץ שלקח שעות הופך לצינור עם בדיקת חוקים: המנהל תמיד רואה את הסטטוס לשבועיים הקרובים, הצוות חולק לוח שקוף אחד, ורק חריגים אמיתיים דורשים החלטה אנושית סופית.",
+      "לאחר מכן השיבוץ מופץ בלוח שנה לכולם. פשוט עובד מדהים.",
     industry: "Workforce / Hybrid Office",
     industryHe: "כוח אדם / משרד היברידי",
     clientName: "See You Tomorrow",
@@ -33,19 +33,7 @@ export const fallbackCaseStudies: Project[] = [
       "/projects/see-you-tomorrow/employee-requests.jpg",
       "/projects/see-you-tomorrow/help-agent.jpg",
     ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "MUI",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Redis",
-      "BullMQ",
-      "Socket.io",
-      "OpenAI",
-      "Docker",
-    ],
+    techStack: [],
     githubUrl: "https://github.com/RonenCohen7/see-you-tomorrow",
     images: [],
     featured: true,
