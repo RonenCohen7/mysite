@@ -15,6 +15,8 @@ export function Footer() {
         <p className={"footer__copy"}>
           &copy; {year} {t.site.name}. {t.footer.rights}{" "}
           <Link to="/about" className="footer__about-link">{t.footer.about}</Link>
+          {" · "}
+          <a href="/privacy.html" className="footer__about-link">{t.footer.privacy}</a>
         </p>
         <div className={"footer__socials"}>
           <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">

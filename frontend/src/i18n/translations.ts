@@ -191,7 +191,7 @@ export const translations = {
                 message: "Tell me what you need help with...",
             },
         },
-        footer: { rights: "All rights reserved.", about: "About", linkedin: "LinkedIn", github: "GitHub", email: "Email", whatsapp: "WhatsApp" },
+        footer: { rights: "All rights reserved.", about: "About", privacy: "Privacy Policy", linkedin: "LinkedIn", github: "GitHub", email: "Email", whatsapp: "WhatsApp" },
         about: {
             label: "About Me",
             backHome: "Back to Home",
@@ -418,7 +418,7 @@ export const translations = {
                 message: "ספר לי במה אתה צריך עזרה...",
             },
         },
-        footer: { rights: "כל הזכויות שמורות.", about: "אודות", linkedin: "LinkedIn", github: "GitHub", email: "אימייל", whatsapp: "WhatsApp" },
+        footer: { rights: "כל הזכויות שמורות.", about: "אודות", privacy: "מדיניות פרטיות", linkedin: "LinkedIn", github: "GitHub", email: "אימייל", whatsapp: "WhatsApp" },
         about: {
             label: "אודות",
             backHome: "חזרה לדף הבית",
