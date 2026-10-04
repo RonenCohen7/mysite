@@ -34,6 +34,7 @@ export const fallbackCaseStudies: Project[] = [
       "/projects/see-you-tomorrow/help-agent.jpg",
     ],
     techStack: [],
+    demoUrl: "https://whosintomorrow.com/",
     githubUrl: "https://github.com/RonenCohen7/see-you-tomorrow",
     images: [],
     featured: true,

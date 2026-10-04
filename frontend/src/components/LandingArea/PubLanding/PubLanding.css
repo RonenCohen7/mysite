@@ -1,0 +1,506 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@600;700&display=swap");
+
+.pub-lp {
+  --lp-paper: #efe4cf;
+  --lp-ink: #1c1410;
+  --lp-muted: #5c4a3d;
+  --lp-oxblood: #6b1d28;
+  --lp-oxblood-deep: #3f1018;
+  --lp-brass: #c4a056;
+  --lp-brass-deep: #8a6a2a;
+  --lp-cream: #f7f0e2;
+  --lp-rule: rgba(28, 20, 16, 0.14);
+  --lp-serif: "Frank Ruhl Libre", "Times New Roman", serif;
+  --lp-sans: "Assistant", "Avenir Next", sans-serif;
+
+  min-height: 100vh;
+  color: var(--lp-ink);
+  background:
+    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(107, 29, 40, 0.14), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(196, 160, 86, 0.16), transparent 50%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(28, 20, 16, 0.015) 2px,
+      rgba(28, 20, 16, 0.015) 3px
+    ),
+    var(--lp-paper);
+  font-family: var(--lp-sans);
+}
+
+.pub-lp h1,
+.pub-lp h2,
+.pub-lp h3 {
+  font-family: var(--lp-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--lp-ink);
+}
+
+.pub-lp--excel {
+  --lp-accent: var(--lp-brass-deep);
+  --lp-btn: var(--lp-oxblood);
+}
+
+.pub-lp--stock {
+  --lp-accent: var(--lp-oxblood);
+  --lp-btn: var(--lp-oxblood-deep);
+}
+
+.pub-lp--reports,
+.pub-lp--hub {
+  --lp-accent: #2f4a3a;
+  --lp-btn: #24382c;
+}
+
+.pub-lp__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 6vw;
+  border-bottom: 1px solid var(--lp-rule);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(239, 228, 207, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.pub-lp__brand {
+  font-family: var(--lp-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--lp-ink);
+  text-decoration: none;
+  unicode-bidi: isolate;
+}
+
+.pub-lp__top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.pub-lp__lang {
+  display: flex;
+  border: 1px solid var(--lp-rule);
+  overflow: hidden;
+}
+
+.pub-lp__lang button {
+  background: transparent;
+  border: 0;
+  padding: 0.35rem 0.65rem;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--lp-muted);
+}
+
+.pub-lp__lang button.is-on {
+  background: var(--lp-ink);
+  color: var(--lp-cream);
+}
+
+.pub-lp__top-cta {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--lp-btn, var(--lp-oxblood));
+  color: var(--lp-cream);
+  padding: 0.45rem 0.8rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  max-width: min(52vw, 16rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 720px) {
+  .pub-lp__top-cta {
+    font-size: 0.88rem;
+    padding: 0.5rem 0.95rem;
+    max-width: none;
+  }
+}
+
+.pub-lp__mood {
+  height: min(28vh, 220px);
+  overflow: hidden;
+  border-bottom: 1px solid var(--lp-rule);
+}
+
+.pub-lp__mood img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.pub-lp--stock .pub-lp__mood img {
+  object-position: center 60%;
+  filter: saturate(0.7) sepia(0.15);
+}
+
+.pub-lp--reports .pub-lp__mood img {
+  object-position: left center;
+  filter: grayscale(0.25) contrast(1.1);
+}
+
+.pub-lp__hero {
+  padding: 3.2rem 6vw 2.5rem;
+  max-width: 52rem;
+}
+
+.pub-lp[dir="rtl"] .pub-lp__hero {
+  margin-right: auto;
+}
+
+.pub-lp[dir="ltr"] .pub-lp__hero {
+  margin-left: auto;
+}
+
+.pub-lp--stock .pub-lp__hero,
+.pub-lp--hub .pub-lp__hero,
+.pub-lp--hub .pub-lp__hub {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.pub-lp__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lp-accent, var(--lp-oxblood));
+  margin: 0 0 1rem;
+}
+
+.pub-lp[dir="rtl"] .pub-lp__eyebrow,
+.pub-lp[dir="rtl"] .pub-lp__hub-list span {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.pub-lp__hero h1,
+.pub-lp__hub h1 {
+  font-size: clamp(2.1rem, 5.4vw, 3.7rem);
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+  max-width: 18ch;
+}
+
+.pub-lp--stock .pub-lp__hero h1,
+.pub-lp--hub h1 {
+  max-width: none;
+}
+
+.pub-lp__punch {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--lp-muted);
+  margin: 0 0 1.75rem;
+  max-width: 38rem;
+}
+
+.pub-lp--stock .pub-lp__punch,
+.pub-lp--hub .pub-lp__punch {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pub-lp__btn,
+.pub-lp__lead button {
+  display: inline-block;
+  background: var(--lp-btn, var(--lp-oxblood));
+  color: var(--lp-cream);
+  text-decoration: none;
+  border: 0;
+  padding: 0.95rem 1.5rem;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--lp-ink);
+}
+
+.pub-lp__btn:hover,
+.pub-lp__lead button:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--lp-ink);
+}
+
+.pub-lp__shot {
+  padding: 0 6vw 3.5rem;
+}
+
+.pub-lp__shot figure {
+  margin: 0;
+  background: var(--lp-cream);
+  border: 1px solid var(--lp-rule);
+  box-shadow: 12px 16px 0 rgba(107, 29, 40, 0.12);
+  max-width: 920px;
+  overflow: hidden;
+}
+
+.pub-lp--excel .pub-lp__shot figure {
+  margin-inline-start: auto;
+}
+
+.pub-lp--reports .pub-lp__shot figure {
+  margin-inline-end: auto;
+}
+
+.pub-lp--stock .pub-lp__shot figure {
+  margin-inline: auto;
+}
+
+.pub-lp__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center 18%;
+  margin-top: -42px;
+}
+
+.pub-lp__shot figcaption {
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--lp-muted);
+  border-top: 1px dashed var(--lp-rule);
+}
+
+.pub-lp__split {
+  display: grid;
+  gap: 2.5rem;
+  padding: 0 6vw 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 860px) {
+  .pub-lp__split {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.pub-lp__split h2 {
+  font-size: 1.55rem;
+  margin: 0 0 1.1rem;
+}
+
+.pub-lp__pain,
+.pub-lp__offer {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub-lp__pain li,
+.pub-lp__offer li {
+  position: relative;
+  padding-block: 0.85rem;
+  padding-inline-start: 2.4rem;
+  border-top: 1px solid var(--lp-rule);
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+.pub-lp__pain li::before,
+.pub-lp__offer li::before {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.9rem;
+  font-family: var(--lp-serif);
+  font-weight: 700;
+  color: var(--lp-accent, var(--lp-oxblood));
+}
+
+.pub-lp__pain li:nth-child(1)::before { content: "01"; }
+.pub-lp__pain li:nth-child(2)::before { content: "02"; }
+.pub-lp__pain li:nth-child(3)::before { content: "03"; }
+
+.pub-lp__offer li::before {
+  content: "✓";
+  font-family: var(--lp-sans);
+}
+
+.pub-lp__proof {
+  text-align: center;
+  font-family: var(--lp-serif);
+  font-size: 1.35rem;
+  padding: 0.5rem 6vw 3.5rem;
+  margin: 0;
+}
+
+.pub-lp__lead {
+  margin: 0 6vw 4.5rem;
+  max-width: 34rem;
+  padding: 2rem 1.5rem 2.2rem;
+  background: var(--lp-cream);
+  border: 1px solid var(--lp-ink);
+  box-shadow: 10px 10px 0 var(--lp-oxblood);
+}
+
+.pub-lp--excel .pub-lp__lead {
+  margin-inline-start: auto;
+}
+
+.pub-lp--stock .pub-lp__lead,
+.pub-lp--hub .pub-lp__lead {
+  margin-inline: auto;
+}
+
+.pub-lp__lead h2 {
+  font-size: 1.7rem;
+  margin: 0 0 0.5rem;
+}
+
+.pub-lp__lead > p {
+  color: var(--lp-muted);
+  margin: 0 0 1.4rem;
+}
+
+.pub-lp__lead form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.pub-lp__lead label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.pub-lp__lead input,
+.pub-lp__lead textarea {
+  font: inherit;
+  font-weight: 400;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--lp-rule);
+  background: #fffdf8;
+  color: var(--lp-ink);
+}
+
+.pub-lp__lead input:focus,
+.pub-lp__lead textarea:focus {
+  outline: 2px solid var(--lp-brass);
+  border-color: transparent;
+}
+
+.pub-lp__lead button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.pub-lp__honey {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+
+.pub-lp__error {
+  color: var(--lp-oxblood);
+  font-weight: 700;
+  margin: 0;
+}
+
+.pub-lp__thanks {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.45rem;
+  padding: 1.5rem 0.5rem;
+  color: var(--lp-accent, var(--lp-oxblood));
+}
+
+.pub-lp__thanks span {
+  color: var(--lp-muted);
+  font-weight: 400;
+}
+
+.pub-lp__hub {
+  padding: 4.5rem 6vw 5rem;
+  max-width: 52rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pub-lp__hub-list {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.1rem;
+  text-align: start;
+}
+
+.pub-lp__hub-list a {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem 1.3rem;
+  background: var(--lp-cream);
+  border: 1px solid var(--lp-rule);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 6px 6px 0 rgba(28, 20, 16, 0.12);
+}
+
+.pub-lp__hub-list a:hover {
+  border-color: var(--lp-ink);
+}
+
+.pub-lp__hub-list span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lp-oxblood);
+}
+
+.pub-lp__hub-list strong {
+  font-family: var(--lp-serif);
+  font-size: 1.25rem;
+}
+
+.pub-lp__hub-list em {
+  font-style: normal;
+  font-size: 0.88rem;
+  color: var(--lp-muted);
+}
+
+.pub-lp__foot {
+  padding: 0 6vw 2.5rem;
+  text-align: center;
+}
+
+.pub-lp__foot a {
+  color: var(--lp-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.pub-lp__foot a:hover {
+  color: var(--lp-ink);
+}
+
+@media (max-width: 640px) {
+  .pub-lp__hero {
+    padding-top: 2.8rem;
+  }
+
+  .pub-lp__lead {
+    margin-inline: 1rem 1rem;
+    box-shadow: 6px 6px 0 var(--lp-oxblood);
+  }
+}

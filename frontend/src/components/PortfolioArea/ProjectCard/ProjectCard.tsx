@@ -1,4 +1,4 @@
-import { useState, type MouseEvent, type KeyboardEvent } from "react";
+import { useState, type KeyboardEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mail } from "lucide-react";
 import type { Project } from "@mysite/shared";
@@ -9,6 +9,7 @@ import { IconButton } from "@/components/UiArea/IconButton/IconButton";
 import { getMediaUrl } from "@/Services/ApiService";
 import { getProjectGallery } from "@/data/caseStudies";
 import { getProjectIcon } from "@/data/projectIcons";
+import { LiveSystemLink } from "@/components/PortfolioArea/LiveSystemLink/LiveSystemLink";
 import { cn } from "@/Utils/cn";
 import "../Portfolio/Portfolio.css";
 
@@ -43,7 +44,7 @@ export function ProjectCard({ project }: { project: Project }) {
     }
   }
 
-  function stop(e: MouseEvent) {
+  function stop(e: { stopPropagation: () => void }) {
     e.stopPropagation();
   }
 
@@ -91,6 +92,7 @@ export function ProjectCard({ project }: { project: Project }) {
       )}
 
       <h3 className={"portfolio__title"}>{title}</h3>
+      {project.demoUrl && <LiveSystemLink href={project.demoUrl} onClick={stop} />}
       <p className={"portfolio__desc"}>{description}</p>
 
       {(challenge || solution || outcome) && (

@@ -11,6 +11,7 @@ import { Navbar } from "@/components/LayoutArea/Navbar/Navbar";
 import { Footer } from "@/components/LayoutArea/Footer/Footer";
 import { Badge } from "@/components/UiArea/Badge/Badge";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
+import { LiveSystemLink } from "@/components/PortfolioArea/LiveSystemLink/LiveSystemLink";
 import "./ProjectDetail.css";
 
 function pick(locale: "en" | "he", en?: string, he?: string): string | undefined {
@@ -94,6 +95,7 @@ export function ProjectDetail() {
             </div>
             <h1 className="project-detail__title">{title}</h1>
             <p className="project-detail__desc">{description}</p>
+            {project.demoUrl && <LiveSystemLink href={project.demoUrl} />}
             <div className="project-detail__actions">
               <Link to="/#contact">
                 <IconButton icon={<Mail size={18} />} tooltip={t.nav.contact} variant="ghost" />

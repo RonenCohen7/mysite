@@ -40,6 +40,7 @@ const seedProjects = [
       "/projects/see-you-tomorrow/help-agent.jpg",
     ],
     techStack: [],
+    demoUrl: "https://whosintomorrow.com/",
     githubUrl: "https://github.com/RonenCohen7/see-you-tomorrow",
     featured: true,
     published: true,

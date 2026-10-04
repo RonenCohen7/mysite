@@ -5,6 +5,7 @@ import { About } from "@/components/PagesArea/About/About";
 import { NotFound } from "@/components/PagesArea/NotFound/NotFound";
 import { AdminGuard } from "@/components/AdminArea/AdminGuard/AdminGuard";
 import { ProjectDetail } from "@/components/PortfolioArea/ProjectDetail/ProjectDetail";
+import { PubLanding, PubLandingHub } from "@/components/LandingArea/PubLanding/PubLanding";
 
 const AdminDashboard = lazy(() =>
   import("@/components/AdminArea/AdminDashboard/AdminDashboard").then((m) => ({ default: m.AdminDashboard }))
@@ -28,6 +29,8 @@ export function Routing() {
         <Route path="/about" element={<About />} />
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/" element={<PublicSite />} />
+        <Route path="/lp/pub" element={<PubLandingHub />} />
+        <Route path="/lp/pub/:pageId" element={<PubLanding />} />
         <Route path="/ronen" element={<AdminGuard />}>
           <Route index element={<AdminDashboard />} />
           <Route path="projects/:id" element={<ProjectEditor />} />
