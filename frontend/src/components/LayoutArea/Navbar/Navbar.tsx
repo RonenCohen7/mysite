@@ -83,30 +83,27 @@ export function Navbar() {
     );
   };
 
+  const brand = (
+    <>
+      <img src="/brand/logo-mark.jpg" alt="" className="navbar__logo-mark" width={67} height={40} />
+      <span dir="ltr" className={cn("navbar__logo-text", "navbar__logo-brand", "navbar__logo-text--dark")}>
+        {siteConfig.brand}
+        <span className="navbar__logo-accent--dark">.</span>
+      </span>
+    </>
+  );
+
   return (
     <>
       <nav className={cn("navbar", navScrolled ? "navbar--scrolled" : "navbar--transparent")}>
         <div className={"navbar__inner"}>
           {isHome ? (
             <button type="button" onClick={() => handleNav("home")} className={"navbar__logo"}>
-              <span
-                dir="ltr"
-                className={cn(
-                  "navbar__logo-text",
-                  "navbar__logo-brand",
-                  "navbar__logo-text--dark"
-                )}
-              >
-                {siteConfig.brand}
-                <span className="navbar__logo-accent--dark">.</span>
-              </span>
+              {brand}
             </button>
           ) : (
             <Link to="/" className={"navbar__logo"}>
-              <span dir="ltr" className={cn("navbar__logo-text", "navbar__logo-brand", "navbar__logo-text--dark")}>
-                {siteConfig.brand}
-                <span className="navbar__logo-accent--dark">.</span>
-              </span>
+              {brand}
             </Link>
           )}
 
