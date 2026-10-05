@@ -11,3 +11,11 @@
 .footer__about-link { color: var(--color-turquoise-600); text-decoration: none; font-weight: 600; margin-inline-start: 0.25rem; }
 .footer__about-link:hover { color: var(--color-turquoise-700); text-decoration: underline; }
 .footer__socials { display: flex; align-items: center; gap: 0.5rem; }
+.footer__socials .footer__social { color: var(--brand); border-color: color-mix(in srgb, var(--brand) 40%, transparent); }
+.footer__socials .footer__social:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+.footer__social--linkedin { --brand: #0a66c2; }
+.footer__social--facebook { --brand: #1877f2; }
+.footer__social--github { --brand: #181717; }
+.footer__social--youtube { --brand: #ff0000; }
+.footer__social--email { --brand: #ea4335; }
+.footer__social--whatsapp { --brand: #25d366; }

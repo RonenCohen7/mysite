@@ -70,7 +70,7 @@ const ronen = {
   alternateName: "רונן כהן",
   jobTitle: "Full Stack Developer & AI Automation Architect",
   url: `${SITE}/about`,
-  sameAs: [siteConfig.linkedin, siteConfig.github, siteConfig.youtube],
+  sameAs: [siteConfig.linkedin, siteConfig.github, siteConfig.youtube, siteConfig.facebook],
 };
 
 const business = {
@@ -83,7 +83,7 @@ const business = {
   image: LOGO,
   description: HOME_DESCRIPTION,
   founder: { "@id": ronen["@id"] },
-  sameAs: [siteConfig.linkedin, siteConfig.github, siteConfig.youtube],
+  sameAs: [siteConfig.linkedin, siteConfig.github, siteConfig.youtube, siteConfig.facebook],
   knowsLanguage: ["he", "en"],
   areaServed: [
     ...siteConfig.serviceAreas.map((a) => ({ "@type": "City", name: a.he, alternateName: a.en })),

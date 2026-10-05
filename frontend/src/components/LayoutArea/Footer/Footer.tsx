@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Github, Youtube, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, Facebook, Github, Youtube, Mail, MessageCircle } from "lucide-react";
 import { siteConfig } from "@models/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
@@ -20,19 +20,22 @@ export function Footer() {
         </p>
         <div className={"footer__socials"}>
           <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">
-            <IconButton icon={<Linkedin size={18} />} tooltip={t.footer.linkedin} variant="ghost" />
+            <IconButton icon={<Linkedin size={18} />} tooltip={t.footer.linkedin} variant="ghost" className="footer__social footer__social--linkedin" />
+          </a>
+          <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer">
+            <IconButton icon={<Facebook size={18} />} tooltip={t.footer.facebook} variant="ghost" className="footer__social footer__social--facebook" />
           </a>
           <a href={siteConfig.github} target="_blank" rel="noopener noreferrer">
-            <IconButton icon={<Github size={18} />} tooltip={t.footer.github} variant="ghost" />
+            <IconButton icon={<Github size={18} />} tooltip={t.footer.github} variant="ghost" className="footer__social footer__social--github" />
           </a>
           <a href={siteConfig.youtube} target="_blank" rel="noopener noreferrer">
-            <IconButton icon={<Youtube size={18} />} tooltip={t.footer.youtube} variant="ghost" />
+            <IconButton icon={<Youtube size={18} />} tooltip={t.footer.youtube} variant="ghost" className="footer__social footer__social--youtube" />
           </a>
           <a href={`mailto:${siteConfig.email}`}>
-            <IconButton icon={<Mail size={18} />} tooltip={t.footer.email} variant="ghost" />
+            <IconButton icon={<Mail size={18} />} tooltip={t.footer.email} variant="ghost" className="footer__social footer__social--email" />
           </a>
           <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer">
-            <IconButton icon={<MessageCircle size={18} />} tooltip={t.footer.whatsapp} variant="ghost" />
+            <IconButton icon={<MessageCircle size={18} />} tooltip={t.footer.whatsapp} variant="ghost" className="footer__social footer__social--whatsapp" />
           </a>
         </div>
       </div>
