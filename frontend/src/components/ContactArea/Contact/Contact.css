@@ -15,5 +15,9 @@
 .contact__success { text-align: center; padding: 4rem 0; }
 .contact__success-icon { width: 4rem; height: 4rem; border-radius: 50%; background: var(--color-turquoise-50); border: 1px solid var(--color-turquoise-200); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--color-turquoise-600); }
 .contact__success-title { font-size: 1.5rem; font-weight: 600; color: var(--color-slate-900); margin-bottom: 0.5rem; }
-.contact__success-text { color: var(--color-slate-500); }
+.contact__success-text { color: var(--color-slate-500); max-width: 32rem; margin: 0 auto; line-height: 1.7; }
+.contact__success-tip { display: flex; gap: 0.75rem; align-items: flex-start; max-width: 32rem; margin: 1.75rem auto 0; padding: 1rem 1.25rem; border-radius: var(--radius-xl); background: #FFF7ED; border: 1px solid #FED7AA; color: var(--color-slate-600); font-size: 0.9rem; line-height: 1.7; text-align: start; }
+.contact__success-tip strong { color: var(--color-orange-600); }
+.contact__success-tip-icon { flex-shrink: 0; margin-top: 0.2rem; color: var(--color-orange-500); }
+.contact__success-address { font-weight: 600; color: var(--color-slate-900); }
 .contact__error { color: var(--color-orange-600); font-size: 0.875rem; }

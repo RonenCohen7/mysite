@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Mail } from "lucide-react";
+import { siteConfig } from "@models/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Section } from "@/components/LayoutArea/Section/Section";
 import { SectionHeading } from "@/components/UiArea/SectionHeading/SectionHeading";
@@ -45,6 +46,15 @@ export function Contact() {
               <div className={"contact__success-icon"}><CheckCircle size={32} /></div>
               <h3 className={"contact__success-title"}>{t.contact.successTitle}</h3>
               <p className={"contact__success-text"}>{t.contact.successText}</p>
+              <div className={"contact__success-tip"}>
+                <Mail size={18} className={"contact__success-tip-icon"} />
+                <div>
+                  <strong>{t.contact.spamTitle}</strong>{" "}
+                  {t.contact.spamText}
+                  <bdi dir="ltr" className={"contact__success-address"}>{siteConfig.salesEmail}</bdi>{" "}
+                  {t.contact.spamAction}
+                </div>
+              </div>
             </motion.div>
           ) : (
             <motion.form key="form" className={"contact__form glass-card glow-border"} onSubmit={handleSubmit} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
