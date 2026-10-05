@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Github, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, Github, Youtube, Mail, MessageCircle } from "lucide-react";
 import { siteConfig } from "@models/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
@@ -24,6 +24,9 @@ export function Footer() {
           </a>
           <a href={siteConfig.github} target="_blank" rel="noopener noreferrer">
             <IconButton icon={<Github size={18} />} tooltip={t.footer.github} variant="ghost" />
+          </a>
+          <a href={siteConfig.youtube} target="_blank" rel="noopener noreferrer">
+            <IconButton icon={<Youtube size={18} />} tooltip={t.footer.youtube} variant="ghost" />
           </a>
           <a href={`mailto:${siteConfig.email}`}>
             <IconButton icon={<Mail size={18} />} tooltip={t.footer.email} variant="ghost" />

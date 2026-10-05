@@ -16,6 +16,7 @@ export const siteConfig = {
   salesEmail: "noa@ronencohen.dev",
   linkedin: "https://www.linkedin.com/in/ronen-cohen7/",
   github: "https://github.com/RonenCohen7",
+  youtube: "https://www.youtube.com/@ronencohen-dev",
   whatsapp: "https://wa.me/972000000000",
   /** Set true to show the "Collaboration with" partners section on the homepage. */
   showPartnersSection: false,
