@@ -49,7 +49,7 @@ app.use(csrfErrorHandler);
 app.get("/robots.txt", (_req, res) => {
   res.type("text/plain");
   res.send(
-    "User-agent: *\nDisallow: /ronen\nDisallow: /admin\nDisallow: /api/admin\n\nSitemap: https://ronencohen.dev/sitemap.xml\n"
+    "User-agent: *\nDisallow: /ronen\nDisallow: /admin\nDisallow: /api/admin\nDisallow: /team-app\n\nSitemap: https://ronencohen.dev/sitemap.xml\n"
   );
 });
 
@@ -68,6 +68,20 @@ if (config.isProd) {
   const pagesDir = path.join(frontendDist, "_pages");
   app.use("/_pages", (_req, res) => {
     res.status(404).end();
+  });
+  /** The agency's Telegram Mini App (frontend/public/team-app): Telegram Web shows it in an iframe and it needs
+   *  Telegram's script, so it gets its own CSP instead of helmet's frame/script restrictions. */
+  app.use("/team-app", (_req, res, next) => {
+    res.removeHeader("X-Frame-Options");
+    res.setHeader(
+      "Content-Security-Policy",
+      "default-src 'self'; script-src 'self' https://telegram.org; style-src 'self'; img-src 'self' data:; " +
+        "connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; " +
+        "frame-ancestors https://web.telegram.org https://*.telegram.org"
+    );
+    res.setHeader("X-Robots-Tag", "noindex, nofollow");
+    res.setHeader("Cache-Control", "no-cache");
+    next();
   });
   app.use(express.static(frontendDist, { index: false, redirect: false }));
   app.get("*", (req, res, next) => {
