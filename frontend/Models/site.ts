@@ -4,7 +4,7 @@ export const siteConfig = {
   brand: "Ronen",
   email: "hello@example.com",
   /** The address Noa (sales) answers contact-form leads from — shown after the form is sent. */
-  salesEmail: "noaaronenai@gmail.com",
+  salesEmail: "noa@ronencohen.dev",
   linkedin: "https://www.linkedin.com/in/ronen-cohen7/",
   github: "https://github.com/RonenCohen7",
   whatsapp: "https://wa.me/972000000000",
