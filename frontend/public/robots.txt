@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /ronen
 Disallow: /admin
 Disallow: /api/admin
+
+Sitemap: https://ronencohen.dev/sitemap.xml

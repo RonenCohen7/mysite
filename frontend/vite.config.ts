@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { seoPrerender } from "./seo/prerender";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, path.resolve(__dirname, ".."), "");
@@ -9,7 +10,7 @@ export default defineConfig(({ mode }) => {
   const n8nPath = new URL(n8nFormUrl).pathname;
 
   return {
-    plugins: [react()],
+    plugins: [react(), seoPrerender()],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),

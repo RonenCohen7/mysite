@@ -102,6 +102,36 @@ export const translations = {
                 },
             ],
         },
+        faq: {
+            label: "[ FAQ ]",
+            title: "What businesses ask before we start",
+            items: [
+                {
+                    q: "Who is a custom system for?",
+                    a: "Small and mid-sized businesses whose team loses hours to manual work — spreadsheets, WhatsApp, copy-paste between tools — or whose off-the-shelf software forces a process that doesn't fit. The system is built around how the business actually works.",
+                },
+                {
+                    q: "Which areas do you work in?",
+                    a: "I work with businesses in Gedera, Rehovot, Ness Ziona, Mazkeret Batya, Ashdod and the surrounding area — and remotely with businesses anywhere in Israel.",
+                },
+                {
+                    q: "What systems and automations do you build?",
+                    a: "Web systems for managing customers, stock, orders, staff scheduling and data libraries; n8n automations; AI agents for office work; web scraping and data mining; and building and tuning databases (MSSQL, MongoDB).",
+                },
+                {
+                    q: "Can the system connect to the tools I already use?",
+                    a: "Yes. APIs, WhatsApp, calendars, Google Sheets, CRM and payments are planned into the architecture from day one — so data moves once and every system stays updated.",
+                },
+                {
+                    q: "How much does it cost and how long does it take?",
+                    a: "It depends on the scope. We start with a short intro call to map the need, and then you get a clear proposal with price and timeline — before a single line of code is written.",
+                },
+                {
+                    q: "How do we get started?",
+                    a: "Fill in the form on this site, and within minutes you'll get an email with free times to talk with Ronen — pick one with a single click.",
+                },
+            ],
+        },
         techTooltips: {
             react: "React — JavaScript library for building fast, interactive user interfaces.",
             typescript: "TypeScript — Typed JavaScript for safer, more maintainable code.",
@@ -330,6 +360,36 @@ export const translations = {
                     title: "ערך שאפשר להסביר",
                     description:
                         "פחות טעויות, תגובה מהירה יותר, שליטה טובה יותר במלאי/לקוחות/מכירות — תוצאות שבעל העסק מרגיש בתפעול היומיומי.",
+                },
+            ],
+        },
+        faq: {
+            label: "[ שאלות נפוצות ]",
+            title: "מה עסקים שואלים לפני שמתחילים",
+            items: [
+                {
+                    q: "למי מתאימה מערכת בהתאמה אישית?",
+                    a: "לעסקים קטנים ובינוניים שהצוות שלהם מאבד שעות על עבודה ידנית — אקסלים, WhatsApp והעתקות בין כלים — או שתוכנת מדף כופה עליהם תהליך שלא מתאים להם. המערכת נבנית סביב איך שהעסק באמת עובד.",
+                },
+                {
+                    q: "באילו אזורים אתה עובד?",
+                    a: "אני עובד עם עסקים בגדרה, רחובות, נס ציונה, מזכרת בתיה, אשדוד והסביבה — וגם מרחוק עם עסקים מכל הארץ.",
+                },
+                {
+                    q: "אילו מערכות ואוטומציות אתה בונה?",
+                    a: "מערכות ווב לניהול לקוחות, מלאי, הזמנות, שיבוץ עובדים ומאגרי מידע; אוטומציות ב-n8n; סוכני AI לצרכי המשרד; Scraping וכריית מידע; ובנייה ושיפור ביצועים של מסדי נתונים (MSSQL, MongoDB).",
+                },
+                {
+                    q: "אפשר לחבר את המערכת לכלים שכבר יש לי?",
+                    a: "כן. חיבורי API, WhatsApp, יומנים, Google Sheets, CRM ותשלומים מתוכננים כבר בארכיטקטורה — כך שהנתונים זזים פעם אחת וכל המערכות מתעדכנות.",
+                },
+                {
+                    q: "כמה זה עולה וכמה זמן זה לוקח?",
+                    a: "זה תלוי בהיקף. מתחילים בשיחת היכרות קצרה שבה ממפים את הצורך, ואחריה מקבלים הצעה מסודרת עם מחיר ולוח זמנים — לפני שנכתבת שורת קוד.",
+                },
+                {
+                    q: "איך מתחילים?",
+                    a: "ממלאים את הטופס באתר, ותוך דקות מגיע מייל עם מועדים פנויים לשיחה עם רונן — בוחרים שעה בלחיצה אחת.",
                 },
             ],
         },

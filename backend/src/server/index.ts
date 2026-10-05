@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
+import { existsSync } from "fs";
 import { fileURLToPath } from "url";
 import { config, isAllowedOrigin } from "./config.js";
 import { connectDb } from "./db.js";
@@ -47,16 +48,33 @@ app.use(csrfErrorHandler);
 
 app.get("/robots.txt", (_req, res) => {
   res.type("text/plain");
-  res.send("User-agent: *\nDisallow: /ronen\nDisallow: /admin\nDisallow: /api/admin\n");
+  res.send(
+    "User-agent: *\nDisallow: /ronen\nDisallow: /admin\nDisallow: /api/admin\n\nSitemap: https://ronencohen.dev/sitemap.xml\n"
+  );
 });
+
+/** Same mapping as frontend/seo/prerender.ts — pages built there for crawlers that don't run JavaScript. */
+function prerenderedPage(pathname: string): string | null {
+  const route = pathname.replace(/\/+$/, "") || "/";
+  if (route === "/") return "home.html";
+  if (route === "/about") return "about.html";
+  const project = /^\/projects\/([a-z0-9-]+)$/.exec(route);
+  return project ? `projects/${project[1]}.html` : null;
+}
 
 if (config.isProd) {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const frontendDist = path.resolve(__dirname, "../../../frontend/dist");
-  app.use(express.static(frontendDist));
+  const pagesDir = path.join(frontendDist, "_pages");
+  app.use("/_pages", (_req, res) => {
+    res.status(404).end();
+  });
+  app.use(express.static(frontendDist, { index: false, redirect: false }));
   app.get("*", (req, res, next) => {
     if (req.path.startsWith("/api")) return next();
-    res.sendFile(path.join(frontendDist, "index.html"), (err) => {
+    const page = prerenderedPage(req.path);
+    const file = page ? path.join(pagesDir, page) : null;
+    res.sendFile(file && existsSync(file) ? file : path.join(frontendDist, "index.html"), (err) => {
       if (err) next(err);
     });
   });

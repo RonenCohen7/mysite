@@ -8,6 +8,7 @@ import { Services } from "@/components/ServicesArea/Services/Services";
 import { Portfolio } from "@/components/PortfolioArea/Portfolio/Portfolio";
 import { WhyCustom } from "@/components/ValueArea/WhyCustom/WhyCustom";
 import { Testimonials } from "@/components/TestimonialsArea/Testimonials/Testimonials";
+import { Faq } from "@/components/FaqArea/Faq/Faq";
 import { Contact } from "@/components/ContactArea/Contact/Contact";
 import { siteConfig } from "@models/site";
 import { scrollToSection } from "@/Utils/useScrollSpy";
@@ -33,6 +34,7 @@ export function PublicSite() {
         <Services />
         <WhyCustom />
         {siteConfig.showPartnersSection ? <Testimonials /> : null}
+        <Faq />
         <Contact />
       </main>
       <Footer />
