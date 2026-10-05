@@ -20,6 +20,7 @@ import { siteConfig } from "../Models/site";
 const he = translations.he;
 const SITE = siteConfig.url;
 const PAGES_DIR = "_pages";
+const LOGO = `${SITE}/brand/logo.jpg`;
 
 const areasHe = siteConfig.serviceAreas.map((a) => a.he);
 const areasSentence = `ב${areasHe.slice(0, -1).join(", ")} ו${areasHe[areasHe.length - 1]}`;
@@ -78,6 +79,8 @@ const business = {
   name: "Ronen Cohen — מערכות בהתאמה אישית לעסקים",
   alternateName: ["רונן כהן", "Ronen Cohen"],
   url: `${SITE}/`,
+  logo: LOGO,
+  image: LOGO,
   description: HOME_DESCRIPTION,
   founder: { "@id": ronen["@id"] },
   sameAs: [siteConfig.linkedin, siteConfig.github],
@@ -258,6 +261,7 @@ function render(template: string, page: Page): string {
     `    <meta property="og:title" content="${esc(page.title)}" />\n` +
     `    <meta property="og:description" content="${esc(page.description)}" />\n` +
     `    <meta property="og:url" content="${esc(page.url)}" />\n` +
+    `    <meta property="og:image" content="${LOGO}" />\n` +
     `    <style>${STATIC_CSS}</style>\n` +
     `    <script type="application/ld+json">${JSON.stringify(page.jsonLd).replace(/</g, "\\u003c")}</script>\n  `;
 
