@@ -1,6 +1,10 @@
 import axios from "axios";
 import type { Project, ApiResponse, AuthMeResponse, UploadResponse } from "@mysite/shared";
 import { buildN8nContactFormData } from "@mysite/shared";
+import { leadSourceLine } from "@/Services/LeadSource";
+
+/** contactSchema's limit on the message, the source line included. */
+const MAX_MESSAGE = 5000;
 
 // In dev, leave VITE_API_URL empty so requests go through the Vite proxy (same origin).
 // Direct calls to :3001 break login cookies (cross-origin + SameSite=strict).
@@ -97,11 +101,12 @@ export async function uploadFile(file: File, kind: "image" | "video"): Promise<U
 export async function sendContact(form: Record<string, string>): Promise<void> {
   if (form.website) return;
 
+  const source = leadSourceLine();
   const payload = {
     name: form.name,
     email: form.email,
     company: form.company || "",
-    message: form.message,
+    message: form.message.slice(0, MAX_MESSAGE - source.length) + source,
     mobile: form.mobile,
   };
 
