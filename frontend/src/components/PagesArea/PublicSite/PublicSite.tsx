@@ -9,6 +9,7 @@ import { Portfolio } from "@/components/PortfolioArea/Portfolio/Portfolio";
 import { WhyCustom } from "@/components/ValueArea/WhyCustom/WhyCustom";
 import { Testimonials } from "@/components/TestimonialsArea/Testimonials/Testimonials";
 import { Faq } from "@/components/FaqArea/Faq/Faq";
+import { BeyondCode } from "@/components/PersonalArea/BeyondCode/BeyondCode";
 import { Contact } from "@/components/ContactArea/Contact/Contact";
 import { siteConfig } from "@models/site";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -41,6 +42,7 @@ export function PublicSite() {
         <Services />
         <WhyCustom />
         {siteConfig.showPartnersSection ? <Testimonials /> : null}
+        <BeyondCode />
         <Faq />
         <Contact />
       </main>

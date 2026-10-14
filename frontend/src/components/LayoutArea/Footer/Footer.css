@@ -15,6 +15,7 @@
 .footer__socials .footer__social:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
 .footer__social--linkedin { --brand: #0a66c2; }
 .footer__social--facebook { --brand: #1877f2; }
+.footer__social--instagram { --brand: #e1306c; }
 .footer__social--github { --brand: #181717; }
 .footer__social--youtube { --brand: #ff0000; }
 .footer__social--email { --brand: #ea4335; }

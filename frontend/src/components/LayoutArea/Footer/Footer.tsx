@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Facebook, Github, Youtube, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, Facebook, Instagram, Github, Youtube, Mail, MessageCircle } from "lucide-react";
 import { siteConfig } from "@models/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { IconButton } from "@/components/UiArea/IconButton/IconButton";
@@ -24,6 +24,9 @@ export function Footer() {
           </a>
           <a href={siteConfig.facebook} target="_blank" rel="noopener noreferrer">
             <IconButton icon={<Facebook size={18} />} tooltip={t.footer.facebook} variant="ghost" className="footer__social footer__social--facebook" />
+          </a>
+          <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer">
+            <IconButton icon={<Instagram size={18} />} tooltip={t.footer.instagram} variant="ghost" className="footer__social footer__social--instagram" />
           </a>
           <a href={siteConfig.github} target="_blank" rel="noopener noreferrer">
             <IconButton icon={<Github size={18} />} tooltip={t.footer.github} variant="ghost" className="footer__social footer__social--github" />

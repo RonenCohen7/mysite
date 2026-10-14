@@ -202,7 +202,12 @@ export const translations = {
                 message: "Tell me what you need help with...",
             },
         },
-        footer: { rights: "All rights reserved.", about: "About", privacy: "Privacy Policy", linkedin: "LinkedIn", github: "GitHub", youtube: "YouTube", facebook: "Facebook", email: "Email", whatsapp: "WhatsApp" },
+        footer: { rights: "All rights reserved.", about: "About", privacy: "Privacy Policy", linkedin: "LinkedIn", github: "GitHub", youtube: "YouTube", facebook: "Facebook", instagram: "Instagram", email: "Email", whatsapp: "WhatsApp" },
+        beyondCode: {
+            title: "Beyond the code...",
+            subtitle: "Motorcycles, trips and moments from the road — on my Instagram.",
+            cta: "Follow on Instagram",
+        },
         about: {
             pageTitle: "Nice to meet you | Ronen Cohen",
             backHome: "Back to Home",
@@ -483,7 +488,12 @@ export const translations = {
                 message: "ספר לי במה אתה צריך עזרה...",
             },
         },
-        footer: { rights: "כל הזכויות שמורות.", about: "אודות", privacy: "מדיניות פרטיות", linkedin: "LinkedIn", github: "GitHub", youtube: "YouTube", facebook: "Facebook", email: "אימייל", whatsapp: "WhatsApp" },
+        footer: { rights: "כל הזכויות שמורות.", about: "אודות", privacy: "מדיניות פרטיות", linkedin: "LinkedIn", github: "GitHub", youtube: "YouTube", facebook: "Facebook", instagram: "Instagram", email: "אימייל", whatsapp: "WhatsApp" },
+        beyondCode: {
+            title: "קצת מעבר לקוד...",
+            subtitle: "אופנועים, טיולים ורגעים מהדרך — באינסטגרם שלי.",
+            cta: "לאינסטגרם שלי",
+        },
         about: {
             pageTitle: "נעים להכיר | רונן כהן",
             backHome: "חזרה לדף הבית",

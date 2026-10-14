@@ -18,6 +18,7 @@ export const siteConfig = {
   github: "https://github.com/RonenCohen7",
   youtube: "https://www.youtube.com/@ronencohen-dev",
   facebook: "https://www.facebook.com/profile.php?id=61594823104470",
+  instagram: "https://www.instagram.com/ronen7437/",
   whatsapp: "https://wa.me/972000000000",
   /** Set true to show the "Collaboration with" partners section on the homepage. */
   showPartnersSection: false,
