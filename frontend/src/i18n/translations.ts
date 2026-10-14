@@ -226,15 +226,55 @@ export const translations = {
         },
         footer: { rights: "All rights reserved.", about: "About", privacy: "Privacy Policy", linkedin: "LinkedIn", github: "GitHub", youtube: "YouTube", facebook: "Facebook", email: "Email", whatsapp: "WhatsApp" },
         about: {
-            label: "About Me",
+            pageTitle: "Nice to meet you | Ronen Cohen",
             backHome: "Back to Home",
-            experience: "15+ years of experience",
-            bio: [
-                "My name is Ronen Cohen — a Full Stack Developer and AI Automation Architect with over 15 years of experience.",
-                "I build intelligent systems that optimize businesses through automation and custom AI agents tailored to office needs.",
-                "I specialize in custom SaaS development, API integrations, web scraping, and AI-powered automation that saves teams countless hours and drives measurable ROI.",
-                "I guide businesses end to end — from needs analysis and understanding workflows to finding the best-fit solution — by building scalable solutions with modern tools like React, TypeScript, Node.js, Python, n8n, Claude, Cursor, GPT, DeepSeek, and more.",
+            headline: "Nice to meet you, I'm Ronen Cohen",
+            lead: "I like understanding how things work, and I like even more finding ways to make them work better.",
+            intro: [
+                "For as long as I can remember, computers and technology have fascinated me. I always wanted to understand what happens behind the scenes, how systems work, and how technology can be used to solve real problems.",
+                "Over the years I worked with information systems, computers, and software development, and I met people, organizations, and the different ways businesses run.",
+                "Over time I understood something important: behind every system there are people. People who want to work more comfortably, save time, bring some order, and focus on what actually matters to them.",
             ],
+            refrain: "And that understanding stays with me to this day.",
+            chapters: [
+                {
+                    title: "First understand the problem, then build the solution",
+                    paragraphs: [
+                        "When a business owner comes to me, I don't start by talking about software or technologies.",
+                        "I listen first.",
+                        "I want to understand how the business works, what eats up time, what makes the work cumbersome, and what could be done differently.",
+                        "Sometimes it's a process that repeats itself every day. Sometimes it's information scattered across files, and sometimes it's an idea for a new system that still isn't clear how to bring to life.",
+                        "For me, the interesting challenge is to take all of those things, bring order to them, and find a solution that is simple, comfortable, and right for the business.",
+                    ],
+                    quote: "",
+                },
+                {
+                    title: "From an idea to something that actually works",
+                    paragraphs: [
+                        "One of the things I love about my work is that I can accompany an idea from the moment it comes up in a conversation until it becomes a real system that people use.",
+                        "I combine experience in information systems, an understanding of how work actually flows, and the ability to build digital solutions tailored to the business.",
+                        "In recent years I've also been bringing AI tools into the work. They make it possible to do things that used to take much more time and effort.",
+                        "But for me, technology is always the means, not the goal.",
+                    ],
+                    quote: "Not every business needs a big, expensive system. It needs a solution that fits.",
+                },
+                {
+                    title: "And a little about me, outside of work",
+                    paragraphs: [
+                        "I like learning new things, meeting people, and discovering places I haven't been.",
+                        "One of my great loves is riding a motorcycle. Heading out on the road, enjoying the views, stopping in interesting places, and discovering something new every time.",
+                        "I think there's something in common between riding and the way I approach projects: curiosity, a wish to keep moving, the ability to change direction when it's needed, and the pleasure of the road itself.",
+                    ],
+                    quote: "",
+                },
+            ],
+            closeTitle: "So if you have an idea, or something in the business that simply doesn't work the way you'd like...",
+            close: [
+                "I'd be glad to hear.",
+                "You don't need to understand technology, prepare documents, or show up with a solution already figured out.",
+            ],
+            closeQuote: "We'll start with a simple conversation. We'll understand what's needed, think it through together, and see how to make things easier and better.",
+            signature: "Ronen.",
         },
         notFound: {
             title: "This page does not exist",
@@ -487,15 +527,56 @@ export const translations = {
         },
         footer: { rights: "כל הזכויות שמורות.", about: "אודות", privacy: "מדיניות פרטיות", linkedin: "LinkedIn", github: "GitHub", youtube: "YouTube", facebook: "Facebook", email: "אימייל", whatsapp: "WhatsApp" },
         about: {
-            label: "אודות",
+            pageTitle: "נעים להכיר | רונן כהן",
             backHome: "חזרה לדף הבית",
-            experience: " שנים רבות בעולם המידע והפיתוח ",
-            bio: [
-                "שמי רונן כהן — מפתח Full Stack וארכיטקט AI Automation עם המון ניסיון.",
-                "אני בונה מערכות חכמות המייעלות עסקים בהכנסת אוטומציה וסוכני AI ייעודיים לצרכי המשרד.",
-                "אני מתמחה בפיתוח SaaS ייעודי, אינטגרציות API, scraping ואוטומציה מבוססת AI שחוסכת לצוותים שעות רבות ומייצרת ROI מדיד.",
-                "ליווי עסקי מאיפיון הצורך והבנת תהליכי העבודה ועד למציאת הפתרון המתאים ביותר עבור הלקוח, באמצעות יצירת פתרונות סקיילביליים עם כלים מודרניים כמו React, TypeScript, Node.js, Python, n8n, Claude, Cursor, GPT, DeepSeek ועוד.",
+            headline: "נעים להכיר, אני רונן כהן",
+            lead: "אני אוהב להבין איך דברים עובדים, ועוד יותר אוהב למצוא דרכים לגרום להם לעבוד טוב יותר.",
+            intro: [
+                "מאז שאני זוכר את עצמי, עולם המחשבים והטכנולוגיה סיקרן אותי. תמיד רציתי להבין מה קורה מאחורי הקלעים, איך מערכות עובדות ואיך אפשר להשתמש בטכנולוגיה כדי לפתור בעיות אמיתיות.",
+                "במהלך השנים עסקתי במערכות מידע, מחשבים ופיתוח תוכנה, ונחשפתי לאנשים, לארגונים ולדרכים שונות שבהן עסקים מתנהלים.",
+                "עם הזמן הבנתי משהו חשוב: מאחורי כל מערכת יש אנשים. אנשים שרוצים לעבוד בצורה נוחה יותר, לחסוך זמן, לעשות סדר ולהתמקד במה שבאמת חשוב להם.",
             ],
+            refrain: "וההבנה הזאת מלווה אותי עד היום.",
+            chapters: [
+                {
+                    title: "קודם מבינים את הבעיה, אחר כך בונים את הפתרון",
+                    paragraphs: [
+                        "כשבעל עסק פונה אליי, אני לא מתחיל מלדבר על תוכנות או טכנולוגיות.",
+                        "אני קודם כול מקשיב.",
+                        "אני רוצה להבין איך העסק עובד, מה גוזל זמן, מה מסרבל את העבודה ומה אפשר לעשות אחרת.",
+                        "לפעמים מדובר בתהליך שחוזר על עצמו מדי יום. לפעמים במידע שמפוזר בין קבצים, ולפעמים ברעיון למערכת חדשה שעדיין לא ברור איך להוציא לפועל.",
+                        "מבחינתי, האתגר המעניין הוא לקחת את כל הדברים האלה, לעשות בהם סדר ולמצוא פתרון פשוט, נוח ונכון לעסק.",
+                    ],
+                    quote: "",
+                },
+                {
+                    title: "מהרעיון ועד למשהו שעובד באמת",
+                    paragraphs: [
+                        "אחד הדברים שאני אוהב בעבודה שלי הוא שאני יכול ללוות רעיון מהרגע שהוא עולה בשיחה ועד שהוא הופך למערכת אמיתית שאנשים משתמשים בה.",
+                        "אני משלב ניסיון במערכות מידע, הבנה של תהליכי עבודה ויכולת לפתח פתרונות דיגיטליים בהתאמה אישית.",
+                        "בשנים האחרונות אני משלב בעבודה גם כלי בינה מלאכותית, שמאפשרים לעשות דברים שבעבר דרשו הרבה יותר זמן ומאמץ.",
+                        "אבל מבחינתי, הטכנולוגיה היא תמיד האמצעי ולא המטרה.",
+                    ],
+                    quote: "לא כל עסק צריך מערכת גדולה ויקרה. הוא צריך פתרון שמתאים לו.",
+                },
+                {
+                    title: "וקצת עליי, מחוץ לעולם העבודה",
+                    paragraphs: [
+                        "אני אוהב ללמוד דברים חדשים, להכיר אנשים ולגלות מקומות שלא הייתי בהם.",
+                        "אחת האהבות הגדולות שלי היא רכיבה על אופנוע. לצאת לדרך, ליהנות מהנופים, לעצור במקומות מעניינים ולגלות משהו חדש בכל פעם.",
+                        "אני חושב שיש משהו משותף בין רכיבה לבין הדרך שבה אני ניגש לפרויקטים: סקרנות, רצון להתקדם, היכולת לשנות כיוון כשצריך, וההנאה מהדרך עצמה.",
+                    ],
+                    quote: "",
+                },
+            ],
+            closeTitle: "אז אם יש לכם רעיון, או משהו בעסק שפשוט לא עובד כמו שהייתם רוצים...",
+            close: [
+                "אשמח לשמוע.",
+                "לא צריך להבין בטכנולוגיה, להכין מסמכים או להגיע עם פתרון מוכן.",
+            ],
+            closeQuote:
+                "נתחיל בשיחה פשוטה. נבין מה צריך, נחשוב יחד ונראה איך אפשר להפוך את הדברים לקלים וטובים יותר.",
+            signature: "רונן.",
         },
         notFound: {
             title: "דף זה לא קיים",

@@ -175,18 +175,32 @@ function homePage(projects: Project[]): Page {
 }
 
 function aboutPage(projects: Project[]): Page {
+  const chapterHtml = he.about.chapters
+    .map((chapter) => {
+      const paras = chapter.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("");
+      const quote = chapter.quote ? `<p><strong>${esc(chapter.quote)}</strong></p>` : "";
+      return `<section><h2>${esc(chapter.title)}</h2>${paras}${quote}</section>`;
+    })
+    .join("");
+
   const body =
     header() +
-    `<main><h1>${esc(he.site.name)}</h1><p>${esc(he.site.title)}</p><p>${esc(he.about.experience.trim())}</p>` +
-    he.about.bio.map((p) => `<p>${esc(p)}</p>`).join("") +
+    `<main><h1>${esc(he.about.headline)}</h1><p><strong>${esc(he.about.lead)}</strong></p>` +
+    he.about.intro.map((p) => `<p>${esc(p)}</p>`).join("") +
+    `<p>${esc(he.about.refrain)}</p>` +
+    chapterHtml +
+    `<section><h2>${esc(he.about.closeTitle)}</h2>` +
+    he.about.close.map((p) => `<p>${esc(p)}</p>`).join("") +
+    `<p><strong>${esc(he.about.closeQuote)}</strong></p><p>${esc(he.about.signature)}</p>` +
+    `<p><a href="/#contact">${esc(he.hero.ctaCall)}</a></p></section>` +
     `<section><h2>${esc(he.sections.portfolio.label)}</h2>${projectList(projects)}</section></main>` +
     footer();
 
   return {
     file: "about.html",
     url: `${SITE}/about`,
-    title: "אודות רונן כהן — מפתח Full Stack ו-AI Automation",
-    description: `${he.about.bio[0]} ${he.about.bio[1]}`,
+    title: he.about.pageTitle,
+    description: he.about.lead,
     body,
     jsonLd: {
       "@context": "https://schema.org",
