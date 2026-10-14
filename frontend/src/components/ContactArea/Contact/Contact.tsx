@@ -38,7 +38,7 @@ export function Contact() {
 
   return (
     <Section id="contact">
-      <SectionHeading label={t.sections.contact.label} subtitle={t.sections.contact.subtitle} />
+      <SectionHeading title={t.sections.contact.label} subtitle={t.sections.contact.subtitle} />
       <div className={"contact__wrapper"}>
         <AnimatePresence mode="wait">
           {sent ? (

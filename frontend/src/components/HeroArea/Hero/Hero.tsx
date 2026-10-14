@@ -1,124 +1,81 @@
 import { motion } from "framer-motion";
-import { Search, PenTool, CircleCheck, Calendar, FolderOpen, ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import portraitImage from "@/Assets/Images/about-portrait.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { IconButton } from "@/components/UiArea/IconButton/IconButton";
 import { scrollToSection } from "@/Utils/useScrollSpy";
-import { cn } from "@/Utils/cn";
 import "./Hero.css";
 
-const heroIcons = [
-  { Icon: Search, key: "line1" as const, variant: "turquoise" as const },
-  { Icon: PenTool, key: "line2" as const, variant: "orange" as const },
-  { Icon: CircleCheck, key: "line3" as const, variant: "redOrange" as const },
-];
-
 export function Hero() {
-  const { t, dir } = useLanguage();
-  const Arrow = dir === "rtl" ? ArrowRight : ArrowRight;
+  const { t } = useLanguage();
 
   return (
-    <section id="home" className={"hero"}>
+    <section id="home" className="hero">
       <div className="hero__ambient" aria-hidden="true">
         <span className="hero__blob hero__blob--a" />
         <span className="hero__blob hero__blob--b" />
         <span className="hero__blob hero__blob--c" />
       </div>
 
-      <div className={"hero__content"}>
-        <motion.h1
-          className="hero__headline"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {t.hero.headline}
-        </motion.h1>
+      <div className="hero__layout">
+        <div className="hero__copy">
+          <motion.h1
+            className="hero__headline"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {t.hero.headline}
+          </motion.h1>
 
-        <motion.div
-          className="hero__punch"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <p className="hero__punch-line">{t.hero.punchLine1}</p>
-          <p className="hero__punch-line">{t.hero.punchLine2}</p>
-        </motion.div>
+          <motion.p
+            className="hero__secondary"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {t.hero.secondary}
+          </motion.p>
 
-        <motion.div
-          className={"hero__icon-row"}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.2, delayChildren: 0.25 } },
-          }}
-        >
-          {heroIcons.map(({ Icon, key, variant }, i) => {
-            return (
-              <motion.div
-                key={key}
-                className="hero__icon-group"
-                variants={{
-                  hidden: { opacity: 0, y: 40, scale: 0.8 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-                  },
-                }}
-              >
-                {i > 0 && (
-                  <Arrow className={cn("hero__connector", dir === "rtl" && "hero__connector--rtl")} size={28} />
-                )}
-                <div className={cn("hero__icon-card", `hero__icon-card--${variant}`)}>
-                  <div className={cn("hero__icon-wrap", `hero__icon-wrap--${variant}`)}>
-                    <Icon size={36} strokeWidth={1.5} />
-                  </div>
-                  <span className={cn("hero__icon-label", `hero__icon-label--${variant}`)}>{t.hero[key]}</span>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+          <motion.p
+            className="hero__subtitle"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            {t.hero.subtitle}
+          </motion.p>
 
-        <motion.div
-          className={"hero__subtitle-block"}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.55, duration: 0.8 }}
-        >
-          <p className={"hero__subtitle"}>{t.hero.subtitle}</p>
-        </motion.div>
+          <motion.div
+            className="hero__actions"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.32, duration: 0.6 }}
+          >
+            <button type="button" className="hero__cta hero__cta--primary" onClick={() => scrollToSection("contact")}>
+              {t.hero.ctaTalk}
+            </button>
+            <button type="button" className="hero__cta hero__cta--secondary" onClick={() => scrollToSection("portfolio")}>
+              {t.hero.ctaProjects}
+            </button>
+          </motion.div>
+        </div>
 
-        <motion.div
-          className={"hero__actions"}
-          initial={{ opacity: 0, y: 20 }}
+        <motion.figure
+          className="hero__portrait"
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
+          transition={{ delay: 0.18, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <IconButton
-            icon={<Calendar size={22} />}
-            tooltip={t.hero.ctaCall}
-            size="lg"
-            onClick={() => scrollToSection("contact")}
-          />
-          <IconButton
-            icon={<FolderOpen size={22} />}
-            tooltip={t.hero.ctaProjects}
-            variant="ghost"
-            size="lg"
-            onClick={() => scrollToSection("portfolio")}
-          />
-        </motion.div>
+          <img src={portraitImage} alt={t.site.name} width={775} height={1024} />
+        </motion.figure>
       </div>
 
       <motion.div
-        className={"hero__scroll"}
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+        className="hero__scroll"
+        animate={{ y: [0, 6, 0] }}
+        transition={{ repeat: Infinity, duration: 2.2 }}
       >
-        <ChevronDown size={20} />
+        <ChevronDown size={18} />
         {t.hero.scroll}
       </motion.div>
     </section>

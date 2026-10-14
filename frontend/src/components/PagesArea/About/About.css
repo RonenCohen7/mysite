@@ -102,9 +102,6 @@
 
 .about-page__refrain {
   margin: 0.35rem 0 0;
-  padding-block: 0.15rem;
-  padding-inline-start: 1rem;
-  border-inline-start: 3px solid var(--color-orange-400);
   color: var(--color-slate-900);
   font-size: 1.08rem;
   font-weight: 600;

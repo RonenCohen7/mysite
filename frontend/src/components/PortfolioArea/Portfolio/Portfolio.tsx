@@ -24,7 +24,7 @@ export function Portfolio() {
 
   return (
     <Section id="portfolio">
-      <SectionHeading label={t.sections.portfolio.label} subtitle={t.sections.portfolio.subtitle} />
+      <SectionHeading title={t.sections.portfolio.title} subtitle={t.sections.portfolio.subtitle} />
       {loading ? (
         <p className={"portfolio__loading"}>{t.portfolio.loading}</p>
       ) : projects.length === 0 ? (

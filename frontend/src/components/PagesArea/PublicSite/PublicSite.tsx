@@ -11,17 +11,24 @@ import { Testimonials } from "@/components/TestimonialsArea/Testimonials/Testimo
 import { Faq } from "@/components/FaqArea/Faq/Faq";
 import { Contact } from "@/components/ContactArea/Contact/Contact";
 import { siteConfig } from "@models/site";
+import { useLanguage } from "@/i18n/LanguageContext";
 import { scrollToSection } from "@/Utils/useScrollSpy";
 
 export function PublicSite() {
   const location = useLocation();
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    document.title = t.site.title;
+  }, [t.site.title]);
 
   useEffect(() => {
     const id = location.hash.replace(/^#/, "");
     if (!id) return;
-    const timer = window.setTimeout(() => scrollToSection(id), 80);
-    return () => window.clearTimeout(timer);
-  }, [location.hash, location.pathname]);
+    // Sections above (e.g. portfolio) load async and shift the layout, so re-align a few times.
+    const timers = [80, 400, 1000].map((ms) => window.setTimeout(() => scrollToSection(id), ms));
+    return () => timers.forEach((t) => window.clearTimeout(t));
+  }, [location.hash, location.pathname, location.key]);
 
   return (
     <div className="site-shell">
@@ -29,9 +36,9 @@ export function PublicSite() {
       <Navbar />
       <main>
         <Hero />
-        <Portfolio />
         <ValueNeeds />
         <Services />
+        <Portfolio />
         <WhyCustom />
         {siteConfig.showPartnersSection ? <Testimonials /> : null}
         <Faq />

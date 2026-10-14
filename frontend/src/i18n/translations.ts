@@ -4,7 +4,7 @@ export const translations = {
     en: {
         site: {
             name: "Ronen Cohen",
-            title: "Custom Systems for Small Businesses | Full Stack & AI",
+            title: "Your business can work smarter | Ronen Cohen",
         },
         nav: {
             home: "Home",
@@ -19,86 +19,84 @@ export const translations = {
             line1: "Identify the need",
             line2: "Design the solution",
             line3: "Save time, money & headaches",
-            headline: "Custom systems for small businesses",
-            punchLine1: "Stop working for the business. Let the business work for you.",
-            punchLine2: "If it repeats every day — we turn it into a system.",
+            headline: "Your business can work smarter.",
+            secondary: "I'm here to help make that happen.",
+            punchLine1: "I'm here to help make that happen.",
+            punchLine2: "From the first idea to a solution that actually works.",
             subtitle:
-                "I design and build tailored web systems and automations around your real workflow — so the business runs with less friction, fewer errors, and hours saved every week.",
+                "I'm Ronen Cohen. I help business owners see what can be improved, save time, and build digital solutions that fit their needs. From the first idea to a solution that actually works.",
             ctaCall: "Schedule a Call",
-            ctaProjects: "See Real Projects",
+            ctaTalk: "Let's talk about your business",
+            ctaProjects: "See my projects",
             scroll: "Scroll",
         },
         sections: {
             services: {
-                label: "Services & automations",
-                subtitle:
-                    "Web scraping, AI workflows, integrations, and databases — practical capabilities with demo videos.",
+                label: "What I can help with",
+                title: "Solutions that fit your business",
+                subtitle: "Practical solutions, built around how the business actually works.",
             },
             portfolio: {
-                label: "What I build",
-                subtitle: "Real projects for small businesses — the requirement, what we built, and the result.",
+                label: "",
+                title: "Featured projects",
+                subtitle: "A selection of systems and websites I built — you're welcome to go in and take a look.",
             },
             techStack: { label: "Tech Stack", subtitle: "Industry-leading tools and platforms for system development, AI-driven automation, and business integrations." },
             process: { label: "Process", subtitle: "A proven methodology delivering results from discovery to deployment." },
             testimonials: { label: "Collaboration with" },
-            contact: { label: "Let's talk", subtitle: "" },
+            contact: { label: "Let's talk", subtitle: "Tell me about the business — we'll start with a simple conversation." },
         },
         valueNeeds: {
-            label: "[ When you need a custom system ]",
-            title: "The need behind every build",
-            subtitle:
-                "I don't start from features — I start from the operational pain. Here's when a tailored system creates real value.",
+            label: "",
+            title: "Feel like some things in the business could be simpler?",
+            subtitle: "",
             items: [
                 {
                     title: "Too much manual work",
-                    need: "Your team lives in spreadsheets, WhatsApp, and copy-paste between tools.",
-                    value: "Value: reclaim hours every week and cut avoidable mistakes.",
+                    need: "Tasks that repeat and eat up precious time?",
                 },
                 {
-                    title: "Systems that don't talk",
-                    need: "Stock, customers, sales, and events sit in separate places with no single source of truth.",
-                    value: "Value: one connected flow — data moves once, everywhere stays updated.",
+                    title: "Scattered information",
+                    need: "Is your information spread across files and different systems?",
                 },
                 {
-                    title: "Off-the-shelf isn't enough",
-                    need: "Generic software forces your business into someone else's process (VIP clubs, tickets, special workflows).",
-                    value: "Value: a system shaped around how you actually operate.",
+                    title: "Hard to manage the business",
+                    need: "Hard to follow customers, orders, or work processes?",
                 },
                 {
-                    title: "Growth without more headcount",
-                    need: "Demand grows, but hiring for repetitive ops isn't sustainable.",
-                    value: "Value: scale operations with automation instead of extra manual load.",
+                    title: "New business ideas",
+                    need: "Have an idea for a new system and don't know where to start?",
                 },
             ],
         },
         whyCustom: {
-            label: "[ Why custom ]",
+            label: "",
             title: "Time saved. Clear business value.",
-            subtitle: "Every custom system I build is measured by what it removes from the team — and what it unlocks for the business.",
+            subtitle: "Every system I build is measured by what it takes off the team — and what it opens up for the business.",
             items: [
                 {
                     step: "01",
                     title: "Hours back every week",
                     description:
-                        "We map the repetitive tasks first, then automate or digitize them so staff focus on customers — not admin.",
+                        "We start with the tasks that repeat, then turn them into a simple flow so the team can focus on customers — not paperwork.",
                 },
                 {
                     step: "02",
-                    title: "Built around your workflow",
+                    title: "Built around how you work",
                     description:
-                        "Discovery → architecture → build. The product follows your real process, roles, and edge cases — not a template.",
+                        "I listen first, then shape the solution around your real process — not a ready-made template.",
                 },
                 {
                     step: "03",
-                    title: "Integrations from day one",
+                    title: "Everything stays connected",
                     description:
-                        "APIs, databases, WhatsApp, calendars, payments — connected in the architecture so nothing becomes a fragile afterthought.",
+                        "The tools you already use — WhatsApp, calendars, payments — can sit in one flow, so information doesn't get lost between systems.",
                 },
                 {
                     step: "04",
-                    title: "Value you can explain",
+                    title: "Value you can feel",
                     description:
-                        "Fewer errors, faster response, better control of stock/customers/sales — outcomes owners can feel in daily operations.",
+                        "Fewer mistakes, faster answers, and a clearer picture of customers, orders, and stock — in the day-to-day work.",
                 },
             ],
         },
@@ -116,11 +114,11 @@ export const translations = {
                 },
                 {
                     q: "What systems and automations do you build?",
-                    a: "Web systems for managing customers, stock, orders, staff scheduling and data libraries; n8n automations; AI agents for office work; web scraping and data mining; and building and tuning databases (MSSQL, MongoDB).",
+                    a: "Systems for managing customers, stock, orders and staff; automations that save time on repeating work; and smart tools that help with everyday office tasks.",
                 },
                 {
                     q: "Can the system connect to the tools I already use?",
-                    a: "Yes. APIs, WhatsApp, calendars, Google Sheets, CRM and payments are planned into the architecture from day one — so data moves once and every system stays updated.",
+                    a: "Yes. WhatsApp, calendars, spreadsheets, customer tools and payments can be planned in from the start — so information moves once and stays updated.",
                 },
                 {
                     q: "How much does it cost and how long does it take?",
@@ -154,44 +152,24 @@ export const translations = {
         },
         services: [
             {
-                icon: "Bot",
-                category: "Custom Systems",
-                title: "Tailored Business Systems",
-                description: "Custom web systems built around your process — not generic software — so operations run faster, with less manual work and clearer control.",
-                highlights: ["Map the real need before writing code", "Digitize repetitive office workflows", "Save hours every week for the team", "Grow without adding headcount for admin"],
-                tags: ["Custom Build", "Time Saved"],
+                icon: "Layers",
+                title: "Custom business systems",
+                description: "Systems that help manage information, customers, and processes in a simple, organized way.",
             },
             {
                 icon: "Workflow",
-                category: "Automations",
-                title: "n8n Automation Development",
-                description: "Custom automations built on demand to optimize workflows, save time, and elevate the quality of service you deliver.",
-                highlights: ["Tailored n8n workflows for your business", "Connect apps, APIs, and databases seamlessly", "Save hours on repetitive manual tasks", "Improve response times and customer experience"],
-                tags: ["n8n", "Workflow Automation"],
+                title: "Automation and smoother processes",
+                description: "Less manual work, fewer repeating tasks, and more time for what actually matters.",
+            },
+            {
+                icon: "Sparkles",
+                title: "Artificial intelligence for businesses",
+                description: "Smart tools that help with customer service, handling information, and everyday tasks.",
             },
             {
                 icon: "Globe",
-                category: "Data Intelligence",
-                title: "Web Scraping",
-                description: "Mining information from the open web for any purpose — market research, lead generation, monitoring, and more.",
-                highlights: ["Extract data from public web sources", "Market research and competitor tracking", "Lead generation pipelines", "Scheduled monitoring and alerts"],
-                tags: ["Data Mining", "Real-Time Insights"],
-            },
-            {
-                icon: "Plug",
-                category: "Integrations",
-                title: "System Integrations",
-                description: "Seamless integrations between platforms, tools, and business systems for unified, efficient operations.",
-                highlights: ["API connections across platforms", "Real-time data synchronization", "CRM, ERP, and third-party tools", "Unified operational workflows"],
-                tags: ["Zero Friction", "Connected Systems"],
-            },
-            {
-                icon: "Database",
-                category: "Databases",
-                title: "Database Build & Performance",
-                description: "Building, optimizing, and maintaining high-performance databases — indexes, stored procedures, and reliable backups.",
-                highlights: ["Index design and query optimization", "Stored procedures and database logic", "Backup strategies and disaster recovery", "Specialized in MSSQL and MongoDB"],
-                tags: ["MSSQL", "MongoDB"],
+                title: "Websites and digital solutions",
+                description: "Websites, stores, and digital systems built around what the business actually needs.",
             },
         ],
         process: [
@@ -285,6 +263,8 @@ export const translations = {
             empty: "Case studies coming soon.",
             demo: "Open the live system",
             live: "Working system",
+            enterSystem: "Enter the system",
+            visitSite: "Visit the site",
             github: "View on GitHub",
             challenge: "The need",
             solution: "What I built",
@@ -305,7 +285,7 @@ export const translations = {
     he: {
         site: {
             name: "רונן כהן",
-            title: "מערכות בהתאמה אישית לעסקים  | Full Stack ו-AI",
+            title: "העסק שלך יכול לעבוד חכם יותר | רונן כהן",
         },
         nav: {
             home: "בית",
@@ -320,86 +300,84 @@ export const translations = {
             line1: "מזהים צורך",
             line2: "מאפיינים פתרון",
             line3: "חוסכים זמן, כסף וכאב ראש",
-            headline: "מערכות בהתאמה אישית לעסקים",
-            punchLine1: "תפסיקו לעבוד בשביל העסק. תנו לעסק לעבוד בשבילכם",
-            punchLine2: "אם זה חוזר כל יום - הופכים את זה למערכת",
+            headline: "העסק שלך יכול לעבוד חכם יותר.",
+            secondary: "אני כאן כדי לעזור לזה לקרות.",
+            punchLine1: "אני כאן כדי לעזור לזה לקרות.",
+            punchLine2: "מהרעיון הראשון ועד לפתרון שעובד באמת.",
             subtitle:
-                "אני מתכנן ובונה מערכות ווב ואוטומציות סביב תהליך העבודה האמיתי שלכם — פחות חיכוך, פחות טעויות, וחיסכון של שעות בכל שבוע.",
+                "אני רונן כהן. אני עוזר לבעלי עסקים לזהות מה אפשר לשפר, לחסוך זמן ולבנות פתרונות דיגיטליים שמתאימים לצרכים שלהם. מהרעיון הראשון ועד לפתרון שעובד באמת.",
             ctaCall: "קביעת שיחה",
-            ctaProjects: "פרויקטים אמיתיים",
+            ctaTalk: "בואו נדבר על העסק שלכם",
+            ctaProjects: "לצפייה בפרויקטים שלי",
             scroll: "גלילה",
         },
         sections: {
             services: {
-                label: "שירותים ואוטומציות",
-                subtitle:
-                    "Scraping, תהליכי AI, אינטגרציות ומסדי נתונים — יכולות פרקטיות עם סרטוני הדגמה.",
+                label: "איך אפשר לעזור",
+                title: "פתרונות שמתאימים לעסק שלך",
+                subtitle: "פתרונות פרקטיים, סביב הדרך שבה העסק באמת עובד.",
             },
             portfolio: {
-                label: "מה אני בונה",
-                subtitle: "פרויקטים אמיתיים לעסקים  — הדרישה, מה נבנה, והתוצאה.",
+                label: "",
+                title: "פרויקטים נבחרים",
+                subtitle: "מבחר מערכות ואתרים שפיתחתי — מוזמנים להיכנס ולהתרשם.",
             },
             techStack: { label: "טכנולוגיות", subtitle: "כלים ופלטפורמות מובילות לפיתוח מערכות, אוטומציה מבוססת AI ואינטגרציות עסקיות." },
             process: { label: "תהליך", subtitle: "מתודולוגיה מוכחת שמספקת תוצאות מגילוי ועד פריסה." },
             testimonials: { label: "שיתוף פעולה עם" },
-            contact: { label: "בואו נדבר", subtitle: "" },
+            contact: { label: "בואו נדבר", subtitle: "ספרו לי על העסק — נתחיל בשיחה פשוטה." },
         },
         valueNeeds: {
-            label: "[ מתי צריך מערכת בהתאמה אישית ]",
-            title: "הצורך מאחורי כל פיתוח",
-            subtitle:
-                "אני לא מתחיל מפיצ'רים — אני מתחיל מכאב תפעולי. אלה הרגעים שבהם מערכת מותאמת מייצרת ערך אמיתי.",
+            label: "",
+            title: "מרגישים שיש דברים בעסק שאפשר לעשות פשוט יותר?",
+            subtitle: "",
             items: [
                 {
                     title: "יותר מדי עבודה ידנית",
-                    need: "הצוות חי באקסלים, ב-WhatsApp, ובהעתקות בין כלים.",
-                    value: "הערך: מחזירים שעות בכל שבוע ומקטנים טעויות מיותרות.",
+                    need: "משימות שחוזרות על עצמן וגוזלות זמן יקר?",
                 },
                 {
-                    title: "מערכות שלא מדברות",
-                    need: "מלאי, לקוחות, מכירות ואירועים יושבים במקומות נפרדים בלי מקור אמת אחד.",
-                    value: "הערך: זרימה מחוברת אחת — הנתונים זזים פעם אחת, והכול מתעדכן.",
+                    title: "מידע מפוזר",
+                    need: "המידע שלכם מפוזר בין קבצים ומערכות שונות?",
                 },
                 {
-                    title: "תוכנה מדף לא מספיקה",
-                    need: "כלים גנריים כופים תהליך של מישהו אחר (מועדון VIP, כרטיסים, תהליכים מיוחדים).",
-                    value: "הערך: מערכת שמעוצבת לפי איך שהעסק באמת עובד.",
+                    title: "ניהול העסק מסתבך",
+                    need: "קשה לעקוב אחרי לקוחות, הזמנות או תהליכי עבודה?",
                 },
                 {
-                    title: "צמיחה בלי להגדיל כוח אדם",
-                    need: "הביקוש עולה, אבל גיוס רק לתפעול חוזר לא משתלם.",
-                    value: "הערך: מרחיבים תפעול עם אוטומציה במקום עוד עומס ידני.",
+                    title: "רעיונות למערכת חדשה",
+                    need: "יש לכם רעיון למערכת חדשה ולא יודעים מאיפה להתחיל?",
                 },
             ],
         },
         whyCustom: {
-            label: "[ למה בהתאמה אישית ]",
-            title: "חיסכון זמן. ערך עסקי ברור.",
+            label: "",
+            title: "חיסכון בזמן. ערך עסקי ברור.",
             subtitle: "כל מערכת שאני בונה נמדדת במה שהיא מורידה מהצוות — ובמה שהיא פותחת לעסק.",
             items: [
                 {
                     step: "01",
-                    title: "שעות חוזרות לצוות",
+                    title: "שעות שחוזרות לצוות",
                     description:
-                        "קודם ממפים את המשימות החוזרות, ואז הופכים אותן לאוטומטיות או דיגיטליות — כדי שהצוות יתמקד בלקוחות ולא באדמין.",
+                        "מתחילים מהמשימות שחוזרות על עצמן, והופכים אותן לתהליך פשוט — כדי שהצוות יתמקד בלקוחות, לא בניירת.",
                 },
                 {
                     step: "02",
-                    title: "בנויה סביב התהליך שלכם",
+                    title: "נבנה סביב איך שאתם עובדים",
                     description:
-                        "גילוי → ארכיטקטורה → פיתוח. המוצר הולך אחרי התהליך, התפקידים והמקרים החריגים שלכם — לא אחרי תבנית.",
+                        "קודם מקשיבים, ואז בונים פתרון לפי התהליך האמיתי שלכם — לא לפי תבנית מוכנה.",
                 },
                 {
                     step: "03",
-                    title: "אינטגרציות מהיום הראשון",
+                    title: "הכול נשאר מחובר",
                     description:
-                        "API, מסדי נתונים, WhatsApp, יומנים, תשלומים — מחוברים בארכיטקטורה, לא כטלאי שברירי בסוף.",
+                        "הכלים שכבר משתמשים בהם — WhatsApp, יומנים, תשלומים — יכולים לשבת בזרימה אחת, כדי שהמידע לא ילך לאיבוד בין מערכות.",
                 },
                 {
                     step: "04",
-                    title: "ערך שאפשר להסביר",
+                    title: "ערך שמרגישים ביום־יום",
                     description:
-                        "פחות טעויות, תגובה מהירה יותר, שליטה טובה יותר במלאי/לקוחות/מכירות — תוצאות שבעל העסק מרגיש בתפעול היומיומי.",
+                        "פחות טעויות, תשובות מהירות יותר, ותמונה ברורה יותר של לקוחות, הזמנות ומלאי — בעבודה השוטפת.",
                 },
             ],
         },
@@ -417,11 +395,11 @@ export const translations = {
                 },
                 {
                     q: "אילו מערכות ואוטומציות אתה בונה?",
-                    a: "מערכות ווב לניהול לקוחות, מלאי, הזמנות, שיבוץ עובדים ומאגרי מידע; אוטומציות ב-n8n; סוכני AI לצרכי המשרד; Scraping וכריית מידע; ובנייה ושיפור ביצועים של מסדי נתונים (MSSQL, MongoDB).",
+                    a: "מערכות לניהול לקוחות, מלאי, הזמנות ועובדים; אוטומציות שחוסכות זמן על עבודה שחוזרת על עצמה; וכלים חכמים שעוזרים במשימות יומיומיות במשרד.",
                 },
                 {
                     q: "אפשר לחבר את המערכת לכלים שכבר יש לי?",
-                    a: "כן. חיבורי API, WhatsApp, יומנים, Google Sheets, CRM ותשלומים מתוכננים כבר בארכיטקטורה — כך שהנתונים זזים פעם אחת וכל המערכות מתעדכנות.",
+                    a: "כן. WhatsApp, יומנים, גיליונות, כלי לקוחות ותשלומים אפשר לתכנן כבר מההתחלה — כדי שהמידע יזוז פעם אחת ויישאר מעודכן.",
                 },
                 {
                     q: "כמה זה עולה וכמה זמן זה לוקח?",
@@ -455,44 +433,24 @@ export const translations = {
         },
         services: [
             {
-                icon: "Bot",
-                category: "מערכות מותאמות",
-                title: "מערכות עסקיות בהתאמה אישית",
-                description: "מערכות ווב שנבנות סביב התהליך שלכם — לא תוכנה גנרית — כדי שהתפעול ירוץ מהר יותר, עם פחות עבודה ידנית ושליטה ברורה יותר.",
-                highlights: ["ממפים את הצורך האמיתי לפני כתיבת קוד", "מדיגיטלים תהליכי משרד חוזרים", "חוסכים שעות בכל שבוע לצוות", "צומחים בלי להגדיל כוח אדם לאדמין"],
-                tags: ["פיתוח מותאם", "חיסכון זמן"],
+                icon: "Layers",
+                title: "מערכות ניהול בהתאמה אישית",
+                description: "מערכות שעוזרות לנהל מידע, לקוחות ותהליכים בצורה פשוטה ומסודרת.",
             },
             {
                 icon: "Workflow",
-                category: "אוטומציה",
-                title: "פיתוח אוטומציות ב-n8n",
-                description: "יצירת אוטומציות ייעודיות לפי דרישה לייעול העבודה, חיסכון זמן והגברת איכות השירות.",
-                highlights: ["תהליכי n8n מותאמים לצרכי העסק", "חיבור אפליקציות, APIs ומסדי נתונים", "חיסכון בשעות עבודה על משימות חוזרות", "שיפור זמני תגובה וחוויית לקוח"],
-                tags: ["n8n", "אוטומציית תהליכים"],
+                title: "אוטומציה וייעול תהליכים",
+                description: "פחות עבודה ידנית, פחות משימות שחוזרות על עצמן ויותר זמן לדברים החשובים.",
+            },
+            {
+                icon: "Sparkles",
+                title: "בינה מלאכותית לעסקים",
+                description: "כלים חכמים שמסייעים בשירות לקוחות, טיפול במידע וביצוע משימות יומיומיות.",
             },
             {
                 icon: "Globe",
-                category: "מידע ונתונים",
-                title: "Scraping וכריית מידע",
-                description: "שירותי scraping — כריית מידע מהרשת הגלויה לכל מטרה: מחקר שוק, לידים, ניטור ועוד.",
-                highlights: ["חילוץ מידע ממקורות ציבוריים", "מחקר שוק ומעקב מתחרים", "צינורות לידים אוטומטיים", "ניטור ודוחות מתוזמנים"],
-                tags: ["כריית מידע", "תובנות בזמן אמת"],
-            },
-            {
-                icon: "Plug",
-                category: "אינטגרציות",
-                title: "אינטגרציות בין מערכות",
-                description: "חיבור חלק בין פלטפורמות, כלים ומערכות עסקיות לתפעול מאוחד ויעיל.",
-                highlights: ["חיבורי API בין פלטפורמות", "סנכרון נתונים בזמן אמת", "CRM, ERP וכלים חיצוניים", "תהליכים עסקיים מאוחדים"],
-                tags: ["חיבור חלק", "מערכות מחוברות"],
-            },
-            {
-                icon: "Database",
-                category: "מסדי נתונים",
-                title: "בנייה ושיפור ביצועים ב-Databases",
-                description: "בנייה, אופטימיזציה ותחזוקה של מסדי נתונים בעלי ביצועים גבוהים — כולל אינדקסים, stored procedures וגיבויים.",
-                highlights: ["תכנון אינדקסים ואופטימיזציית שאילתות", "Stored procedures ולוגיקה בבסיס הנתונים", "אסטרטגיות גיבוי והתאוששות מאסון", "התמחות ב-MSSQL ו-MongoDB"],
-                tags: ["MSSQL", "MongoDB"],
+                title: "אתרים ופתרונות דיגיטליים",
+                description: "אתרים, חנויות ומערכות דיגיטליות שנבנות בהתאם לצרכים של העסק.",
             },
         ],
         process: [
@@ -587,6 +545,8 @@ export const translations = {
             empty: "תיקי עבודה בקרוב.",
             demo: "למערכת החיה",
             live: "מערכת עובדת",
+            enterSystem: "כניסה למערכת",
+            visitSite: "ביקור באתר",
             github: "GitHub",
             challenge: "הצורך",
             solution: "מה בניתי",
@@ -610,7 +570,7 @@ export type TranslationKeys = typeof translations.en;
 
 export const navIds = [
     { id: "home", key: "home" as const },
-    { id: "portfolio", key: "portfolio" as const },
     { id: "services", key: "services" as const },
+    { id: "portfolio", key: "portfolio" as const },
     { id: "contact", key: "contact" as const },
 ];

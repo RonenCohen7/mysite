@@ -25,9 +25,9 @@ const LOGO = `${SITE}/brand/logo.jpg`;
 const areasHe = siteConfig.serviceAreas.map((a) => a.he);
 const areasSentence = `ב${areasHe.slice(0, -1).join(", ")} ו${areasHe[areasHe.length - 1]}`;
 
-const HOME_TITLE = "מערכות בהתאמה אישית לעסקים, אוטומציות ו-AI | רונן כהן";
+const HOME_TITLE = "העסק שלך יכול לעבוד חכם יותר | רונן כהן";
 const HOME_DESCRIPTION =
-  `רונן כהן — פיתוח מערכות ווב בהתאמה אישית, אוטומציות n8n, סוכני AI ואינטגרציות לעסקים קטנים ובינוניים ` +
+  `רונן כהן עוזר לבעלי עסקים לזהות מה אפשר לשפר, לחסוך זמן ולבנות פתרונות דיגיטליים שמתאימים לצרכים שלהם. ` +
   `${areasSentence}, וגם מרחוק בכל הארץ.`;
 
 /** Maps a site path to its prerendered file under dist/_pages (the backend keeps the same mapping). */
@@ -110,7 +110,7 @@ function header(): string {
 function footer(): string {
   return (
     `<footer><h2>${esc(he.sections.contact.label)}</h2>` +
-    `<p>${esc(he.faq.items[he.faq.items.length - 1].a)} <a href="/#contact">${esc(he.hero.ctaCall)}</a></p>` +
+    `<p>${esc(he.faq.items[he.faq.items.length - 1].a)} <a href="/#contact">${esc(he.hero.ctaTalk)}</a></p>` +
     `<p><a href="${esc(siteConfig.linkedin)}">LinkedIn</a> · <a href="${esc(siteConfig.github)}">GitHub</a></p>` +
     `<p>© ${new Date().getFullYear()} ${esc(he.site.name)}. ${esc(he.footer.rights)}</p></footer>`
   );
@@ -129,20 +129,14 @@ function projectList(projects: Project[]): string {
 function homePage(projects: Project[]): Page {
   const body =
     header() +
-    `<main><h1>${esc(he.hero.headline)}</h1><p>${esc(he.hero.subtitle)}</p>` +
-    `<p>${esc(he.hero.punchLine1)}. ${esc(he.hero.punchLine2)}.</p>` +
+    `<main><h1>${esc(he.hero.headline)}</h1><p>${esc(he.hero.secondary)}</p><p>${esc(he.hero.subtitle)}</p>` +
     `<p>אזורי שירות: ${esc(areasHe.join(", "))}, וגם מרחוק בכל הארץ.</p>` +
-    `<section><h2>${esc(he.sections.portfolio.label)}</h2><p>${esc(he.sections.portfolio.subtitle)}</p>${projectList(projects)}</section>` +
-    `<section><h2>${esc(he.valueNeeds.title)}</h2><p>${esc(he.valueNeeds.subtitle)}</p>` +
-    he.valueNeeds.items.map((i) => `<h3>${esc(i.title)}</h3><p>${esc(i.need)}</p><p>${esc(i.value)}</p>`).join("") +
-    `</section><section><h2>${esc(he.sections.services.label)}</h2><p>${esc(he.sections.services.subtitle)}</p>` +
-    he.services
-      .map(
-        (s) =>
-          `<h3>${esc(s.title)}</h3><p>${esc(s.description)}</p><ul>${s.highlights.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>`
-      )
-      .join("") +
-    `</section><section><h2>${esc(he.whyCustom.title)}</h2><p>${esc(he.whyCustom.subtitle)}</p>` +
+    `<section><h2>${esc(he.valueNeeds.title)}</h2>` +
+    he.valueNeeds.items.map((i) => `<h3>${esc(i.title)}</h3><p>${esc(i.need)}</p>`).join("") +
+    `</section><section><h2>${esc(he.sections.services.title)}</h2><p>${esc(he.sections.services.subtitle)}</p>` +
+    he.services.map((s) => `<h3>${esc(s.title)}</h3><p>${esc(s.description)}</p>`).join("") +
+    `</section><section><h2>${esc(he.sections.portfolio.title)}</h2><p>${esc(he.sections.portfolio.subtitle)}</p>${projectList(projects)}</section>` +
+    `<section><h2>${esc(he.whyCustom.title)}</h2><p>${esc(he.whyCustom.subtitle)}</p>` +
     he.whyCustom.items.map((i) => `<h3>${esc(i.title)}</h3><p>${esc(i.description)}</p>`).join("") +
     `</section><section><h2>${esc(he.faq.title)}</h2>` +
     he.faq.items.map((i) => `<h3>${esc(i.q)}</h3><p>${esc(i.a)}</p>`).join("") +
