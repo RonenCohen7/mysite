@@ -1,38 +1,68 @@
 .beyond-code__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
-  margin: 0 auto 2rem;
-  max-width: 28rem;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .beyond-code__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1024px) {
   .beyond-code__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    max-width: none;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-.beyond-code__actions {
-  display: flex;
-  justify-content: center;
-}
-
-.beyond-code__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.6rem;
-  border-radius: 999px;
-  background: linear-gradient(120deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
-  color: #fff;
-  font-weight: 700;
+.beyond-code__tile {
+  display: block;
+  min-width: 0;
+  border-radius: var(--radius-xl);
   text-decoration: none;
-  box-shadow: 0 12px 30px rgba(221, 42, 123, 0.25);
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(135deg, #7c3aed, #06b6d4 55%, #f97316) border-box;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-md);
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-.beyond-code__cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(221, 42, 123, 0.35);
+.beyond-code__tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.beyond-code__tile:focus-visible {
+  outline: 2px solid var(--color-violet-500);
+  outline-offset: 3px;
+}
+
+.beyond-code__media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: calc(var(--radius-xl) - 1px);
+  background: var(--color-slate-100);
+}
+
+.beyond-code__media img,
+.beyond-code__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beyond-code__tile {
+    transition: none;
+  }
+  .beyond-code__tile:hover {
+    transform: none;
+  }
+  .beyond-code__media video {
+    animation: none;
+  }
 }

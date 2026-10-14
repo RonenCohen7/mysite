@@ -207,8 +207,6 @@ export const translations = {
             title: "Beyond the code...",
             subtitle: "Motorcycles, trips and moments from the road — on my Instagram.",
             cta: "Follow on Instagram",
-            watchReel: "Watch this reel on Instagram",
-            embedFailed: "This reel couldn't load here. Open it on Instagram.",
         },
         about: {
             pageTitle: "Nice to meet you | Ronen Cohen",
@@ -495,8 +493,6 @@ export const translations = {
             title: "קצת מעבר לקוד...",
             subtitle: "אופנועים, טיולים ורגעים מהדרך — באינסטגרם שלי.",
             cta: "לאינסטגרם שלי",
-            watchReel: "לצפייה בריל באינסטגרם",
-            embedFailed: "הריל לא נטען כאן. אפשר לפתוח אותו באינסטגרם.",
         },
         about: {
             pageTitle: "נעים להכיר | רונן כהן",
