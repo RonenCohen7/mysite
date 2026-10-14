@@ -131,11 +131,12 @@ function homePage(projects: Project[]): Page {
     header() +
     `<main><h1>${esc(he.hero.headline)}</h1><p>${esc(he.hero.secondary)}</p><p>${esc(he.hero.subtitle)}</p>` +
     `<p>אזורי שירות: ${esc(areasHe.join(", "))}, וגם מרחוק בכל הארץ.</p>` +
+    `<section><h2>${esc(he.sections.portfolio.title)}</h2><p>${esc(he.sections.portfolio.subtitle)}</p>${projectList(projects)}</section>` +
     `<section><h2>${esc(he.valueNeeds.title)}</h2>` +
     he.valueNeeds.items.map((i) => `<h3>${esc(i.title)}</h3><p>${esc(i.need)}</p>`).join("") +
     `</section><section><h2>${esc(he.sections.services.title)}</h2><p>${esc(he.sections.services.subtitle)}</p>` +
     he.services.map((s) => `<h3>${esc(s.title)}</h3><p>${esc(s.description)}</p>`).join("") +
-    `</section><section><h2>${esc(he.sections.portfolio.title)}</h2><p>${esc(he.sections.portfolio.subtitle)}</p>${projectList(projects)}</section>` +
+    `</section>` +
     `<section><h2>${esc(he.whyCustom.title)}</h2><p>${esc(he.whyCustom.subtitle)}</p>` +
     he.whyCustom.items.map((i) => `<h3>${esc(i.title)}</h3><p>${esc(i.description)}</p>`).join("") +
     `</section><section><h2>${esc(he.faq.title)}</h2>` +

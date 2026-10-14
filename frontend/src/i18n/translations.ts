@@ -101,7 +101,7 @@ export const translations = {
             ],
         },
         faq: {
-            label: "[ FAQ ]",
+            label: "FAQ",
             title: "What businesses ask before we start",
             items: [
                 {
@@ -382,7 +382,7 @@ export const translations = {
             ],
         },
         faq: {
-            label: "[ שאלות נפוצות ]",
+            label: "שאלות נפוצות",
             title: "מה עסקים שואלים לפני שמתחילים",
             items: [
                 {
@@ -570,7 +570,7 @@ export type TranslationKeys = typeof translations.en;
 
 export const navIds = [
     { id: "home", key: "home" as const },
-    { id: "services", key: "services" as const },
     { id: "portfolio", key: "portfolio" as const },
+    { id: "services", key: "services" as const },
     { id: "contact", key: "contact" as const },
 ];
