@@ -1,3 +1,18 @@
+.beyond-code__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 0 auto 2rem;
+  max-width: 28rem;
+}
+
+@media (min-width: 1024px) {
+  .beyond-code__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
+  }
+}
+
 .beyond-code__actions {
   display: flex;
   justify-content: center;
