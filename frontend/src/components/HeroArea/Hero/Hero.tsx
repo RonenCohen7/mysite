@@ -66,7 +66,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.06, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
-          <img src={portraitImage} alt={t.site.name} width={775} height={1024} />
+          <img src={portraitImage} alt={t.site.name} width={1024} height={770} />
         </motion.figure>
       </div>
 

@@ -38,8 +38,8 @@ export function About() {
               <img
                 src={portraitImage}
                 alt={t.site.name}
-                width={775}
-                height={1024}
+                width={1024}
+                height={770}
               />
             </div>
             <div className="about-page__intro">

@@ -52,7 +52,7 @@
 
 .about-page__portrait {
   flex-shrink: 0;
-  width: min(100%, 17.5rem);
+  width: min(100%, 18rem);
   border-radius: 1.35rem;
   overflow: hidden;
   border: 3px solid #fff;
@@ -63,6 +63,9 @@
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 12%;
 }
 
 .about-page__title {
