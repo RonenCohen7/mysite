@@ -1,6 +1,7 @@
-import { CalendarClock, Plane, Scale, Users, Wine, type LucideIcon } from "lucide-react";
+import { Bot, CalendarClock, Plane, Scale, Users, Wine, type LucideIcon } from "lucide-react";
 
 const ICONS: Record<string, LucideIcon> = {
+  "ronen-ai-agents": Bot,
   "see-you-tomorrow": CalendarClock,
   "tmore-talent-pool": Users,
   "hamasgeria-hadar-pub": Wine,

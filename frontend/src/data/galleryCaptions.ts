@@ -1,6 +1,48 @@
 type Caption = { en: string; he: string };
 
 const captionsByFile: Record<string, Record<string, Caption>> = {
+  "ronen-ai-agents": {
+    "home.jpg": {
+      en: "Your team keeps working when you are away — agents around you, and a live log of what is happening.",
+      he: "הצוות ממשיך לעבוד גם כשאתה לא כאן — סוכנים סביבך, ויומן חי של מה שקורה.",
+    },
+    "steps.jpg": {
+      en: "Three steps: send an email, the team does the work, you approve.",
+      he: "שלושה צעדים: שולחים מייל, הצוות עובד, אתה מאשר.",
+    },
+    "agents.jpg": {
+      en: "The whole agent team in one place — role, cost, and status.",
+      he: "כל הסוכנים במקום אחד — תפקיד, עלות וסטטוס.",
+    },
+    "tasks.jpg": {
+      en: "Tasks move between agents — who sent, who received, and what was decided.",
+      he: "משימות עוברות בין הסוכנים — מי שלח, מי קיבל, ומה הוחלט.",
+    },
+    "protocol.jpg": {
+      en: "A meeting protocol is prepared in the system and ready for approval.",
+      he: "פרוטוקול הישיבה נבנה במערכת ומחכה לאישור.",
+    },
+    "protocol-draft.jpg": {
+      en: "Open a new meeting, record it, and the protocol is drafted for you.",
+      he: "פותחים ישיבה חדשה, מקליטים, והפרוטוקול נכתב עבורך.",
+    },
+    "protocol-pdf.jpg": {
+      en: "The protocol comes out as a PDF you can download.",
+      he: "הפרוטוקול יוצא כקובץ PDF שאפשר להוריד.",
+    },
+    "email.jpg": {
+      en: "The protocol is sent by email, with the file attached.",
+      he: "הפרוטוקול נשלח במייל, עם הקובץ מצורף.",
+    },
+    "telegram.jpg": {
+      en: "The same agents are also connected through Telegram.",
+      he: "אותם סוכנים מחוברים גם דרך טלגרם.",
+    },
+    "content.jpg": {
+      en: "Posts for Instagram, Facebook, and LinkedIn wait for approval before they go out.",
+      he: "תוכן לאינסטגרם, לפייסבוק וללינקדאין מחכה לאישור לפני שהוא יוצא.",
+    },
+  },
   "hamasgeria-hadar-pub": {
     "dashboard.jpg": {
       en: "Control board — stock, suppliers, and events at a glance.",

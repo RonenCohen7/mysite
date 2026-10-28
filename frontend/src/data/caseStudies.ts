@@ -3,6 +3,52 @@ import type { Project } from "@mysite/shared";
 /** Real portfolio case studies only — no invented demos. */
 export const fallbackCaseStudies: Project[] = [
   {
+    _id: "case-ronen-ai-agents",
+    title: "Ronen AI Agents",
+    titleHe: "מערכת סוכני AI",
+    slug: "ronen-ai-agents",
+    description:
+      "An AI agent team that keeps working when you step away — meetings, tasks, content, and Telegram in one system.",
+    descriptionHe:
+      "צוות סוכני AI שממשיך לעבוד גם כשאתה לא ליד המחשב — ישיבות, משימות, תוכן וטלגרם במערכת אחת.",
+    challenge:
+      "The work does not stop when you leave the desk. Meetings need a protocol, tasks need to move between people, and content sits waiting for approval.",
+    challengeHe:
+      "העבודה לא נגמרת כשיוצאים מהשולחן. ישיבה צריכה פרוטוקול, משימות צריכות לעבור בין אנשים, ותוכן מחכה לאישור.",
+    solution:
+      "A system of agents working around you. You send an email or record a meeting, the agents split the work, prepare the protocol and the content, and wait for your approval.",
+    solutionHe:
+      "מערכת סוכנים שעובדת סביבך. שולחים מייל או מקליטים ישיבה, הסוכנים מחלקים את העבודה, מכינים פרוטוקול ותוכן, ומחכים לאישור שלך.",
+    outcome:
+      "Three steps: you send, the team works, you approve. The protocol goes out by email, tasks move between agents, and Telegram stays connected.",
+    outcomeHe:
+      "שלושה צעדים: שולחים, הצוות עובד, אתה מאשר. הפרוטוקול יוצא במייל, המשימות זזות בין הסוכנים, והטלגרם נשאר מחובר.",
+    industry: "AI agents / Business operations",
+    industryHe: "סוכני AI / ניהול עסק",
+    clientName: "Ronen AI Agents",
+    coverUrl: "/projects/ronen-ai-agents/home.jpg",
+    galleryUrls: [
+      "/projects/ronen-ai-agents/home.jpg",
+      "/projects/ronen-ai-agents/steps.jpg",
+      "/projects/ronen-ai-agents/agents.jpg",
+      "/projects/ronen-ai-agents/tasks.jpg",
+      "/projects/ronen-ai-agents/protocol.jpg",
+      "/projects/ronen-ai-agents/protocol-draft.jpg",
+      "/projects/ronen-ai-agents/protocol-pdf.jpg",
+      "/projects/ronen-ai-agents/email.jpg",
+      "/projects/ronen-ai-agents/telegram.jpg",
+      "/projects/ronen-ai-agents/content.jpg",
+    ],
+    techStack: [],
+    demoUrl: "https://agents.ronencohen.dev/home",
+    images: [],
+    featured: true,
+    published: true,
+    order: 0,
+    createdAt: new Date(0).toISOString(),
+    updatedAt: new Date(0).toISOString(),
+  },
+  {
     _id: "case-see-you-tomorrow",
     title: "See You Tomorrow — Workforce Scheduling",
     titleHe: "See You Tomorrow — מערכת לתכנון וניהול שיבוץ עובדים",
@@ -228,6 +274,7 @@ const IGNORED_DEMO_SLUGS = new Set([
 
 /** Fixed public portfolio order — do not rely on array declaration order. */
 const PORTFOLIO_SLUG_ORDER = [
+  "ronen-ai-agents",
   "hamasgeria-hadar-pub",
   "tmore-talent-pool",
   "see-you-tomorrow",
